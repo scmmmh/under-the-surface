@@ -1,1 +1,16 @@
-{"data": {"type": "people", "id": "4", "attributes": {"slug": "4-herrad-von-landsberg", "title": "Herrad von Landsberg", "template": "person", "names": ["Herrad von Landsberg"]}}}
+{
+  "data": {
+    "type": "people",
+    "id": "4",
+    "attributes": {
+      "slug": "4-herrad-von-landsberg",
+      "title": "Herrad von Landsberg",
+      "template": "person",
+      "names": [
+        {
+          "name": "Herrad von Landsberg"
+        }
+      ]
+    }
+  }
+}

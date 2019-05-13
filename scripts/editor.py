@@ -39,4 +39,4 @@ def edit(set, unset, add, remove, person_id):
                 else:
                     del data['data']['attributes'][key]
         with open(filepath, 'w') as out_f:
-            json.dump(data, out_f)
+            json.dump(data, out_f, indent=2)

@@ -28,10 +28,10 @@ def add_people(names):
                         'title': name,
                         'template': 'person',
                         'names': [
-                            name
+                            {'name': name}
                         ]
                     }
                 }
             }
-            json.dump(stub, out_f)
+            json.dump(stub, out_f, indent=2)
         next_id = next_id + 1
