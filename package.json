@@ -1,0 +1,14 @@
+{
+  "name": "under-the-surface",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:scmmmh/under-the-surface.git",
+  "author": "Mark Hall <mark.hall@informatik.uni-halle.de>",
+  "license": "CC-BY-SA-4.0",
+  "dependencies": {
+    "foundation-sites": "^6.5.3",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "pump": "^3.0.0"
+  }
+}

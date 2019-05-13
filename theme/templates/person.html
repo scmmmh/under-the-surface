@@ -1,30 +1,39 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ page.title }}{% endblock title %}
+
 {% block content %}
-<h1>{{ page.title }}</h1>
-<div class="grid-x grid-padding-x">
-  <div class="cell small-12 medium-8">
-    <section>
-      <h2>Works</h2>
-    </section>
-    <section>
-      <h2>Links</h2>
-    </section>
+<main>
+  <div class="grid-x grid-padding-x">
+    <div class="cell small-12">
+      <h1>{{ page.title }}</h1>
+    </div>
   </div>
-  <aside class="cell small-12 medium-4">
-    <h2>About</h2>
-    <dl>
-      {% for label, field in PERSON_METADATA %}
-        <dt>{{ label }}</dt>
-        <dd>
-          <ul class="no-bullet">
-            {% for value in page[field] %}
-              <li>{{ value }}</li>
-            {% endfor %}
-          </ul>
-        </dd>
-      {% endfor %}
-    </dl>
-  </aside>
-</div>
+  <div class="grid-x grid-padding-x">
+    <div class="cell small-12 medium-8">
+      <section><p>{{ page.content }}</p></section>
+      <section>
+        <h2>Works</h2>
+      </section>
+      <section>
+        <h2>Links</h2>
+      </section>
+    </div>
+    <aside class="cell small-12 medium-4">
+      <h2>About</h2>
+      <dl>
+        {% for label, field in PERSON_METADATA %}
+          <dt>{{ label }}</dt>
+          <dd>
+            <ul class="no-bullet">
+              {% for value in page[field] %}
+                <li>{{ value }}</li>
+              {% endfor %}
+            </ul>
+          </dd>
+        {% endfor %}
+      </dl>
+    </aside>
+  </div>
+</main>
 {% endblock content %}

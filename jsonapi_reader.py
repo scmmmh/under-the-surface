@@ -13,11 +13,15 @@ class JsonApiReader(BaseReader):
         with open(filename) as in_f:
             obj = load(in_f)
             metadata = obj['data']['attributes']
+        content = ''
+        if 'content' in metadata:
+            content = metadata['content']
+            del metadata['content']
         parsed = {}
         for key, value in metadata.items():
             parsed[key] = self.process_metadata(key, value)
 
-        return '', parsed
+        return content, parsed
 
 def add_reader(readers):
     readers.reader_classes['json'] = JsonApiReader

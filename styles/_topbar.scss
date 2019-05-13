@@ -1,0 +1,26 @@
+.top-bar {
+    margin-bottom: $global-margin * 2;
+}
+.top-bar-left li:first-child a {
+    position: relative;
+    left: -$global-padding / 2;
+    font-size: rem-calc(24);
+    font-family: 'Playfair Display SC', Georgia, serif;
+
+    &:link, &:visited, &:hover {
+        color: $black;
+        &[aria-current="true"] {
+            color: $black;
+        }
+    }
+
+    small {
+        display: block;
+        font-size: rem-calc(16);
+        font-family: 'Playfair Display', Georgia, serif;
+        margin-top: $global-margin / 4;
+    }
+}
+.top-bar-right {
+    border-bottom: 1px solid $primary-color;
+}

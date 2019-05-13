@@ -1,0 +1,18 @@
+article {
+    .metadata {
+        font-size: rem-calc(13);
+        position: relative;
+        top: -$global-padding / 2;
+    }
+}
+aside dl {
+    font-size: 90%;
+
+    dt {
+        font-family: 'Playfair Display SC', Georgia, serif;
+        font-weight: normal;
+    }
+    dd {
+        margin-bottom: $global-margin;
+    }
+}

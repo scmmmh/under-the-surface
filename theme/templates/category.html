@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+  <div class="grid-x grid-padding-x margin-bottom">
+    <div class="cell small-12">
+      <h1>Articles categorised as {{ category }}</h1>
+    </div>
+  </div>
+  <div class="grid-x grid-padding-x">
+    {% for article in articles %}
+      <article class="cell small-12 medium-6 large-4">
+        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+        <div class="metadata">{{ article.date|strftime('%d.%m.%Y') }} by <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></div>
+        {{ article.summary }}
+        <p class="text-right"><a href="{{ SITEURL }}/{{ article.url }}">Read more...</a></p>
+      </article>
+    {% endfor %}
+  </div>
+</main>
+{% endblock content %}

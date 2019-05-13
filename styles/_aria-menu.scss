@@ -1,0 +1,40 @@
+/*
+ * ARIA Compliant Menu
+ */
+*[role="menu"] {
+    @include menu-base;
+
+    &[aria-orientation="vertical"] {
+        @include menu-direction('vertical');
+    }
+
+    li {
+        position: relative;
+
+        &.menu-text {
+            @include menu-text;
+        }
+
+        *[role="menuitem"] {
+        }
+
+        & > *[role="menu"] {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0 10px 10px $light-gray;
+
+            *[role="menu"] {
+                position: absolute;
+                top: 0;
+                left: 100%;
+            }
+        }
+
+        &:hover {
+            & > *[role="menu"] {
+                display: block;
+            }
+        }
+    }
+}

@@ -6,7 +6,8 @@
       <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
       <link rel="icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/favicon.ico" type="image/x-icon">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/app.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display:400,700|Playfair+Display+SC" rel="stylesheet">
+      <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/theme.css"/>
       {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
       {% endif %}
@@ -16,6 +17,23 @@
     {% endblock %}
   </head>
   <body>
-    {% block content %}{% endblock content %}
+    <div class="grid-container">
+      <header class="top-bar">
+        <nav class="top-bar-left">
+          <ul role="menu">
+            <li role="presentation"><a href="{{ SITEURL }}" role="menuitem" tabindex="0">Under the Surface<small>Authors in hiding from the Canon</small></a></li>
+          </ul>
+        </nav>
+        <nav class="top-bar-right">
+          <ul role="menu">
+            <li role="presentation"><a href="" role="menuitem" tabindex="0">Browse</a></li>
+            <li role="presentation"><a href="" role="menuitem" tabindex="-1">Search</a></li>
+            <li role="presentation"><a href="{{ SITEURL }}" role="menuitem" tabindex="-1">Blog</a></li>
+            <li role="presentation"><a href="" role="menuitem" tabindex="-1">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      {% block content %}{% endblock content %}
+    </div>
   </body>
 </html>
