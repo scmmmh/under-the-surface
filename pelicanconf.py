@@ -11,13 +11,14 @@ PAGE_PATHS = ['people']
 
 TIMEZONE = 'Europe/Berlin'
 
+LANGUAGES = ['en', 'de']
 DEFAULT_LANG = 'en'
 
-PLUGINS = ('jsonapi_reader', )
+PLUGINS = ('multi_language_jsonapi_reader', )
 
 THEME = './theme'
 PERSON_METADATA = (
-    ('Names', 'name', None),
+    ('Names', 'names', None),
     ('Wikidata', 'wikidata', 'https://www.wikidata.org/wiki/%s'),
     ('VIAF', 'viaf', 'https://viaf.org/viaf/%s/'),
     ('GND', 'gnd', 'https://d-nb.info/gnd/%s')
