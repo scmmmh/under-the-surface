@@ -23,11 +23,11 @@
       <h2>About</h2>
       <dl>
         {% for label, field, url in PERSON_METADATA %}
-          {% if page[field] and page[field][DEFAULT_LANG] %}
+          {% if page[field] and page[field][page.lang] %}
             <dt>{{ label }}</dt>
             <dd>
               <ul class="no-bullet">
-                {% for value in page[field][DEFAULT_LANG] %}
+                {% for value in page[field][page.lang] %}
                   <li>{{ value }}</li>
                 {% endfor %}
               </ul>

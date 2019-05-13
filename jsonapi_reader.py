@@ -14,7 +14,7 @@ class JsonApiReader(BaseReader):
         metadata = {}
         with open(filename) as in_f:
             obj = load(in_f)
-            metadata = obj['data']['attributes']
+            metadata.update(obj['data']['attributes'])
         content = ''
         if 'content' in metadata:
             content = ''.join(['<p>{0}</p>'.format(c) for c in metadata['content'][DEFAULT_LANG]])
