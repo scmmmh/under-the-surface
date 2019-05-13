@@ -3,6 +3,8 @@ from json import load
 from pelican import signals
 from pelican.readers import BaseReader
 
+from pelicanconf import DEFAULT_LANG
+
 
 class JsonApiReader(BaseReader):
     enabled = True
@@ -15,7 +17,7 @@ class JsonApiReader(BaseReader):
             metadata = obj['data']['attributes']
         content = ''
         if 'content' in metadata:
-            content = metadata['content']
+            content = ''.join(['<p>{0}</p>'.format(c) for c in metadata['content'][DEFAULT_LANG]])
             del metadata['content']
         parsed = {}
         for key, value in metadata.items():

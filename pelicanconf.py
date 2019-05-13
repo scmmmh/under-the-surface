@@ -17,7 +17,10 @@ PLUGINS = ('jsonapi_reader', )
 
 THEME = './theme'
 PERSON_METADATA = (
-    ('Names', 'names'),
+    ('Names', 'name', None),
+    ('Wikidata', 'wikidata', 'https://www.wikidata.org/wiki/%s'),
+    ('VIAF', 'viaf', 'https://viaf.org/viaf/%s/'),
+    ('GND', 'gnd', 'https://d-nb.info/gnd/%s')
 )
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

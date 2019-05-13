@@ -26,10 +26,7 @@ def add_people(names):
                     'attributes': {
                         'slug': '{0}-{1}'.format(next_id, name.replace(' ', '-').lower()),
                         'title': name,
-                        'template': 'person',
-                        'names': [
-                            {'name': name}
-                        ]
+                        'template': 'person'
                     }
                 }
             }

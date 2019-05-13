@@ -11,7 +11,7 @@
   </div>
   <div class="grid-x grid-padding-x">
     <div class="cell small-12 medium-8">
-      <section><p>{{ page.content }}</p></section>
+      <section>{{ page.content }}</section>
       <section>
         <h2>Works</h2>
       </section>
@@ -22,15 +22,27 @@
     <aside class="cell small-12 medium-4">
       <h2>About</h2>
       <dl>
-        {% for label, field in PERSON_METADATA %}
-          <dt>{{ label }}</dt>
-          <dd>
-            <ul class="no-bullet">
-              {% for value in page[field] %}
-                <li>{{ value }}</li>
-              {% endfor %}
-            </ul>
-          </dd>
+        {% for label, field, url in PERSON_METADATA %}
+          {% if page[field] and page[field][DEFAULT_LANG] %}
+            <dt>{{ label }}</dt>
+            <dd>
+              <ul class="no-bullet">
+                {% for value in page[field][DEFAULT_LANG] %}
+                  <li>{{ value }}</li>
+                {% endfor %}
+              </ul>
+            </dd>
+          {% endif %}
+          {% if page.links[field] %}
+            <dt>{{ label }}</dt>
+            <dd>
+              <ul class="no-bullet">
+                {% for value in page.links[field] %}
+                  <li><a href="{{ url|format(value) }}" rel="noopener">{{ value }}</a></li>
+                {% endfor %}
+              </ul>
+            </dd>
+          {% endif %}
         {% endfor %}
       </dl>
     </aside>
