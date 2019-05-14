@@ -12,39 +12,49 @@
   <div class="grid-x grid-padding-x">
     <div class="cell small-12 medium-8">
       <section>{{ page.content }}</section>
-      <section>
-        <h2>Works</h2>
-      </section>
-      <section>
-        <h2>Links</h2>
-      </section>
+      {% if page.works %}
+        <section>
+          <h2>Works</h2>
+        </section>
+      {% endif %}
+      {% if page.links %}
+        <section>
+          <h2>Links</h2>
+          <ul class="no-bullet grid-x grid-padding-x">
+          {% for label, field, url in PERSON_LINK_CATEGORIES %}
+            {% if page.links[field] %}
+              <li class="cell small-6 medium-3 large-2">
+                <span class="sc">{{ label }}</span>
+                <ul class="no-bullet">
+                  {% for value in page.links[field] %}
+                    <li><a href="{{ url|format(value) }}" rel="noopener">{{ value }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
     </div>
     <aside class="cell small-12 medium-4">
-      <h2>About</h2>
-      <dl>
-        {% for label, field, url in PERSON_METADATA %}
+      <div class="grid-x grid-padding-x">
+        <div class="cell small-12">
+          <h2>About</h2>
+        </div>
+        {% for label, field in PERSON_METADATA %}
           {% if page[field] and page[field] %}
-            <dt>{{ label }}</dt>
-            <dd>
+            <section class="cell small-12 large-6">
+              <h3>{{ label }}</h3>
               <ul class="no-bullet">
                 {% for value in page[field] %}
                   <li>{{ value }}</li>
                 {% endfor %}
               </ul>
-            </dd>
-          {% endif %}
-          {% if page.links[field] %}
-            <dt>{{ label }}</dt>
-            <dd>
-              <ul class="no-bullet">
-                {% for value in page.links[field] %}
-                  <li><a href="{{ url|format(value) }}" rel="noopener">{{ value }}</a></li>
-                {% endfor %}
-              </ul>
-            </dd>
+            </section>
           {% endif %}
         {% endfor %}
-      </dl>
+      </div>
     </aside>
   </div>
 </main>
