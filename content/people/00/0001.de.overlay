@@ -1,7 +1,5 @@
 {
   "data": {
-    "type": "people",
-    "id": "1",
     "attributes": {
       "names": [
         "Hrotsvit",
@@ -19,7 +17,7 @@
         "Hrotsvith von Gandersheim"
       ],
       "content": [
-          "Autorin des Fr\u00fchmittelalters"
+        "Autorin des Fr\u00fchmittelalters"
       ]
     }
   }

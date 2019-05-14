@@ -1,16 +1,14 @@
 {
   "data": {
-    "type": "people",
-    "id": "1",
     "attributes": {
       "names": [
-          "Hrotsvitha",
-          "Hrosvitha",
-          "Hroswitha",
-          "Roswitha"
+        "Hrotsvitha",
+        "Hrosvitha",
+        "Hroswitha",
+        "Roswitha"
       ],
       "content": [
-          "Secular canoness, dramatist, and poet"
+        "Secular canoness, dramatist, and poet"
       ]
     }
   }
