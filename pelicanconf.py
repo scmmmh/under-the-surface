@@ -7,7 +7,12 @@ SITENAME = 'Under the Surface'
 SITEURL = ''
 
 PATH = 'content'
+
 PAGE_PATHS = ['people']
+
+ARTICLE_PATHS = ['articles']
+ARTICLE_URL = 'articles/{slug}.html'
+ARTICLE_SAVE_AS = 'articles/{slug}.html'
 
 TIMEZONE = 'Europe/Berlin'
 
