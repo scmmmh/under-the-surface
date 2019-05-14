@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-PAGE_PATHS = ['people']
+PAGE_PATHS = ['people', 'pages']
 
 ARTICLE_PATHS = ['articles']
 ARTICLE_URL = 'articles/{slug}.html'
@@ -19,7 +19,7 @@ TIMEZONE = 'Europe/Berlin'
 LANGUAGES = ['en', 'de']
 DEFAULT_LANG = 'en'
 
-PLUGINS = ('multi_language_jsonapi_reader', )
+PLUGINS = ('person_reader', )
 
 THEME = './theme'
 PERSON_METADATA = (

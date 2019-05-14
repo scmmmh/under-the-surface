@@ -15,7 +15,8 @@ class MultiLanguageJsonapiReader(BaseReader):
 
     def read(self, filename):
         metadata = {
-            'lang': DEFAULT_LANG
+            'lang': DEFAULT_LANG,
+            'type': 'person'
         }
         path, basename = os.path.split(filename)
         match = re.match('([0-9]{4})\.([a-z]+)\.overlay', basename)
@@ -27,6 +28,10 @@ class MultiLanguageJsonapiReader(BaseReader):
         with open(filename) as in_f:
             obj = load(in_f)
             metadata.update(obj['data']['attributes'])
+        if 'title' in metadata:
+            metadata['firsttitleletter'] = metadata['title'][0]
+        else:
+            metadata['firsttitleletter'] = ''
         content = ''
         if 'content' in metadata:
             content = ''.join(['<p>{0}</p>'.format(c) for c in metadata['content']])
