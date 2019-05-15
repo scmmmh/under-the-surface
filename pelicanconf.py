@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+# Site defaults
 AUTHOR = 'Mark Hall'
 SITENAME = 'Under the Surface'
 SITEURL = ''
 
+# Path configuration
 PATH = 'content'
 
 PAGE_PATHS = ['people', 'pages']
@@ -14,13 +16,16 @@ ARTICLE_PATHS = ['articles']
 ARTICLE_URL = 'articles/{slug}.html'
 ARTICLE_SAVE_AS = 'articles/{slug}.html'
 
+# Internationalisation
 TIMEZONE = 'Europe/Berlin'
 
 LANGUAGES = ['en', 'de']
 DEFAULT_LANG = 'en'
 
+# Plugins
 PLUGINS = ('person_reader', )
 
+# Theme configuration
 THEME = './theme'
 PERSON_METADATA = (
     ('Names', 'names'),
@@ -45,6 +50,8 @@ PERSON_LINK_CATEGORIES = (
     ('GND', 'gnd'),
 )
 
+DEFAULT_PAGINATION = 10
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -53,16 +60,10 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = []
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
-
-DEFAULT_PAGINATION = 10
+SOCIAL = []
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
