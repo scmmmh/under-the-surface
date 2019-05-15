@@ -10,5 +10,8 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "pump": "^3.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
   }
 }
