@@ -201,7 +201,7 @@ def load_wikidata_data():
                             set_value(obj,
                                       'data.attributes.links.wikidata.{0}'.format(source_key),
                                       {'timestamp': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
-                                       'url': 'https://www.wikidata.org/wiki/{0}'.format(key)})
+                                       'url': 'https://www.wikidata.org/wiki/{0}'.format(source_key)})
                             # Set the verification level
                             if get_attribute(obj, 'data.attributes.verification') in ['partial', 'full']:
                                 set_value(obj,
