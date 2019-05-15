@@ -15,7 +15,7 @@ class MultiLanguageJsonapiReader(BaseReader):
 
     def read(self, filename):
         metadata = {
-            'lang': DEFAULT_LANG,
+            'lang': self.settings['DEFAULT_LANG'],
             'type': 'person'
         }
         path, basename = os.path.split(filename)
@@ -30,7 +30,7 @@ class MultiLanguageJsonapiReader(BaseReader):
         if 'content' in metadata:
             content = ''.join(['<p>{0}</p>'.format(c) for c in metadata['content']])
             del metadata['content']
-        if metadata['lang'] != DEFAULT_LANG:
+        if metadata['lang'] != self.settings['DEFAULT_LANG']:
             metadata['Status'] = 'draft'
         parsed = {}
         for key, value in metadata.items():
