@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 # Site defaults
 AUTHOR = 'Mark Hall'
 SITENAME = 'Under the Surface'
+SITE_TAGLINE = 'Authors in hiding from the Canon'
 SITEURL = ''
 
 # Path configuration
