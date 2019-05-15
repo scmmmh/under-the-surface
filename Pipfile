@@ -9,8 +9,6 @@ verify_ssl = true
 pelican = "*"
 click = "*"
 requests = "*"
-i18n-subsites = "*"
-pelican-i18n-subsites = "*"
 
 [requires]
 python_version = "3.7"

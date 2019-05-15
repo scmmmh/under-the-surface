@@ -23,6 +23,9 @@ To run and build the Under the Surface site, use the instructions below, dependi
 * ```yarn install```
 * ```./runner.py```
 
+Alternatively you can run the ```build.sh``` script to fully automatically pull the latest changes, install all
+dependencies, and rebuild the site.
+
 ### Development
 
 * ```export PIPENV_VENV_IN_PROJECT=True```
