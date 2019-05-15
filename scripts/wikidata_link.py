@@ -156,7 +156,7 @@ def load_wikidata_data():
                     obj = json.load(in_f)
                 lang = get_attribute(obj, 'data.attributes.lang')
                 for source_key, value in list(get_attribute(obj, 'data.attributes.links.wikidata').items()):
-                    if value is None or True:
+                    if value is None:
                         data = fetch_wikidata_page(source_key)
                         if data:
                             # Load main label
@@ -202,6 +202,15 @@ def load_wikidata_data():
                                       'data.attributes.links.wikidata.{0}'.format(source_key),
                                       {'timestamp': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
                                        'url': 'https://www.wikidata.org/wiki/{0}'.format(key)})
+                            # Set the verification level
+                            if get_attribute(obj, 'data.attributes.verification') in ['partial', 'full']:
+                                set_value(obj,
+                                          'data.attributes.verification',
+                                          'partial')
+                            else:
+                                set_value(obj,
+                                          'data.attributes.verification',
+                                          'none')
                 with open(os.path.join(basepath, filename), 'w') as out_f:
                     json.dump(obj, out_f, indent=2)
 

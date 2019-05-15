@@ -10,7 +10,7 @@
       "links": {
         "wikidata": {
           "Q269687": {
-            "timestamp": "2019-05-15T09:59:55Z",
+            "timestamp": "2019-05-15T10:42:03Z",
             "url": "https://www.wikidata.org/wiki/data.attributes.date_of_death"
           }
         },
@@ -62,7 +62,8 @@
       ],
       "date_of_death": [
         "+1282-01-01T00:00:00Z"
-      ]
+      ],
+      "verification": "none"
     }
   }
 }

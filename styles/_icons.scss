@@ -7,4 +7,20 @@ svg.icon {
         height: 16px;
         vertical-align: middle;
     }
+
+    &.alert {
+        path {
+            fill: $alert-color;
+        }
+    }
+    &.warning {
+        path {
+            fill: $warning-color;
+        }
+    }
+    &.success {
+        path {
+            fill: $success-color;
+        }
+    }
 }

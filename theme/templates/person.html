@@ -5,8 +5,29 @@
 {% block content %}
 <main>
   <div class="grid-x grid-padding-x">
-    <div class="cell small-12">
+    <div class="cell small-10">
       <h1>{{ page.title }}</h1>
+    </div>
+    <div class="cell small-2 text-right">
+      {% if page.verification == 'full' %}
+        <span title="The information on this page has been verified">
+          <svg viewBox="0 0 24 24" class="icon success">
+            <path d="M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
+          </svg>
+        </span>
+      {% elif page.verification == 'partial' %}
+        <span title="The information on this page has been verified partially">
+          <svg viewBox="0 0 24 24" class="icon warning">
+            <path d="M19.5,5.5V18.5H17.5V5.5H19.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
+          </svg>
+        </span>
+      {% else %}
+        <span title="The information on this page has not been verified">
+          <svg viewBox="0 0 24 24" class="icon alert">
+            <path d="M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
+          </svg>
+        </span>
+      {% endif %}
     </div>
   </div>
   <div class="grid-x grid-padding-x">
