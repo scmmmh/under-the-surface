@@ -26,7 +26,9 @@ To build in production mode, run the following commands in sequence:
 * ```./runner.py```
 
 Alternatively you can run the ```build.sh``` script to fully automatically pull the latest changes, install all
-dependencies, and rebuild the site.
+dependencies, and rebuild the site. Any specific code that needs to be run must be placed in a file
+called ```local-config```, which will automatically be sourced at the start of the script. Similarly any commands to
+be run after the build, must be placed in a file ```post-build``` which is automatically run after the build completes.
 
 ### Development
 

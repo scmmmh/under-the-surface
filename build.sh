@@ -16,7 +16,7 @@ yarn install
 pipenv run ./runner.py
 
 # Run any optional server-restart commands
-if [ -f 'post-install' ]
+if [ -f 'post-build' ]
 then
-    ./post-install
+    ./post-run
 fi
