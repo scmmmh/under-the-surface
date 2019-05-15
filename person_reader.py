@@ -6,12 +6,12 @@ from json import load
 from pelican import signals
 from pelican.readers import BaseReader
 
-from pelicanconf import DEFAULT_LANG, LANGUAGES
+from pelicanconf import DEFAULT_LANG
 
 
 class MultiLanguageJsonapiReader(BaseReader):
     enabled = True
-    file_extensions = ['{0}.json'.format(lang) for lang in LANGUAGES]
+    file_extensions = ['json']
 
     def read(self, filename):
         metadata = {
@@ -19,9 +19,6 @@ class MultiLanguageJsonapiReader(BaseReader):
             'type': 'person'
         }
         path, basename = os.path.split(filename)
-        match = re.match('([0-9]{4})\.([a-z]+)\.overlay', basename)
-        if match:
-            metadata['lang'] = match.group(2)
         with open(filename) as in_f:
             obj = load(in_f)
             metadata.update(obj['data']['attributes'])
@@ -33,6 +30,8 @@ class MultiLanguageJsonapiReader(BaseReader):
         if 'content' in metadata:
             content = ''.join(['<p>{0}</p>'.format(c) for c in metadata['content']])
             del metadata['content']
+        if metadata['lang'] != DEFAULT_LANG:
+            metadata['Status'] = 'draft'
         parsed = {}
         for key, value in metadata.items():
             parsed[key] = self.process_metadata(key, value)

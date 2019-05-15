@@ -30,6 +30,13 @@
             <!--<li role="presentation"><a href="" role="menuitem" tabindex="-1">Search</a></li>-->
             <li role="presentation"><a href="{{ SITEURL }}" role="menuitem" tabindex="-1">Blog</a></li>
             <!--<li role="presentation"><a href="" role="menuitem" tabindex="-1">About</a></li>-->
+            <li role="presentation"><a href="{{ SITEURL }}/{{ output_file }}" role="menuitem" aria-haspopup="true">{{ LANGUAGE_LABELS[DEFAULT_LANG] }}</a>
+              <ul role="menu">
+                {% for code, label in LANGUAGES %}
+                  <li role="presentation"><a href="{{ BASE_SITEURL }}/{{ code }}/{{output_file}}" role="menuitem"{% if code == DEFAULT_LANG %} aria-current="true"{% endif %}>{{ label }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
           </ul>
         </nav>
       </header>

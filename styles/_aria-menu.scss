@@ -16,6 +16,22 @@
         }
 
         *[role="menuitem"] {
+            &[aria-haspopup="true"] {
+                position: relative;
+                padding-#{$global-right}: $dropdownmenu-arrow-padding;
+
+                &::after {
+                    @include css-triangle($dropdownmenu-arrow-size, $dropdownmenu-arrow-color, down);
+                    position: absolute;
+                    #{$global-right}: 5px;
+                    #{$global-left}: auto;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            &[aria-current="true"] {
+                font-weight: bold;
+            }
         }
 
         & > *[role="menu"] {

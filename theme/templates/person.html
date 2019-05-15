@@ -10,14 +10,6 @@
     </div>
     <nav class="cell shrink">
       <ul role="menu">
-        <li role="presentation"><a href="{{ SITEURL }}/{{ page.url }}" role="menuitem">{{ LANGUAGE_LABELS[page.lang] }}</a>
-          <ul role="menu">
-            <li role="presentation"><a href="{{ SITEURL }}/{{ page.url }}" role="menuitem">{{ LANGUAGE_LABELS[page.lang] }}</a></li>
-            {% for translation in page.translations %}
-              <li role="presentation"><a href="{{ SITEURL }}/{{ translation.url }}" role="menuitem">{{ LANGUAGE_LABELS[translation.lang] }}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
         <li role="presentation" class="menu-text">
           {% if page.verification == 'full' %}
             <span title="The information on this page has been verified">

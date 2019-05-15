@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Mark Hall'
 SITENAME = 'Under the Surface'
 SITE_TAGLINE = 'Authors in hiding from the Canon'
+BASE_SITEURL = ''
 SITEURL = ''
 
 # Path configuration
@@ -20,10 +21,12 @@ ARTICLE_SAVE_AS = 'articles/{slug}.html'
 # Internationalisation
 TIMEZONE = 'Europe/Berlin'
 
-LANGUAGES = ['en', 'de']
 DEFAULT_LANG = 'en'
-LANGUAGE_LABELS = {'en': 'English',
-                   'de': 'Deutsch'}
+LANGUAGES = (
+    ('de', 'Deutsch'),
+    ('en', 'English'),
+)
+LANGUAGE_LABELS = dict(LANGUAGES)
 
 # Plugins
 PLUGINS = ('person_reader', )

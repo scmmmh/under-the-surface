@@ -2699,6 +2699,25 @@ a.button:hover, a.button:focus {
       font-weight: bold;
       line-height: 1;
       color: inherit; }
+    *[role="menu"] li *[role="menuitem"][aria-haspopup="true"] {
+      position: relative;
+      padding-right: 1.5rem; }
+      *[role="menu"] li *[role="menuitem"][aria-haspopup="true"]::after {
+        display: block;
+        width: 0;
+        height: 0;
+        border: inset 6px;
+        content: '';
+        border-bottom-width: 0;
+        border-top-style: solid;
+        border-color: #368429 transparent transparent;
+        position: absolute;
+        right: 5px;
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%); }
+    *[role="menu"] li *[role="menuitem"][aria-current="true"] {
+      font-weight: bold; }
     *[role="menu"] li > *[role="menu"] {
       display: none;
       position: absolute;
