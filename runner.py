@@ -13,10 +13,11 @@ signal.signal(signal.SIGINT, notification_handler)
 
 run(['rm', '-rf', 'output'])
 processes = []
-if len(sys.argv) > 1 and sys.argv[1] == '-r':
+if len(sys.argv) > 1 and sys.argv[1] == '-d':
     processes.append(Popen(['pelican', '-s', 'publishconf_en.py', '-r'], stderr=DEVNULL))
     processes.append(Popen(['pelican', '-s', 'publishconf_de.py', '-r'], stderr=DEVNULL))
     processes.append(Popen(['http-server', 'output']))
+    processes.append(Popen(['gulp', 'watch']))
 else:
     processes.append(Popen(['pelican', '-s', 'publishconf_en.py']))
     processes.append(Popen(['pelican', '-s', 'publishconf_de.py']))
