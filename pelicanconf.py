@@ -21,6 +21,8 @@ TIMEZONE = 'Europe/Berlin'
 
 LANGUAGES = ['en', 'de']
 DEFAULT_LANG = 'en'
+LANGUAGE_LABELS = {'en': 'English',
+                   'de': 'Deutsch'}
 
 # Plugins
 PLUGINS = ('person_reader', )

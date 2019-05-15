@@ -23,6 +23,7 @@
             position: absolute;
             z-index: 1;
             box-shadow: 0 10px 10px $light-gray;
+            background: $white;
 
             *[role="menu"] {
                 position: absolute;

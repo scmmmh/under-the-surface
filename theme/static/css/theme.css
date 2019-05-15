@@ -2703,7 +2703,8 @@ a.button:hover, a.button:focus {
       display: none;
       position: absolute;
       z-index: 1;
-      box-shadow: 0 10px 10px #e6e6e6; }
+      box-shadow: 0 10px 10px #e6e6e6;
+      background: #fefefe; }
       *[role="menu"] li > *[role="menu"] *[role="menu"] {
         position: absolute;
         top: 0;
@@ -2740,6 +2741,10 @@ svg.icon {
     fill: #ffae00; }
   svg.icon.success path {
     fill: #3adb76; }
+
+[role="menu"] svg.icon {
+  width: 18px;
+  height: 18px; }
 
 .top-bar {
   margin-bottom: 2rem; }
