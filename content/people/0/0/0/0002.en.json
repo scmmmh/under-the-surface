@@ -1,0 +1,74 @@
+{
+  "data": {
+    "type": "people",
+    "id": "2",
+    "attributes": {
+      "slug": "2-margareta-ebner",
+      "title": "Margareta Ebner",
+      "template": "person",
+      "lang": "en",
+      "links": {
+        "wikidata": {
+          "Q68268": {
+            "timestamp": "2019-05-15T09:59:54Z",
+            "url": "https://www.wikidata.org/wiki/data.attributes.date_of_death"
+          }
+        },
+        "wikipedia": {
+          "site": {
+            "label": "Margareta Ebner",
+            "url": "https://en.wikipedia.org/wiki/Margareta_Ebner"
+          }
+        },
+        "viaf": {
+          "64260075": {
+            "url": "https://viaf.org/viaf/64260075/"
+          }
+        },
+        "gnd": {
+          "11868759X": {
+            "url": "https://viaf.org/viaf/11868759X/"
+          }
+        }
+      },
+      "names": [
+        "Margareta Ebner",
+        "Blessed Margareta Ebner"
+      ],
+      "content": [
+        "German nun"
+      ],
+      "gender": [
+        "female"
+      ],
+      "country_of_citizenship": [
+        "Germany"
+      ],
+      "location_of_birth": [
+        "Donauw\u00f6rth"
+      ],
+      "location_of_death": [
+        "M\u00f6dingen"
+      ],
+      "occupation": [
+        "diarist",
+        "nun"
+      ],
+      "religion": [
+        "Catholic Church"
+      ],
+      "religious_order": [
+        "Dominican Order"
+      ],
+      "canonisation_status": [
+        "blessed"
+      ],
+      "date_of_birth": [
+        "+1291-01-01T00:00:00Z"
+      ],
+      "date_of_death": [
+        "+1351-01-01T00:00:00Z"
+      ]
+    }
+  }
+}

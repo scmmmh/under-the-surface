@@ -24,11 +24,25 @@ PLUGINS = ('person_reader', )
 THEME = './theme'
 PERSON_METADATA = (
     ('Names', 'names'),
+    ('Sex or Gender', 'gender'),
+    ('Country of Citizenship', 'country_of_citizenship'),
+    ('Date of Birth', 'date_of_birth'),
+    ('Location of Birth', 'location_of_birth'),
+    ('Date of Death', 'date_of_death'),
+    ('Location of Death', 'location_of_death'),
+    ('Residence', 'residence'),
+    ('Languages used', 'languages_used'),
+    ('Occupation', 'occupation'),
+    ('Field of Work', 'field_of_work'),
+    ('Religion', 'religion'),
+    ('Religious Order', 'religious_order'),
+    ('Canonisation Status', 'canonisation_status'),
 )
 PERSON_LINK_CATEGORIES = (
-    ('Wikidata', 'wikidata', 'https://www.wikidata.org/wiki/%s'),
-    ('VIAF', 'viaf', 'https://viaf.org/viaf/%s/'),
-    ('GND', 'gnd', 'https://d-nb.info/gnd/%s')
+    ('Wikidata', 'wikidata'),
+    ('Wikipedia', 'wikipedia'),
+    ('VIAF', 'viaf'), #, 'https://viaf.org/viaf/%s/'),
+    ('GND', 'gnd') #, 'https://d-nb.info/gnd/%s')
 )
 
 # Feed generation is usually not desired when developing

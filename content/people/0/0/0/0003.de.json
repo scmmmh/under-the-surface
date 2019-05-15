@@ -1,0 +1,68 @@
+{
+  "data": {
+    "type": "people",
+    "id": "3",
+    "attributes": {
+      "slug": "3-mechthild-von-magdeburg",
+      "title": "Mechthild von Magdeburg",
+      "template": "person",
+      "lang": "de",
+      "links": {
+        "wikidata": {
+          "Q269687": {
+            "timestamp": "2019-05-15T09:59:55Z",
+            "url": "https://www.wikidata.org/wiki/data.attributes.date_of_death"
+          }
+        },
+        "wikipedia": {
+          "site": {
+            "label": "Mechthild von Magdeburg",
+            "url": "https://de.wikipedia.org/wiki/Mechthild_von_Magdeburg"
+          }
+        },
+        "viaf": {
+          "267191779": {
+            "url": "https://viaf.org/viaf/267191779/"
+          }
+        },
+        "gnd": {
+          "118579797": {
+            "url": "https://viaf.org/viaf/118579797/"
+          }
+        }
+      },
+      "names": [
+        "Mechthild von Magdeburg"
+      ],
+      "content": [
+        "deutsche Mystikerin des Mittelalters"
+      ],
+      "gender": [
+        "weiblich"
+      ],
+      "location_of_birth": [
+        "Erzstift Magdeburg"
+      ],
+      "location_of_death": [
+        "Kloster Helfta"
+      ],
+      "occupation": [
+        "Philosoph",
+        "Schriftsteller",
+        "Mystiker"
+      ],
+      "religion": [
+        "R\u00f6misch-katholische Kirche"
+      ],
+      "religious_order": [
+        "Zisterzienser"
+      ],
+      "date_of_birth": [
+        "+1210-01-01T00:00:00Z"
+      ],
+      "date_of_death": [
+        "+1282-01-01T00:00:00Z"
+      ]
+    }
+  }
+}

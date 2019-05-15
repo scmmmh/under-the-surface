@@ -1,0 +1,68 @@
+{
+  "data": {
+    "type": "people",
+    "id": "3",
+    "attributes": {
+      "slug": "3-mechthild-von-magdeburg",
+      "title": "Mechthild von Magdeburg",
+      "template": "person",
+      "lang": "en",
+      "links": {
+        "wikidata": {
+          "Q269687": {
+            "timestamp": "2019-05-15T09:59:56Z",
+            "url": "https://www.wikidata.org/wiki/data.attributes.date_of_death"
+          }
+        },
+        "wikipedia": {
+          "site": {
+            "label": "Mechthild of Magdeburg",
+            "url": "https://en.wikipedia.org/wiki/Mechthild_of_Magdeburg"
+          }
+        },
+        "viaf": {
+          "267191779": {
+            "url": "https://viaf.org/viaf/267191779/"
+          }
+        },
+        "gnd": {
+          "118579797": {
+            "url": "https://viaf.org/viaf/118579797/"
+          }
+        }
+      },
+      "names": [
+        "Mechthild of Magdeburg"
+      ],
+      "content": [
+        "German mystic"
+      ],
+      "gender": [
+        "female"
+      ],
+      "location_of_birth": [
+        "Archbishopric of Magdeburg"
+      ],
+      "location_of_death": [
+        "Kloster Helfta"
+      ],
+      "occupation": [
+        "philosopher",
+        "writer",
+        "mystic"
+      ],
+      "religion": [
+        "Catholic Church"
+      ],
+      "religious_order": [
+        "Cistercians"
+      ],
+      "date_of_birth": [
+        "+1210-01-01T00:00:00Z"
+      ],
+      "date_of_death": [
+        "+1282-01-01T00:00:00Z"
+      ]
+    }
+  }
+}

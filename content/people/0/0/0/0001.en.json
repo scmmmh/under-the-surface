@@ -1,0 +1,89 @@
+{
+  "data": {
+    "type": "people",
+    "id": "1",
+    "attributes": {
+      "slug": "1-hrosvith-von-gandersheim",
+      "title": "Hrosvith von Gandersheim",
+      "template": "person",
+      "lang": "en",
+      "links": {
+        "wikidata": {
+          "Q170248": {
+            "timestamp": "2019-05-15T09:59:56Z",
+            "url": "https://www.wikidata.org/wiki/data.attributes.date_of_death"
+          }
+        },
+        "wikipedia": {
+          "site": {
+            "label": "Hrotsvitha",
+            "url": "https://en.wikipedia.org/wiki/Hrotsvitha"
+          }
+        },
+        "viaf": {
+          "9927322": {
+            "url": "https://viaf.org/viaf/9927322/"
+          }
+        },
+        "gnd": {
+          "118553941": {
+            "url": "https://viaf.org/viaf/118553941/"
+          }
+        }
+      },
+      "names": [
+        "Hrotsvitha",
+        "Hrosvitha",
+        "Hroswitha",
+        "Roswitha"
+      ],
+      "content": [
+        "Secular canoness, dramatist, and poet"
+      ],
+      "gender": [
+        "female"
+      ],
+      "country_of_citizenship": [
+        "Germany"
+      ],
+      "location_of_birth": [
+        "Saxony"
+      ],
+      "location_of_death": [
+        "Bad Gandersheim"
+      ],
+      "languages_used": [
+        "Latin"
+      ],
+      "occupation": [
+        "playwright",
+        "hagiographer",
+        "poet",
+        "writer",
+        "abbot"
+      ],
+      "residence": [
+        "Gandersheim Abbey"
+      ],
+      "field_of_work": [
+        "poetry",
+        "drama"
+      ],
+      "religion": [
+        "Catholic Church"
+      ],
+      "religious_order": [
+        "Benedictines"
+      ],
+      "canonisation_status": [
+        "saint"
+      ],
+      "date_of_birth": [
+        "+0935-00-00T00:00:00Z"
+      ],
+      "date_of_death": [
+        "+1002-01-01T00:00:00Z"
+      ]
+    }
+  }
+}

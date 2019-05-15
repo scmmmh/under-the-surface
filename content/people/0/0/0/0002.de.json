@@ -1,0 +1,74 @@
+{
+  "data": {
+    "type": "people",
+    "id": "2",
+    "attributes": {
+      "slug": "2-margareta-ebner",
+      "title": "Margareta Ebner",
+      "template": "person",
+      "lang": "de",
+      "links": {
+        "wikidata": {
+          "Q68268": {
+            "timestamp": "2019-05-15T09:59:56Z",
+            "url": "https://www.wikidata.org/wiki/data.attributes.date_of_death"
+          }
+        },
+        "wikipedia": {
+          "site": {
+            "label": "Margareta Ebner",
+            "url": "https://de.wikipedia.org/wiki/Margareta_Ebner"
+          }
+        },
+        "viaf": {
+          "64260075": {
+            "url": "https://viaf.org/viaf/64260075/"
+          }
+        },
+        "gnd": {
+          "11868759X": {
+            "url": "https://viaf.org/viaf/11868759X/"
+          }
+        }
+      },
+      "names": [
+        "Margareta Ebner",
+        "Margarete Ebner"
+      ],
+      "content": [
+        "katholische Mystikerin des Mittelalters"
+      ],
+      "gender": [
+        "weiblich"
+      ],
+      "country_of_citizenship": [
+        "Deutschland"
+      ],
+      "location_of_birth": [
+        "Donauw\u00f6rth"
+      ],
+      "location_of_death": [
+        "M\u00f6dingen"
+      ],
+      "occupation": [
+        "Tagebuchschreiber",
+        "Nonne"
+      ],
+      "religion": [
+        "R\u00f6misch-katholische Kirche"
+      ],
+      "religious_order": [
+        "Dominikaner"
+      ],
+      "canonisation_status": [
+        "Seliger"
+      ],
+      "date_of_birth": [
+        "+1291-01-01T00:00:00Z"
+      ],
+      "date_of_death": [
+        "+1351-01-01T00:00:00Z"
+      ]
+    }
+  }
+}

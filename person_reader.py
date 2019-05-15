@@ -11,7 +11,7 @@ from pelicanconf import DEFAULT_LANG, LANGUAGES
 
 class MultiLanguageJsonapiReader(BaseReader):
     enabled = True
-    file_extensions = ['{0}.overlay'.format(lang) for lang in LANGUAGES]
+    file_extensions = ['{0}.json'.format(lang) for lang in LANGUAGES]
 
     def read(self, filename):
         metadata = {
@@ -22,9 +22,6 @@ class MultiLanguageJsonapiReader(BaseReader):
         match = re.match('([0-9]{4})\.([a-z]+)\.overlay', basename)
         if match:
             metadata['lang'] = match.group(2)
-            with open(os.path.join(path, '{0}.json'.format(match.group(1)))) as in_f:
-                obj = load(in_f)
-                metadata.update(obj['data']['attributes'])
         with open(filename) as in_f:
             obj = load(in_f)
             metadata.update(obj['data']['attributes'])
@@ -44,7 +41,7 @@ class MultiLanguageJsonapiReader(BaseReader):
 
 
 def add_reader(readers):
-    readers.reader_classes['overlay'] = MultiLanguageJsonapiReader
+    readers.reader_classes['json'] = MultiLanguageJsonapiReader
 
 
 def register():

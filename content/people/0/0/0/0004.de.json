@@ -1,0 +1,73 @@
+{
+  "data": {
+    "type": "people",
+    "id": "4",
+    "attributes": {
+      "slug": "4-herrad-von-landsberg",
+      "title": "Herrad von Landsberg",
+      "template": "person",
+      "lang": "de",
+      "links": {
+        "wikidata": {
+          "Q257351": {
+            "timestamp": "2019-05-15T09:59:55Z",
+            "url": "https://www.wikidata.org/wiki/data.attributes.date_of_death"
+          }
+        },
+        "wikipedia": {
+          "site": {
+            "label": "Herrad von Landsberg",
+            "url": "https://de.wikipedia.org/wiki/Herrad_von_Landsberg"
+          }
+        },
+        "viaf": {
+          "100161471": {
+            "url": "https://viaf.org/viaf/100161471/"
+          },
+          "218905747": {
+            "url": "https://viaf.org/viaf/218905747/"
+          }
+        },
+        "gnd": {
+          "118549901": {
+            "url": "https://viaf.org/viaf/118549901/"
+          }
+        }
+      },
+      "names": [
+        "Herrad von Landsberg",
+        "Herrad von Hohenburg",
+        "Herradis Landsbergensis"
+      ],
+      "content": [
+        "\u00c4btissin und Schriftstellerin im Hochmittelalter"
+      ],
+      "gender": [
+        "weiblich"
+      ],
+      "country_of_citizenship": [
+        "Heiliges R\u00f6misches Reich"
+      ],
+      "location_of_death": [
+        "Odilienberg"
+      ],
+      "languages_used": [
+        "Latein"
+      ],
+      "occupation": [
+        "Buchmaler",
+        "Schriftsteller",
+        "Philosoph"
+      ],
+      "religion": [
+        "R\u00f6misch-katholische Kirche"
+      ],
+      "date_of_birth": [
+        "+1125-01-01T00:00:00Z"
+      ],
+      "date_of_death": [
+        "+1195-07-25T00:00:00Z"
+      ]
+    }
+  }
+}

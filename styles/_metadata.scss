@@ -5,14 +5,22 @@ article {
         top: -$global-padding / 2;
     }
 }
-aside dl {
-    font-size: 90%;
+aside {
+    font-size: rem-calc(16);
 
-    dt {
+    h3 {
         font-family: 'Playfair Display SC', Georgia, serif;
         font-weight: normal;
+        font-size: rem-calc(16);
     }
-    dd {
-        margin-bottom: $global-margin;
+
+    dl {
+        dt {
+            font-family: 'Playfair Display SC', Georgia, serif;
+            font-weight: normal;
+        }
+        dd {
+            margin-bottom: $global-margin;
+        }
     }
 }
