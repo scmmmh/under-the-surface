@@ -41,8 +41,8 @@ PERSON_METADATA = (
 PERSON_LINK_CATEGORIES = (
     ('Wikidata', 'wikidata'),
     ('Wikipedia', 'wikipedia'),
-    ('VIAF', 'viaf'), #, 'https://viaf.org/viaf/%s/'),
-    ('GND', 'gnd') #, 'https://d-nb.info/gnd/%s')
+    ('VIAF', 'viaf'),
+    ('GND', 'gnd'),
 )
 
 # Feed generation is usually not desired when developing
