@@ -1,75 +1,162 @@
 {
-  "data": {
-    "type": "people",
-    "id": "4",
-    "attributes": {
-      "slug": "4-herrad-von-landsberg",
-      "title": "Herrad von Landsberg",
-      "template": "person",
-      "lang": "en",
-      "links": {
-        "wikidata": {
-          "Q257351": {
-            "timestamp": "2019-05-15T12:03:08Z",
-            "url": "https://www.wikidata.org/wiki/Q257351"
-          }
-        },
-        "wikipedia": {
-          "site": {
-            "label": "Herrad of Landsberg",
-            "url": "https://en.wikipedia.org/wiki/Herrad_of_Landsberg"
-          }
-        },
-        "viaf": {
-          "100161471": {
-            "url": "https://viaf.org/viaf/100161471/"
-          },
-          "218905747": {
-            "url": "https://viaf.org/viaf/218905747/"
-          }
-        },
-        "gnd": {
-          "118549901": {
-            "url": "https://viaf.org/viaf/118549901/"
-          }
+    "data": {
+        "type": "people",
+        "id": "4",
+        "attributes": {
+            "slug": "4-herrad-von-landsberg",
+            "title": "Herrad von Landsberg",
+            "template": "person",
+            "lang": "en",
+            "links": {
+                "wikidata": {
+                    "Q257351": {
+                        "value": {
+                            "label": "Q257351",
+                            "url": "https://www.wikidata.org/wiki/Q257351"
+                        },
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=Herrad von Landsberg&format=json",
+                        "timestamp": "2019-05-16T17:13:53Z"
+                    }
+                },
+                "wikipedia": {
+                    "site": {
+                        "value": {
+                            "label": "Herrad of Landsberg",
+                            "url": "https://en.wikipedia.org/wiki/Herrad_of_Landsberg"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                },
+                "viaf": {
+                    "100161471": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/100161471/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    },
+                    "218905747": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/218905747/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                },
+                "gnd": {
+                    "118549901": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/118549901/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                }
+            },
+            "names": [
+                {
+                    "value": "Herrad of Landsberg",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Herrad von Hohenbourg",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "von Hohenbourg",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Herrad von Landsberg",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "content": [
+                {
+                    "value": "abbess from Alsace",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "gender": [
+                {
+                    "value": "female",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "country_of_citizenship": [
+                {
+                    "value": "Holy Roman Empire",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "location_of_death": [
+                {
+                    "value": "Mont Sainte-Odile",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "languages_used": [
+                {
+                    "value": "Latin",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "occupation": [
+                {
+                    "value": "illuminator",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "writer",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "philosopher",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "religion": [
+                {
+                    "value": "Catholic Church",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "date_of_birth": [
+                {
+                    "value": "+1125-01-01T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "date_of_death": [
+                {
+                    "value": "+1195-07-25T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "verification": "none",
+            "sources": [
+                {
+                    "value": "Wikidata",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ]
         }
-      },
-      "names": [
-        "Herrad of Landsberg",
-        "Herrad von Hohenbourg",
-        "von Hohenbourg",
-        "Herrad von Landsberg"
-      ],
-      "content": [
-        "abbess from Alsace"
-      ],
-      "gender": [
-        "female"
-      ],
-      "country_of_citizenship": [
-        "Holy Roman Empire"
-      ],
-      "location_of_death": [
-        "Mont Sainte-Odile"
-      ],
-      "languages_used": [
-        "Latin"
-      ],
-      "occupation": [
-        "illuminator",
-        "writer",
-        "philosopher"
-      ],
-      "religion": [
-        "Catholic Church"
-      ],
-      "date_of_birth": [
-        "+1125-01-01T00:00:00Z"
-      ],
-      "date_of_death": [
-        "+1195-07-25T00:00:00Z"
-      ],
-      "verification": "none"
     }
-  }
 }

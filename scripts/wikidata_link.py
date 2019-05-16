@@ -38,18 +38,23 @@ def link_to_wikidata():
             if re.match('.+\.[a-z]{2}\.json', filename):
                 with open(os.path.join(basepath, filename)) as in_f:
                     obj = json.load(in_f)
-                if 'links' not in obj['data']['attributes'] or 'wikidata' not in obj['data']['attributes']['links']:
-                    obj = link_to_wikidata_person(obj)
-                    with open(os.path.join(basepath, filename), 'w') as out_f:
-                        json.dump(obj, out_f, indent=2)
+                obj = link_to_wikidata_person(obj)
+                with open(os.path.join(basepath, filename), 'w') as out_f:
+                    json.dump(obj, out_f, indent=4)
 
 
 QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch={0}&format=json'
 DETAILS_URL = 'https://www.wikidata.org/wiki/Special:EntityData/{0}.json'
 
 
+def json_utcnow():
+    return datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+
+
 def link_to_wikidata_person(obj):
     """Link a single person to a Wikidata entry."""
+    source = {'source': QUERY_URL.format(obj['data']['attributes']['title']),
+              'timestamp': json_utcnow()}
     for result in query_wikidata(obj['data']['attributes']['title']):
         data = load_wikidata_attribute(result['title'], 'claims.P31')
         if data:
@@ -58,7 +63,9 @@ def link_to_wikidata_person(obj):
                 if get_attribute(attr, 'mainsnak.datavalue.value.id') == 'Q5':
                     set_value(obj,
                               'data.attributes.links.wikidata.{0}'.format(result['title']),
-                              None)
+                              {'label': result['title'],
+                               'url': 'https://www.wikidata.org/wiki/{0}'.format(result['title'])},
+                              source)
     return obj
 
 
@@ -115,7 +122,7 @@ def get_attribute(obj, path, default=None):
     return default
 
 
-def set_value(obj, path, value):
+def set_value(obj, path, value, source):
     """Set the value at path in obj."""
     if isinstance(path, str):
         path = path.split('.')
@@ -126,10 +133,15 @@ def set_value(obj, path, value):
         tmp = tmp[component]
     if path[-1] not in tmp:
         tmp[path[-1]] = {}
-    tmp[path[-1]] = value
+    if source:
+        tmp[path[-1]] = {'value': value,
+                         'source': source['source'],
+                         'timestamp': source['timestamp']}
+    else:
+        tmp[path[-1]] = value
 
 
-def add_to_set(obj, path, value):
+def add_to_set(obj, path, value, source):
     """Add a value to the set at location path in obj."""
     if isinstance(path, str):
         path = path.split('.')
@@ -142,8 +154,16 @@ def add_to_set(obj, path, value):
         tmp[path[-1]] = []
     elif not isinstance(tmp[path[-1]], list):
         tmp[path[-1]] = [tmp[path[-1]]]
-    if value not in tmp[path[-1]]:
-        tmp[path[-1]].append(value)
+    found = False
+    for exist in tmp[path[-1]]:
+        if exist['value'] == value:
+            exist['source'] = source['source']
+            exist['timestamp'] = source['timestamp']
+            found = True
+    if not found:
+        tmp[path[-1]].append({'value': value,
+                              'source': source['source'],
+                              'timestamp': source['timestamp']})
 
 
 @click.command()
@@ -156,25 +176,28 @@ def load_wikidata_data():
                     obj = json.load(in_f)
                 lang = get_attribute(obj, 'data.attributes.lang')
                 for source_key, value in list(get_attribute(obj, 'data.attributes.links.wikidata').items()):
-                    if value is None:
+                    if value is None or True:
                         data = fetch_wikidata_page(source_key)
+                        source = {'source': DETAILS_URL.format(source_key),
+                                  'timestamp': json_utcnow()}
                         if data:
                             # Load main label
                             if lang in data['labels']:
-                                add_to_set(obj, 'data.attributes.names', data['labels'][lang]['value'])
+                                add_to_set(obj, 'data.attributes.names', data['labels'][lang]['value'], source)
                             # Load alternative labels
                             if lang in data['aliases']:
                                 for label in data['aliases'][lang]:
-                                    add_to_set(obj, 'data.attributes.names', label['value'])
+                                    add_to_set(obj, 'data.attributes.names', label['value'], source)
                             # Load content summary
                             if lang in data['descriptions']:
-                                add_to_set(obj, 'data.attributes.content', data['descriptions'][lang]['value'])
+                                add_to_set(obj, 'data.attributes.content', data['descriptions'][lang]['value'], source)
                             # Load links to Wikipedia
                             if '{0}wiki'.format(lang) in data['sitelinks']:
                                 sitelinks = data['sitelinks']['{0}wiki'.format(lang)]
                                 set_value(obj,
                                           'data.attributes.links.wikipedia.site',
-                                          {'label': sitelinks['title'], 'url': sitelinks['url']})
+                                          {'label': sitelinks['title'], 'url': sitelinks['url']},
+                                          source)
                             # Load other external links
                             for key, path in EXTERNAL_LINKS:
                                 value = get_structured_attribute(data, path, None)
@@ -182,37 +205,39 @@ def load_wikidata_data():
                                     for v in value:
                                         set_value(obj,
                                                   '{0}.{1}'.format(key, v),
-                                                  {'url': 'https://viaf.org/viaf/{0}/'.format(v)})
+                                                  {'url': 'https://viaf.org/viaf/{0}/'.format(v)},
+                                                  source)
                             # Load linked attributes
                             sub_path = 'labels.{0}.value'.format(lang)
                             for key, path in LINKED_ATTRIBUTES:
                                 value = get_structured_attribute(data, path, sub_path)
                                 if value:
                                     for v in value:
-                                        add_to_set(obj, key, v)
+                                        add_to_set(obj, key, v, source)
                             # Load time attributes
                             sub_path = 'time'
                             for key, path in TIME_ATTRIBUTES:
                                 value = get_structured_attribute(data, path, sub_path)
                                 if value:
                                     for v in value:
-                                        add_to_set(obj, key, v)
-                            # Set loading timestamp
-                            set_value(obj,
-                                      'data.attributes.links.wikidata.{0}'.format(source_key),
-                                      {'timestamp': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
-                                       'url': 'https://www.wikidata.org/wiki/{0}'.format(source_key)})
+                                        add_to_set(obj, key, v, source)
                             # Set the verification level
                             if get_attribute(obj, 'data.attributes.verification') in ['partial', 'full']:
                                 set_value(obj,
                                           'data.attributes.verification',
-                                          'partial')
+                                          'partial',
+                                          None)
                             else:
                                 set_value(obj,
                                           'data.attributes.verification',
-                                          'none')
+                                          'none',
+                                          None)
+                            add_to_set(obj,
+                                       'data.attributes.sources',
+                                       'Wikidata',
+                                       source)
                 with open(os.path.join(basepath, filename), 'w') as out_f:
-                    json.dump(obj, out_f, indent=2)
+                    json.dump(obj, out_f, indent=4)
 
 
 def get_structured_attribute(data, path, sub_path):

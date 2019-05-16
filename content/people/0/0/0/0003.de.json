@@ -1,69 +1,140 @@
 {
-  "data": {
-    "type": "people",
-    "id": "3",
-    "attributes": {
-      "slug": "3-mechthild-von-magdeburg",
-      "title": "Mechthild von Magdeburg",
-      "template": "person",
-      "lang": "de",
-      "links": {
-        "wikidata": {
-          "Q269687": {
-            "timestamp": "2019-05-15T12:03:06Z",
-            "url": "https://www.wikidata.org/wiki/Q269687"
-          }
-        },
-        "wikipedia": {
-          "site": {
-            "label": "Mechthild von Magdeburg",
-            "url": "https://de.wikipedia.org/wiki/Mechthild_von_Magdeburg"
-          }
-        },
-        "viaf": {
-          "267191779": {
-            "url": "https://viaf.org/viaf/267191779/"
-          }
-        },
-        "gnd": {
-          "118579797": {
-            "url": "https://viaf.org/viaf/118579797/"
-          }
+    "data": {
+        "type": "people",
+        "id": "3",
+        "attributes": {
+            "slug": "3-mechthild-von-magdeburg",
+            "title": "Mechthild von Magdeburg",
+            "template": "person",
+            "lang": "de",
+            "links": {
+                "wikidata": {
+                    "Q269687": {
+                        "value": {
+                            "label": "Q269687",
+                            "url": "https://www.wikidata.org/wiki/Q269687"
+                        },
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=Mechthild von Magdeburg&format=json",
+                        "timestamp": "2019-05-16T17:13:50Z"
+                    }
+                },
+                "wikipedia": {
+                    "site": {
+                        "value": {
+                            "label": "Mechthild von Magdeburg",
+                            "url": "https://de.wikipedia.org/wiki/Mechthild_von_Magdeburg"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                        "timestamp": "2019-05-16T17:49:11Z"
+                    }
+                },
+                "viaf": {
+                    "267191779": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/267191779/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                        "timestamp": "2019-05-16T17:49:11Z"
+                    }
+                },
+                "gnd": {
+                    "118579797": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/118579797/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                        "timestamp": "2019-05-16T17:49:11Z"
+                    }
+                }
+            },
+            "names": [
+                {
+                    "value": "Mechthild von Magdeburg",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "content": [
+                {
+                    "value": "deutsche Mystikerin des Mittelalters",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "gender": [
+                {
+                    "value": "weiblich",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "location_of_birth": [
+                {
+                    "value": "Erzstift Magdeburg",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "location_of_death": [
+                {
+                    "value": "Kloster Helfta",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "occupation": [
+                {
+                    "value": "Philosoph",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                },
+                {
+                    "value": "Schriftsteller",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                },
+                {
+                    "value": "Mystiker",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "religion": [
+                {
+                    "value": "R\u00f6misch-katholische Kirche",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "religious_order": [
+                {
+                    "value": "Zisterzienser",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "date_of_birth": [
+                {
+                    "value": "+1210-01-01T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "date_of_death": [
+                {
+                    "value": "+1282-01-01T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ],
+            "verification": "none",
+            "sources": [
+                {
+                    "value": "Wikidata",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
+                    "timestamp": "2019-05-16T17:49:11Z"
+                }
+            ]
         }
-      },
-      "names": [
-        "Mechthild von Magdeburg"
-      ],
-      "content": [
-        "deutsche Mystikerin des Mittelalters"
-      ],
-      "gender": [
-        "weiblich"
-      ],
-      "location_of_birth": [
-        "Erzstift Magdeburg"
-      ],
-      "location_of_death": [
-        "Kloster Helfta"
-      ],
-      "occupation": [
-        "Philosoph",
-        "Schriftsteller",
-        "Mystiker"
-      ],
-      "religion": [
-        "R\u00f6misch-katholische Kirche"
-      ],
-      "religious_order": [
-        "Zisterzienser"
-      ],
-      "date_of_birth": [
-        "+1210-01-01T00:00:00Z"
-      ],
-      "date_of_death": [
-        "+1282-01-01T00:00:00Z"
-      ],
-      "verification": "none"
     }
-  }
 }

@@ -1,99 +1,250 @@
 {
-  "data": {
-    "type": "people",
-    "id": "1",
-    "attributes": {
-      "slug": "1-hrosvith-von-gandersheim",
-      "title": "Hrosvith von Gandersheim",
-      "template": "person",
-      "lang": "de",
-      "links": {
-        "wikidata": {
-          "Q170248": {
-            "timestamp": "2019-05-15T12:03:08Z",
-            "url": "https://www.wikidata.org/wiki/Q170248"
-          }
-        },
-        "wikipedia": {
-          "site": {
-            "label": "Hrotsvit",
-            "url": "https://de.wikipedia.org/wiki/Hrotsvit"
-          }
-        },
-        "viaf": {
-          "9927322": {
-            "url": "https://viaf.org/viaf/9927322/"
-          }
-        },
-        "gnd": {
-          "118553941": {
-            "url": "https://viaf.org/viaf/118553941/"
-          }
+    "data": {
+        "type": "people",
+        "id": "1",
+        "attributes": {
+            "slug": "1-hrosvith-von-gandersheim",
+            "title": "Hrosvith von Gandersheim",
+            "template": "person",
+            "lang": "de",
+            "links": {
+                "wikidata": {
+                    "Q170248": {
+                        "value": {
+                            "label": "Q170248",
+                            "url": "https://www.wikidata.org/wiki/Q170248"
+                        },
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=Hrosvith von Gandersheim&format=json",
+                        "timestamp": "2019-05-16T17:13:53Z"
+                    }
+                },
+                "wikipedia": {
+                    "site": {
+                        "value": {
+                            "label": "Hrotsvit",
+                            "url": "https://de.wikipedia.org/wiki/Hrotsvit"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                },
+                "viaf": {
+                    "9927322": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/9927322/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                },
+                "gnd": {
+                    "118553941": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/118553941/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                }
+            },
+            "names": [
+                {
+                    "value": "Hrotsvit",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Gandeshemensis",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Gesta Ottonis",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hrotsvith",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hrotsvitha Gandeshemensis",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hroswitha",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hrotswith",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hrotsvitha",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Roswith",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hrotsvit von Gandersheim",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Roswitha von Gandersheim",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hrosvith",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hrotsvith von Gandersheim",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "content": [
+                {
+                    "value": "Autorin des Fr\u00fchmittelalters",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "gender": [
+                {
+                    "value": "weiblich",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "country_of_citizenship": [
+                {
+                    "value": "Deutschland",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "location_of_birth": [
+                {
+                    "value": "Sachsen",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "location_of_death": [
+                {
+                    "value": "Bad Gandersheim",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "languages_used": [
+                {
+                    "value": "Latein",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "occupation": [
+                {
+                    "value": "Dramatiker",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Hagiograf",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Dichter",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Schriftsteller",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Abt",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "residence": [
+                {
+                    "value": "Stift Gandersheim",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "field_of_work": [
+                {
+                    "value": "Poesie",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Sprechtheater",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "religion": [
+                {
+                    "value": "R\u00f6misch-katholische Kirche",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "religious_order": [
+                {
+                    "value": "Benediktiner",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "canonisation_status": [
+                {
+                    "value": "Heiliger",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "date_of_birth": [
+                {
+                    "value": "+0935-00-00T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "date_of_death": [
+                {
+                    "value": "+1002-01-01T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "verification": "none",
+            "sources": [
+                {
+                    "value": "Wikidata",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ]
         }
-      },
-      "names": [
-        "Hrotsvit",
-        "Gandeshemensis",
-        "Gesta Ottonis",
-        "Hrotsvith",
-        "Hrotsvitha Gandeshemensis",
-        "Hroswitha",
-        "Hrotswith",
-        "Hrotsvitha",
-        "Roswith",
-        "Hrotsvit von Gandersheim",
-        "Roswitha von Gandersheim",
-        "Hrosvith",
-        "Hrotsvith von Gandersheim"
-      ],
-      "content": [
-        "Autorin des Fr\u00fchmittelalters"
-      ],
-      "gender": [
-        "weiblich"
-      ],
-      "country_of_citizenship": [
-        "Deutschland"
-      ],
-      "location_of_birth": [
-        "Sachsen"
-      ],
-      "location_of_death": [
-        "Bad Gandersheim"
-      ],
-      "languages_used": [
-        "Latein"
-      ],
-      "occupation": [
-        "Dramatiker",
-        "Hagiograf",
-        "Dichter",
-        "Schriftsteller",
-        "Abt"
-      ],
-      "residence": [
-        "Stift Gandersheim"
-      ],
-      "field_of_work": [
-        "Poesie",
-        "Sprechtheater"
-      ],
-      "religion": [
-        "R\u00f6misch-katholische Kirche"
-      ],
-      "religious_order": [
-        "Benediktiner"
-      ],
-      "canonisation_status": [
-        "Heiliger"
-      ],
-      "date_of_birth": [
-        "+0935-00-00T00:00:00Z"
-      ],
-      "date_of_death": [
-        "+1002-01-01T00:00:00Z"
-      ],
-      "verification": "none"
     }
-  }
 }

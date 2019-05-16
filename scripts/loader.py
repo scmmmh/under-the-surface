@@ -32,5 +32,5 @@ def add_people(names):
                         }
                     }
                 }
-                json.dump(stub, out_f, indent=2)
+                json.dump(stub, out_f, indent=4)
         next_id = next_id + 1

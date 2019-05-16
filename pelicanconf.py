@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+from filters import json_strftime
+
+
 # Site defaults
 AUTHOR = 'Mark Hall'
 SITENAME = 'Under the Surface'
@@ -34,20 +37,20 @@ PLUGINS = ('person_reader', )
 # Theme configuration
 THEME = './theme'
 PERSON_METADATA = (
-    ('Names', 'names'),
-    ('Sex or Gender', 'gender'),
-    ('Country of Citizenship', 'country_of_citizenship'),
-    ('Date of Birth', 'date_of_birth'),
-    ('Location of Birth', 'location_of_birth'),
-    ('Date of Death', 'date_of_death'),
-    ('Location of Death', 'location_of_death'),
-    ('Residence', 'residence'),
-    ('Languages used', 'languages_used'),
-    ('Occupation', 'occupation'),
-    ('Field of Work', 'field_of_work'),
-    ('Religion', 'religion'),
-    ('Religious Order', 'religious_order'),
-    ('Canonisation Status', 'canonisation_status'),
+    ('Names', 'names', 'string'),
+    ('Sex or Gender', 'gender', 'string'),
+    ('Country of Citizenship', 'country_of_citizenship', 'string'),
+    ('Date of Birth', 'date_of_birth', 'timestamp'),
+    ('Location of Birth', 'location_of_birth', 'string'),
+    ('Date of Death', 'date_of_death', 'timestamp'),
+    ('Location of Death', 'location_of_death', 'string'),
+    ('Residence', 'residence', 'string'),
+    ('Languages used', 'languages_used', 'string'),
+    ('Occupation', 'occupation', 'string'),
+    ('Field of Work', 'field_of_work', 'string'),
+    ('Religion', 'religion', 'string'),
+    ('Religious Order', 'religious_order', 'string'),
+    ('Canonisation Status', 'canonisation_status', 'string'),
 )
 PERSON_LINK_CATEGORIES = (
     ('Wikidata', 'wikidata'),
@@ -55,6 +58,9 @@ PERSON_LINK_CATEGORIES = (
     ('VIAF', 'viaf'),
     ('GND', 'gnd'),
 )
+JINJA_FILTERS = {
+    'format_timestamp': json_strftime
+}
 
 DEFAULT_PAGINATION = 10
 

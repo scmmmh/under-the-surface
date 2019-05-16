@@ -1,90 +1,205 @@
 {
-  "data": {
-    "type": "people",
-    "id": "1",
-    "attributes": {
-      "slug": "1-hrosvith-von-gandersheim",
-      "title": "Hrosvith von Gandersheim",
-      "template": "person",
-      "lang": "en",
-      "links": {
-        "wikidata": {
-          "Q170248": {
-            "timestamp": "2019-05-15T12:03:08Z",
-            "url": "https://www.wikidata.org/wiki/Q170248"
-          }
-        },
-        "wikipedia": {
-          "site": {
-            "label": "Hrotsvitha",
-            "url": "https://en.wikipedia.org/wiki/Hrotsvitha"
-          }
-        },
-        "viaf": {
-          "9927322": {
-            "url": "https://viaf.org/viaf/9927322/"
-          }
-        },
-        "gnd": {
-          "118553941": {
-            "url": "https://viaf.org/viaf/118553941/"
-          }
+    "data": {
+        "type": "people",
+        "id": "1",
+        "attributes": {
+            "slug": "1-hrosvith-von-gandersheim",
+            "title": "Hrosvith von Gandersheim",
+            "template": "person",
+            "lang": "en",
+            "links": {
+                "wikidata": {
+                    "Q170248": {
+                        "value": {
+                            "label": "Q170248",
+                            "url": "https://www.wikidata.org/wiki/Q170248"
+                        },
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=Hrosvith von Gandersheim&format=json",
+                        "timestamp": "2019-05-16T17:13:52Z"
+                    }
+                },
+                "wikipedia": {
+                    "site": {
+                        "value": {
+                            "label": "Hrotsvitha",
+                            "url": "https://en.wikipedia.org/wiki/Hrotsvitha"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                        "timestamp": "2019-05-16T17:49:14Z"
+                    }
+                },
+                "viaf": {
+                    "9927322": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/9927322/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                        "timestamp": "2019-05-16T17:49:14Z"
+                    }
+                },
+                "gnd": {
+                    "118553941": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/118553941/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                        "timestamp": "2019-05-16T17:49:14Z"
+                    }
+                }
+            },
+            "names": [
+                {
+                    "value": "Hrotsvitha",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                },
+                {
+                    "value": "Hrosvitha",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                },
+                {
+                    "value": "Hroswitha",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                },
+                {
+                    "value": "Roswitha",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "content": [
+                {
+                    "value": "Secular canoness, dramatist, and poet",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "gender": [
+                {
+                    "value": "female",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "country_of_citizenship": [
+                {
+                    "value": "Germany",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "location_of_birth": [
+                {
+                    "value": "Saxony",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "location_of_death": [
+                {
+                    "value": "Bad Gandersheim",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "languages_used": [
+                {
+                    "value": "Latin",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "occupation": [
+                {
+                    "value": "playwright",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                },
+                {
+                    "value": "hagiographer",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                },
+                {
+                    "value": "poet",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                },
+                {
+                    "value": "writer",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                },
+                {
+                    "value": "abbot",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "residence": [
+                {
+                    "value": "Gandersheim Abbey",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "field_of_work": [
+                {
+                    "value": "poetry",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                },
+                {
+                    "value": "drama",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "religion": [
+                {
+                    "value": "Catholic Church",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "religious_order": [
+                {
+                    "value": "Benedictines",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "canonisation_status": [
+                {
+                    "value": "saint",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "date_of_birth": [
+                {
+                    "value": "+0935-00-00T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "date_of_death": [
+                {
+                    "value": "+1002-01-01T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ],
+            "verification": "none",
+            "sources": [
+                {
+                    "value": "Wikidata",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q170248.json",
+                    "timestamp": "2019-05-16T17:49:14Z"
+                }
+            ]
         }
-      },
-      "names": [
-        "Hrotsvitha",
-        "Hrosvitha",
-        "Hroswitha",
-        "Roswitha"
-      ],
-      "content": [
-        "Secular canoness, dramatist, and poet"
-      ],
-      "gender": [
-        "female"
-      ],
-      "country_of_citizenship": [
-        "Germany"
-      ],
-      "location_of_birth": [
-        "Saxony"
-      ],
-      "location_of_death": [
-        "Bad Gandersheim"
-      ],
-      "languages_used": [
-        "Latin"
-      ],
-      "occupation": [
-        "playwright",
-        "hagiographer",
-        "poet",
-        "writer",
-        "abbot"
-      ],
-      "residence": [
-        "Gandersheim Abbey"
-      ],
-      "field_of_work": [
-        "poetry",
-        "drama"
-      ],
-      "religion": [
-        "Catholic Church"
-      ],
-      "religious_order": [
-        "Benedictines"
-      ],
-      "canonisation_status": [
-        "saint"
-      ],
-      "date_of_birth": [
-        "+0935-00-00T00:00:00Z"
-      ],
-      "date_of_death": [
-        "+1002-01-01T00:00:00Z"
-      ],
-      "verification": "none"
     }
-  }
 }

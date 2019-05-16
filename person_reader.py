@@ -6,8 +6,6 @@ from json import load
 from pelican import signals
 from pelican.readers import BaseReader
 
-from pelicanconf import DEFAULT_LANG
-
 
 class MultiLanguageJsonapiReader(BaseReader):
     enabled = True
@@ -28,7 +26,8 @@ class MultiLanguageJsonapiReader(BaseReader):
             metadata['firsttitleletter'] = ''
         content = ''
         if 'content' in metadata:
-            content = ''.join(['<p>{0}</p>'.format(c) for c in metadata['content']])
+            content = ''.join(['<p>{0}</p>'.format(content['value'])
+                               for content in metadata['content']])
             del metadata['content']
         if metadata['lang'] != self.settings['DEFAULT_LANG']:
             metadata['Status'] = 'draft'

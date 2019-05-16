@@ -1,75 +1,154 @@
 {
-  "data": {
-    "type": "people",
-    "id": "2",
-    "attributes": {
-      "slug": "2-margareta-ebner",
-      "title": "Margareta Ebner",
-      "template": "person",
-      "lang": "de",
-      "links": {
-        "wikidata": {
-          "Q68268": {
-            "timestamp": "2019-05-15T12:03:08Z",
-            "url": "https://www.wikidata.org/wiki/Q68268"
-          }
-        },
-        "wikipedia": {
-          "site": {
-            "label": "Margareta Ebner",
-            "url": "https://de.wikipedia.org/wiki/Margareta_Ebner"
-          }
-        },
-        "viaf": {
-          "64260075": {
-            "url": "https://viaf.org/viaf/64260075/"
-          }
-        },
-        "gnd": {
-          "11868759X": {
-            "url": "https://viaf.org/viaf/11868759X/"
-          }
+    "data": {
+        "type": "people",
+        "id": "2",
+        "attributes": {
+            "slug": "2-margareta-ebner",
+            "title": "Margareta Ebner",
+            "template": "person",
+            "lang": "de",
+            "links": {
+                "wikidata": {
+                    "Q68268": {
+                        "value": {
+                            "label": "Q68268",
+                            "url": "https://www.wikidata.org/wiki/Q68268"
+                        },
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=Margareta Ebner&format=json",
+                        "timestamp": "2019-05-16T17:13:53Z"
+                    }
+                },
+                "wikipedia": {
+                    "site": {
+                        "value": {
+                            "label": "Margareta Ebner",
+                            "url": "https://de.wikipedia.org/wiki/Margareta_Ebner"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                },
+                "viaf": {
+                    "64260075": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/64260075/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                },
+                "gnd": {
+                    "11868759X": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/11868759X/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                        "timestamp": "2019-05-16T17:49:16Z"
+                    }
+                }
+            },
+            "names": [
+                {
+                    "value": "Margareta Ebner",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Margarete Ebner",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "content": [
+                {
+                    "value": "katholische Mystikerin des Mittelalters",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "gender": [
+                {
+                    "value": "weiblich",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "country_of_citizenship": [
+                {
+                    "value": "Deutschland",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "location_of_birth": [
+                {
+                    "value": "Donauw\u00f6rth",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "location_of_death": [
+                {
+                    "value": "M\u00f6dingen",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "occupation": [
+                {
+                    "value": "Tagebuchschreiber",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                },
+                {
+                    "value": "Nonne",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "religion": [
+                {
+                    "value": "R\u00f6misch-katholische Kirche",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "religious_order": [
+                {
+                    "value": "Dominikaner",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "canonisation_status": [
+                {
+                    "value": "Seliger",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "date_of_birth": [
+                {
+                    "value": "+1291-01-01T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "date_of_death": [
+                {
+                    "value": "+1351-01-01T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ],
+            "verification": "none",
+            "sources": [
+                {
+                    "value": "Wikidata",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
+                    "timestamp": "2019-05-16T17:49:16Z"
+                }
+            ]
         }
-      },
-      "names": [
-        "Margareta Ebner",
-        "Margarete Ebner"
-      ],
-      "content": [
-        "katholische Mystikerin des Mittelalters"
-      ],
-      "gender": [
-        "weiblich"
-      ],
-      "country_of_citizenship": [
-        "Deutschland"
-      ],
-      "location_of_birth": [
-        "Donauw\u00f6rth"
-      ],
-      "location_of_death": [
-        "M\u00f6dingen"
-      ],
-      "occupation": [
-        "Tagebuchschreiber",
-        "Nonne"
-      ],
-      "religion": [
-        "R\u00f6misch-katholische Kirche"
-      ],
-      "religious_order": [
-        "Dominikaner"
-      ],
-      "canonisation_status": [
-        "Seliger"
-      ],
-      "date_of_birth": [
-        "+1291-01-01T00:00:00Z"
-      ],
-      "date_of_death": [
-        "+1351-01-01T00:00:00Z"
-      ],
-      "verification": "none"
     }
-  }
 }

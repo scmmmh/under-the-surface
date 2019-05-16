@@ -2802,3 +2802,11 @@ aside {
     font-weight: normal; }
   aside dl dd {
     margin-bottom: 1rem; }
+
+.person section {
+  padding-bottom: 1rem; }
+  .person section.sources div.label {
+    font-family: 'Playfair Display SC', Georgia, serif;
+    font-variant: small-caps; }
+  .person section.sources div.timestamp {
+    font-size: 80%; }

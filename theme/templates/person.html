@@ -3,7 +3,7 @@
 {% block title %}{{ page.title }}{% endblock title %}
 
 {% block content %}
-<main>
+<main class="person">
   <div class="grid-x grid-padding-x">
     <div class="cell auto">
       <h1>{{ page.title }}</h1>
@@ -53,11 +53,11 @@
                 <ul class="no-bullet">
                   {% for key, value in page.links[field].items() %}
                     {% if value %}
-                      <li><a href="{{ value.url }}" title="{% if 'timestamp' in value %}{{key}} accessed on {{ value.timestamp }}{% endif %}" target="_blank" rel="noopener">
+                      <li><a href="{{ value.value.url }}" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" class="icon small">
                           <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
                         </svg>
-                        {% if 'label' in value %}{{ value.label }}{% else %}{{ key }}{% endif %}</a>
+                        {% if 'label' in value.value %}{{ value.value.label }}{% else %}{{ key }}{% endif %}</a>
                       </li>
                     {% endif %}
                   {% endfor %}
@@ -68,19 +68,33 @@
           </ul>
         </section>
       {% endif %}
+      {% if page.sources %}
+        <section class="sources">
+          <h2>Sources</h2>
+          <ul class="no-bullet grid-x grid-padding-x">
+            {% for source in page.sources %}
+              <li class="cell small-12">
+                <div class="label">{{ source.value }}</div>
+                <div class="source"><a href="{{ source.source }}">{{ source.source }}</a></div>
+                <div class="timestamp">{{ source.timestamp|format_timestamp }}</div>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
     </div>
     <aside class="cell small-12 medium-4 large-5">
       <div class="grid-x grid-padding-x">
         <div class="cell small-12">
           <h2>About</h2>
         </div>
-        {% for label, field in PERSON_METADATA %}
+        {% for label, field, type in PERSON_METADATA %}
           {% if page[field] and page[field] %}
             <section class="cell small-12 large-6">
               <h3>{{ label }}</h3>
               <ul class="no-bullet">
                 {% for value in page[field] %}
-                  <li>{{ value }}</li>
+                  <li>{% if type == 'timestamp' %}{{ value.value|format_timestamp }}{% else %}{{ value.value }}{% endif %}</li>
                 {% endfor %}
               </ul>
             </section>
