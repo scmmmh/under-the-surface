@@ -4,11 +4,7 @@
 <main>
   <div class="grid-x grid-padding-x large-margin-bottom">
     <div class="cell small-12 medium-6">
-      <p>The <span class="sc">Under the Surface</span> project aims to make those authors a bit more visible who for
-        one reason or another have slipped under the surface of their field, whether this is literature, music, poetry,
-        or the visual arts. This project draws together the various traces these people have left and which the process
-        of digitising past works has made available, with the aim of making their contributions more visible and more
-        easily accessible.</p>
+      <p>{% trans %}Welcome Text{% endtrans %}</p>
     </div>
     <div class="cell hide-for-small-only medium-6" style="padding-left: 4rem;padding-right: 4rem;">
       <form class="input-group">
@@ -19,7 +15,7 @@
         </label>
         <input id="searchbox" type="search" name="q" class="input-group-field" tabindex="0"/>
         <div class="input-group-button">
-          <input type="submit" value="Search" class="button"/>
+          <input type="submit" value="{% trans %}Search{% endtrans %}" class="button"/>
         </div>
       </form>
     </div>
@@ -30,7 +26,7 @@
         <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
         <div class="metadata">{{ article.date|strftime('%d.%m.%Y') }} by <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></div>
         {{ article.summary }}
-        <p class="text-right"><a href="{{ SITEURL }}/{{ article.url }}">Read more...</a></p>
+        <p class="text-right"><a href="{{ SITEURL }}/{{ article.url }}">{% trans %}Read more{% endtrans %}</a></p>
       </article>
     {% endfor %}
   </div>

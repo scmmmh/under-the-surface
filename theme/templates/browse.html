@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Browse{% endblock title %}
+{% block title %}{% trans %}Browse{% endtrans %}{% endblock title %}
 
 {% block content %}
 <main>
-  <h1 class="show-for-sr">Browse the People</h1>
+  <h1 class="show-for-sr">{% trans %}Browse the People{% endtrans %}</h1>
   <div class="grid-x grid-padding-x">
     <section class="cell small-12 medium-6">
-      <h2>Alphabetic</h2>
+      <h2>{% trans %}Alphabetic{% endtrans %}</h2>
       <ul class="no-bullet">
         {% for grouper, group in pages|selectattr('type', 'eq', 'person')|groupby(attribute='firsttitleletter') %}
           <li><span class="sc">{{ grouper }}</span>

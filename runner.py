@@ -16,7 +16,7 @@ processes = []
 if len(sys.argv) > 1 and sys.argv[1] == '-d':
     processes.append(Popen(['pelican', '-s', 'publishconf_en.py', '-r'], stderr=DEVNULL))
     processes.append(Popen(['pelican', '-s', 'publishconf_de.py', '-r'], stderr=DEVNULL))
-    processes.append(Popen(['http-server', 'output']))
+    processes.append(Popen(['http-server', '-c-1', 'output']))
     processes.append(Popen(['gulp', 'watch']))
 else:
     processes.append(Popen(['pelican', '-s', 'publishconf_en.py']))

@@ -1,0 +1,189 @@
+# German translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-05-16 21:06+0200\n"
+"PO-Revision-Date: 2019-05-16 20:26+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: pelicanconf.py:15
+msgid "Under the Surface"
+msgstr "Unter der Oberfläche"
+
+#: pelicanconf.py:16
+msgid "Authors in hiding from the Canon"
+msgstr "Vor dem Kanon versteckte Autor/in/en"
+
+#: pelicanconf.py:45
+msgid "Names"
+msgstr "Namen"
+
+#: pelicanconf.py:46
+msgid "Sex or Gender"
+msgstr "Geschlecht"
+
+#: pelicanconf.py:47
+msgid "Country of Citizenship"
+msgstr "Staatsangehörigkeit"
+
+#: pelicanconf.py:48
+msgid "Date of Birth"
+msgstr "Geburtsdatum"
+
+#: pelicanconf.py:49
+msgid "Location of Birth"
+msgstr "Geburtsort"
+
+#: pelicanconf.py:50
+msgid "Date of Death"
+msgstr "Sterbedatum"
+
+#: pelicanconf.py:51
+msgid "Location of Death"
+msgstr "Sterbeort"
+
+#: pelicanconf.py:52
+msgid "Residence"
+msgstr "Residenzort"
+
+#: pelicanconf.py:53
+msgid "Languages used"
+msgstr "Sprachen"
+
+#: pelicanconf.py:54
+msgid "Occupation"
+msgstr "Beruf"
+
+#: pelicanconf.py:55
+msgid "Field of Work"
+msgstr "Berufsfeld"
+
+#: pelicanconf.py:56
+msgid "Religion"
+msgstr "Religion"
+
+#: pelicanconf.py:57
+msgid "Religious Order"
+msgstr "Religiöser Orden"
+
+#: pelicanconf.py:58
+msgid "Canonisation Status"
+msgstr "Kanonisierungsstatus"
+
+#: pelicanconf.py:61
+msgid "Wikidata"
+msgstr "Wikidata"
+
+#: pelicanconf.py:62
+msgid "Wikipedia"
+msgstr "Wikipedia"
+
+#: pelicanconf.py:63
+msgid "VIAF"
+msgstr "VIAF"
+
+#: pelicanconf.py:64
+msgid "GND"
+msgstr "GND"
+
+#: theme/templates/article.html:16
+msgid "Written on"
+msgstr "Geschrieben am"
+
+#: theme/templates/article.html:18
+msgid "Author"
+msgstr "Autor"
+
+#: theme/templates/article.html:20
+msgid "Category"
+msgstr "Kategorie"
+
+#: theme/templates/author.html:3 theme/templates/author.html:9
+#, python-format
+msgid "Articles written by %(author)s"
+msgstr "Artikel geschrieben von %(author)s"
+
+#: theme/templates/author.html:16 theme/templates/category.html:16
+msgid "by"
+msgstr "von"
+
+#: theme/templates/author.html:18 theme/templates/category.html:18
+#: theme/templates/index.html:29
+msgid "Read more"
+msgstr "Weiterlesen ..."
+
+#: theme/templates/base.html:29 theme/templates/browse.html:3
+msgid "Browse"
+msgstr "Stöbern"
+
+#: theme/templates/base.html:31
+msgid "Blog"
+msgstr "Blog"
+
+#: theme/templates/browse.html:7
+msgid "Browse the People"
+msgstr "Stöbern in den Personen"
+
+#: theme/templates/browse.html:10
+msgid "Alphabetic"
+msgstr "Alphabetisch"
+
+#: theme/templates/category.html:3 theme/templates/category.html:9
+#, python-format
+msgid "Articles categorised as %(category)s"
+msgstr "Artikel kategorisiert als %(category)s"
+
+#: theme/templates/index.html:7
+msgid "Welcome Text"
+msgstr ""
+"Das <span class=\"sc\">Unter der Oberfläche</span> Projekt hat das Ziel "
+"jene Autor/in/en, welche aus verschiedenen Gründen unter die Oberfläche "
+"ihrer jeweiligen Domäne gerutscht sind, ob dies Literatur, Musik, Poesie, "
+"oder die Bildkunst ist, wieder sichtbarer zu machen. Das Projekt vereint "
+"die verschiedenen Spuren dieser Personen, welche durch den Digitalisierungsvorgang "
+"verfügbar geworden sind, mit dem Ziel ihre Beiträge sichtbarer und leichter "
+"zugänglich zu machen."
+
+#: theme/templates/index.html:18
+msgid "Search"
+msgstr "Suchen"
+
+#: theme/templates/person.html:15
+msgid "The information on this page has been verified"
+msgstr "Die Informationen auf dieser Seite sind verfiziert worden"
+
+#: theme/templates/person.html:21
+msgid "The information on this page has been verified partially"
+msgstr "Die Informationen auf dieser Seite sind teilweise verifiziert worden"
+
+#: theme/templates/person.html:27
+msgid "The information on this page has not been verified"
+msgstr "Die Informationen auf dieser Seite sind nicht verifiziert worden"
+
+#: theme/templates/person.html:42
+msgid "Works"
+msgstr "Werke"
+
+#: theme/templates/person.html:47
+msgid "Links"
+msgstr "Verlinkungen"
+
+#: theme/templates/person.html:73
+msgid "Sources"
+msgstr "Quellen"
+
+#: theme/templates/person.html:89
+msgid "Personal Information"
+msgstr "Persönliche Daten"

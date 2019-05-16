@@ -1,0 +1,182 @@
+# Translations template for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-05-16 21:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: pelicanconf.py:15
+msgid "Under the Surface"
+msgstr ""
+
+#: pelicanconf.py:16
+msgid "Authors in hiding from the Canon"
+msgstr ""
+
+#: pelicanconf.py:45
+msgid "Names"
+msgstr ""
+
+#: pelicanconf.py:46
+msgid "Sex or Gender"
+msgstr ""
+
+#: pelicanconf.py:47
+msgid "Country of Citizenship"
+msgstr ""
+
+#: pelicanconf.py:48
+msgid "Date of Birth"
+msgstr ""
+
+#: pelicanconf.py:49
+msgid "Location of Birth"
+msgstr ""
+
+#: pelicanconf.py:50
+msgid "Date of Death"
+msgstr ""
+
+#: pelicanconf.py:51
+msgid "Location of Death"
+msgstr ""
+
+#: pelicanconf.py:52
+msgid "Residence"
+msgstr ""
+
+#: pelicanconf.py:53
+msgid "Languages used"
+msgstr ""
+
+#: pelicanconf.py:54
+msgid "Occupation"
+msgstr ""
+
+#: pelicanconf.py:55
+msgid "Field of Work"
+msgstr ""
+
+#: pelicanconf.py:56
+msgid "Religion"
+msgstr ""
+
+#: pelicanconf.py:57
+msgid "Religious Order"
+msgstr ""
+
+#: pelicanconf.py:58
+msgid "Canonisation Status"
+msgstr ""
+
+#: pelicanconf.py:61
+msgid "Wikidata"
+msgstr ""
+
+#: pelicanconf.py:62
+msgid "Wikipedia"
+msgstr ""
+
+#: pelicanconf.py:63
+msgid "VIAF"
+msgstr ""
+
+#: pelicanconf.py:64
+msgid "GND"
+msgstr ""
+
+#: theme/templates/article.html:16
+msgid "Written on"
+msgstr ""
+
+#: theme/templates/article.html:18
+msgid "Author"
+msgstr ""
+
+#: theme/templates/article.html:20
+msgid "Category"
+msgstr ""
+
+#: theme/templates/author.html:3 theme/templates/author.html:9
+#, python-format
+msgid "Articles written by %(author)s"
+msgstr ""
+
+#: theme/templates/author.html:16 theme/templates/category.html:16
+msgid "by"
+msgstr ""
+
+#: theme/templates/author.html:18 theme/templates/category.html:18
+#: theme/templates/index.html:29
+msgid "Read more"
+msgstr ""
+
+#: theme/templates/base.html:29 theme/templates/browse.html:3
+msgid "Browse"
+msgstr ""
+
+#: theme/templates/base.html:31
+msgid "Blog"
+msgstr ""
+
+#: theme/templates/browse.html:7
+msgid "Browse the People"
+msgstr ""
+
+#: theme/templates/browse.html:10
+msgid "Alphabetic"
+msgstr ""
+
+#: theme/templates/category.html:3 theme/templates/category.html:9
+#, python-format
+msgid "Articles categorised as %(category)s"
+msgstr ""
+
+#: theme/templates/index.html:7
+msgid "Welcome Text"
+msgstr ""
+
+#: theme/templates/index.html:18
+msgid "Search"
+msgstr ""
+
+#: theme/templates/person.html:15
+msgid "The information on this page has been verified"
+msgstr ""
+
+#: theme/templates/person.html:21
+msgid "The information on this page has been verified partially"
+msgstr ""
+
+#: theme/templates/person.html:27
+msgid "The information on this page has not been verified"
+msgstr ""
+
+#: theme/templates/person.html:42
+msgid "Works"
+msgstr ""
+
+#: theme/templates/person.html:47
+msgid "Links"
+msgstr ""
+
+#: theme/templates/person.html:73
+msgid "Sources"
+msgstr ""
+
+#: theme/templates/person.html:89
+msgid "Personal Information"
+msgstr ""
+

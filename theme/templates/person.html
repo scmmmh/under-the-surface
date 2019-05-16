@@ -12,19 +12,19 @@
       <ul role="menu">
         <li role="presentation" class="menu-text">
           {% if page.verification == 'full' %}
-            <span title="The information on this page has been verified">
+            <span title="{% trans %}The information on this page has been verified{% endtrans %}">
               <svg viewBox="0 0 24 24" class="icon success">
                 <path d="M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
               </svg>
             </span>
           {% elif page.verification == 'partial' %}
-            <span title="The information on this page has been verified partially">
+            <span title="{% trans %}The information on this page has been verified partially{% endtrans %}">
               <svg viewBox="0 0 24 24" class="icon warning">
                 <path d="M19.5,5.5V18.5H17.5V5.5H19.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
               </svg>
             </span>
           {% else %}
-            <span title="The information on this page has not been verified">
+            <span title="{% trans %}The information on this page has not been verified{% endtrans %}">
               <svg viewBox="0 0 24 24" class="icon alert">
                 <path d="M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
               </svg>
@@ -39,12 +39,12 @@
       <section>{{ page.content }}</section>
       {% if page.works %}
         <section>
-          <h2>Works</h2>
+          <h2>{% trans %}Works{% endtrans %}</h2>
         </section>
       {% endif %}
       {% if page.links %}
         <section>
-          <h2>Links</h2>
+          <h2>{% trans %}Links{% endtrans %}</h2>
           <ul class="no-bullet grid-x grid-padding-x">
           {% for label, field in PERSON_LINK_CATEGORIES %}
             {% if page.links[field] %}
@@ -70,7 +70,7 @@
       {% endif %}
       {% if page.sources %}
         <section class="sources">
-          <h2>Sources</h2>
+          <h2>{% trans %}Sources{% endtrans %}</h2>
           <ul class="no-bullet grid-x grid-padding-x">
             {% for source in page.sources %}
               <li class="cell small-12">
@@ -86,7 +86,7 @@
     <aside class="cell small-12 medium-4 large-5">
       <div class="grid-x grid-padding-x">
         <div class="cell small-12">
-          <h2>About</h2>
+          <h2>{% trans %}Personal Information{% endtrans %}</h2>
         </div>
         {% for label, field, type in PERSON_METADATA %}
           {% if page[field] and page[field] %}

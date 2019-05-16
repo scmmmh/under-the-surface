@@ -13,11 +13,11 @@
     </article>
     <aside class="cell small-12 medium-4 large-offset-1 large-3">
       <dl>
-        <dt>Written on</dt>
+        <dt>{% trans %}Written on{% endtrans %}</dt>
         <dd>{{ article.date|strftime('%d.%m.%Y')}}</dd>
-        <dt>Author</dt>
+        <dt>{% trans %}Author{% endtrans %}</dt>
         <dd><a href="{{ SITE_URL }}/{{ article.author.url }}">{{ article.author }}</a></dd>
-        <dt>Category</dt>
+        <dt>{% trans %}Category{% endtrans %}</dt>
         <dd><a href="{{ SITE_URL }}/{{ article.category.url }}">{{ article.category }}</a></dd>
       </dl>
     </aside>

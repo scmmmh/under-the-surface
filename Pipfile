@@ -9,6 +9,7 @@ verify_ssl = true
 pelican = "*"
 click = "*"
 requests = "*"
+babel = "*"
 
 [requires]
 python_version = "3.7"

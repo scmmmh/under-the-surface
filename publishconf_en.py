@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+from gettext import translation
+
 import os
 import sys
 sys.path.append(os.curdir)
@@ -12,3 +14,10 @@ BASE_SITEURL = SITEURL
 SITEURL = '{0}/en'.format(SITEURL)
 DEFAULT_LANG = 'en'
 OUTPUT_PATH = 'output/en'
+
+t = translation('under-the-surface', localedir='i18n', languages=[DEFAULT_LANG], fallback=True)
+_ = t.gettext
+
+SITENAME = _(SITENAME)
+SITE_TAGLINE = _(SITE_TAGLINE)
+PERSON_METADATA = tuple([(_(label), key, type) for label, key, type in PERSON_METADATA])
