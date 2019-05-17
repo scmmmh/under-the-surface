@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-16 21:06+0200\n"
+"POT-Creation-Date: 2019-05-17 04:55+0200\n"
 "PO-Revision-Date: 2019-05-16 20:30+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -155,6 +155,10 @@ msgstr ""
 "various traces these people have left and which the process of digitising"
 " past works has made available, with the aim of making their "
 "contributions more visible and more easily accessible."
+
+#: theme/templates/index.html:16
+msgid "Search for people"
+msgstr "Search for people"
 
 #: theme/templates/index.html:18
 msgid "Search"

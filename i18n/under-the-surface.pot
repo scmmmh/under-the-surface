@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-16 21:06+0200\n"
+"POT-Creation-Date: 2019-05-17 04:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,6 +146,10 @@ msgstr ""
 
 #: theme/templates/index.html:7
 msgid "Welcome Text"
+msgstr ""
+
+#: theme/templates/index.html:16
+msgid "Search for people"
 msgstr ""
 
 #: theme/templates/index.html:18
