@@ -9,8 +9,8 @@
 @include foundation-table;
 @include foundation-visibility-classes;
 @include foundation-button;
-
-@import 'aria-menu';
+@include foundation-menu;
+@include foundation-dropdown-menu;
 
 @import 'foundation-overrides';
 @import 'generic';

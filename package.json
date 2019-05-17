@@ -12,6 +12,9 @@
     "pump": "^3.0.0"
   },
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "gulp-concat": "^2.6.1",
+    "http-server": "^0.11.1",
+    "jquery": "^3.4.1",
+    "what-input": "^5.2.1"
   }
 }

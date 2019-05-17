@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-17 04:55+0200\n"
+"POT-Creation-Date: 2019-05-17 08:57+0200\n"
 "PO-Revision-Date: 2019-05-16 20:30+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -124,13 +124,17 @@ msgstr "by"
 msgid "Read more"
 msgstr "Read more ..."
 
-#: theme/templates/base.html:29 theme/templates/browse.html:3
+#: theme/templates/base.html:30 theme/templates/browse.html:3
 msgid "Browse"
 msgstr "Browse"
 
-#: theme/templates/base.html:31
+#: theme/templates/base.html:32
 msgid "Blog"
 msgstr "Blog"
+
+#: theme/templates/base.html:34
+msgid "Language"
+msgstr "Language"
 
 #: theme/templates/browse.html:7
 msgid "Browse the People"
