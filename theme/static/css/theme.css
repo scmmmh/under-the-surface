@@ -2744,7 +2744,6 @@ h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hov
   margin-bottom: 2rem; }
 
 .sc {
-  font-family: 'Playfair Display SC', Georgia, serif;
   font-variant: small-caps; }
 
 svg.icon {
@@ -2794,19 +2793,19 @@ article .metadata {
 aside {
   font-size: 1rem; }
   aside h3 {
-    font-family: 'Playfair Display SC', Georgia, serif;
+    font-family: "Montserrat", Roboto, Arial, sans-serif;
     font-weight: normal;
-    font-size: 1rem; }
+    font-size: 1rem;
+    font-variant: small-caps; }
   aside dl dt {
-    font-family: 'Playfair Display SC', Georgia, serif;
-    font-weight: normal; }
+    font-weight: normal;
+    font-variant: small-caps; }
   aside dl dd {
     margin-bottom: 1rem; }
 
 .person section {
   padding-bottom: 1rem; }
   .person section.sources div.label {
-    font-family: 'Playfair Display SC', Georgia, serif;
     font-variant: small-caps; }
   .person section.sources div.timestamp {
     font-size: 80%; }
