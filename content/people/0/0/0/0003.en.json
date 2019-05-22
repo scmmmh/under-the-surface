@@ -14,8 +14,8 @@
                             "label": "Q269687",
                             "url": "https://www.wikidata.org/wiki/Q269687"
                         },
-                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=Mechthild von Magdeburg&format=json",
-                        "timestamp": "2019-05-16T17:13:53Z"
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=\"Mechthild von Magdeburg\"&format=json",
+                        "timestamp": "2019-05-22T18:53:11Z"
                     }
                 },
                 "wikipedia": {
@@ -25,7 +25,7 @@
                             "url": "https://en.wikipedia.org/wiki/Mechthild_of_Magdeburg"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                        "timestamp": "2019-05-16T17:49:16Z"
+                        "timestamp": "2019-05-22T18:54:39Z"
                     }
                 },
                 "viaf": {
@@ -34,7 +34,7 @@
                             "url": "https://viaf.org/viaf/267191779/"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                        "timestamp": "2019-05-16T17:49:16Z"
+                        "timestamp": "2019-05-22T18:54:39Z"
                     }
                 },
                 "gnd": {
@@ -43,7 +43,7 @@
                             "url": "https://viaf.org/viaf/118579797/"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                        "timestamp": "2019-05-16T17:49:16Z"
+                        "timestamp": "2019-05-22T18:54:39Z"
                     }
                 }
             },
@@ -51,80 +51,80 @@
                 {
                     "value": "Mechthild of Magdeburg",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "content": [
                 {
                     "value": "German mystic",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "gender": [
                 {
                     "value": "female",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "location_of_birth": [
                 {
                     "value": "Archbishopric of Magdeburg",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "location_of_death": [
                 {
                     "value": "Kloster Helfta",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "occupation": [
                 {
                     "value": "philosopher",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 },
                 {
                     "value": "writer",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 },
                 {
                     "value": "mystic",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "religion": [
                 {
                     "value": "Catholic Church",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "religious_order": [
                 {
                     "value": "Cistercians",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "date_of_birth": [
                 {
                     "value": "+1210-01-01T00:00:00Z",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "date_of_death": [
                 {
                     "value": "+1282-01-01T00:00:00Z",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ],
             "verification": "none",
@@ -132,7 +132,7 @@
                 {
                     "value": "Wikidata",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q269687.json",
-                    "timestamp": "2019-05-16T17:49:16Z"
+                    "timestamp": "2019-05-22T18:54:39Z"
                 }
             ]
         }

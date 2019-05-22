@@ -43,7 +43,7 @@ def link_to_wikidata():
                     json.dump(obj, out_f, indent=4)
 
 
-QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch={0}&format=json'
+QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch="{0}"&format=json'
 DETAILS_URL = 'https://www.wikidata.org/wiki/Special:EntityData/{0}.json'
 
 

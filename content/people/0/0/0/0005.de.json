@@ -1,0 +1,150 @@
+{
+    "data": {
+        "type": "people",
+        "id": "5",
+        "attributes": {
+            "slug": "5-sophie-von-la-roche",
+            "title": "Sophie von La Roche",
+            "template": "person",
+            "lang": "de",
+            "links": {
+                "wikidata": {
+                    "Q62404": {
+                        "value": {
+                            "label": "Q62404",
+                            "url": "https://www.wikidata.org/wiki/Q62404"
+                        },
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=\"Sophie von La Roche\"&format=json",
+                        "timestamp": "2019-05-22T18:53:12Z"
+                    }
+                },
+                "wikipedia": {
+                    "site": {
+                        "value": {
+                            "label": "Sophie von La Roche",
+                            "url": "https://de.wikipedia.org/wiki/Sophie_von_La_Roche"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                        "timestamp": "2019-05-22T18:54:42Z"
+                    }
+                },
+                "viaf": {
+                    "36932939": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/36932939/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                        "timestamp": "2019-05-22T18:54:42Z"
+                    }
+                },
+                "gnd": {
+                    "118569767": {
+                        "value": {
+                            "url": "https://viaf.org/viaf/118569767/"
+                        },
+                        "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                        "timestamp": "2019-05-22T18:54:42Z"
+                    }
+                }
+            },
+            "names": [
+                {
+                    "value": "Sophie von La Roche",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                },
+                {
+                    "value": "Marie Sophie von La Roche",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                },
+                {
+                    "value": "Sophie de La Roche",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "content": [
+                {
+                    "value": "deutsche Schriftstellerin",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "gender": [
+                {
+                    "value": "weiblich",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "country_of_citizenship": [
+                {
+                    "value": "Deutschland",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "location_of_birth": [
+                {
+                    "value": "Kaufbeuren",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "location_of_death": [
+                {
+                    "value": "Offenbach am Main",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "languages_used": [
+                {
+                    "value": "Deutsch",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "occupation": [
+                {
+                    "value": "Schriftsteller",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                },
+                {
+                    "value": "Salonni\u00e8re",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "date_of_birth": [
+                {
+                    "value": "+1730-12-06T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                },
+                {
+                    "value": "+1731-09-06T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "date_of_death": [
+                {
+                    "value": "+1807-02-18T00:00:00Z",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ],
+            "verification": "none",
+            "sources": [
+                {
+                    "value": "Wikidata",
+                    "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
+                    "timestamp": "2019-05-22T18:54:42Z"
+                }
+            ]
+        }
+    }
+}

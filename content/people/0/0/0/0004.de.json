@@ -14,8 +14,8 @@
                             "label": "Q257351",
                             "url": "https://www.wikidata.org/wiki/Q257351"
                         },
-                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=Herrad von Landsberg&format=json",
-                        "timestamp": "2019-05-16T17:13:51Z"
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=\"Herrad von Landsberg\"&format=json",
+                        "timestamp": "2019-05-22T18:53:10Z"
                     }
                 },
                 "wikipedia": {
@@ -25,7 +25,7 @@
                             "url": "https://de.wikipedia.org/wiki/Herrad_von_Landsberg"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                        "timestamp": "2019-05-16T17:49:13Z"
+                        "timestamp": "2019-05-22T18:54:34Z"
                     }
                 },
                 "viaf": {
@@ -34,14 +34,14 @@
                             "url": "https://viaf.org/viaf/100161471/"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                        "timestamp": "2019-05-16T17:49:13Z"
+                        "timestamp": "2019-05-22T18:54:34Z"
                     },
                     "218905747": {
                         "value": {
                             "url": "https://viaf.org/viaf/218905747/"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                        "timestamp": "2019-05-16T17:49:13Z"
+                        "timestamp": "2019-05-22T18:54:34Z"
                     }
                 },
                 "gnd": {
@@ -50,7 +50,7 @@
                             "url": "https://viaf.org/viaf/118549901/"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                        "timestamp": "2019-05-16T17:49:13Z"
+                        "timestamp": "2019-05-22T18:54:34Z"
                     }
                 }
             },
@@ -58,90 +58,90 @@
                 {
                     "value": "Herrad von Landsberg",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 },
                 {
                     "value": "Herrad von Hohenburg",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 },
                 {
                     "value": "Herradis Landsbergensis",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "content": [
                 {
                     "value": "\u00c4btissin und Schriftstellerin im Hochmittelalter",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "gender": [
                 {
                     "value": "weiblich",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "country_of_citizenship": [
                 {
                     "value": "Heiliges R\u00f6misches Reich",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "location_of_death": [
                 {
                     "value": "Odilienberg",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "languages_used": [
                 {
                     "value": "Latein",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "occupation": [
                 {
                     "value": "Buchmaler",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 },
                 {
                     "value": "Schriftsteller",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 },
                 {
                     "value": "Philosoph",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "religion": [
                 {
                     "value": "R\u00f6misch-katholische Kirche",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "date_of_birth": [
                 {
                     "value": "+1125-01-01T00:00:00Z",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "date_of_death": [
                 {
                     "value": "+1195-07-25T00:00:00Z",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ],
             "verification": "none",
@@ -149,7 +149,7 @@
                 {
                     "value": "Wikidata",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q257351.json",
-                    "timestamp": "2019-05-16T17:49:13Z"
+                    "timestamp": "2019-05-22T18:54:34Z"
                 }
             ]
         }
