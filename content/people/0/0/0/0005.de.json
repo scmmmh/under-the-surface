@@ -143,6 +143,253 @@
                     "value": "Wikidata",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q62404.json",
                     "timestamp": "2019-05-22T18:54:42Z"
+                },
+                {
+                    "value": "TextGrid Repository",
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                }
+            ],
+            "works": [
+                {
+                    "value": {
+                        "title": "Die zwey Schwestern",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rfb4.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Herrn von Wohlheims Geschichte",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rf9t.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Rosaliens Briefe an ihre Freundin Mariane von St**",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rfb0.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Geschichte des Fr\u00e4uleins von Sternheim",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rfbd.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Ein guter Sohn ist auch ein guter Freund",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rf9g.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Ursprung des kleinen Baurenhofes treue Magd",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rf99.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Das wahre Gl\u00fcck ist in der Seele des Rechtschaffenen",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rfbm.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Biographie: La Roche, Sophie von",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rfbh.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Mi\u00df Kery und Sophie Gallen",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rfb6.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "G\u00fcrdenhall und Mis Elma",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rf9m.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Der schwerm\u00fcthige J\u00fcngling",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rf9r.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Moralische Erz\u00e4hlungen",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rf9c.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Die gl\u00fckliche Reise",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rf91.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Erscheinungen am See Oneida",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rfb8.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
+                },
+                {
+                    "value": {
+                        "title": "Liebe, Misverst\u00e4ndni\u00df und Freundschaft",
+                        "url": "https://textgridlab.org/1.0/aggregator/teicorpus/textgrid:rf96.0?flat=true",
+                        "provider": {
+                            "title": "TextGrid Repository",
+                            "url": "https://textgridrep.org"
+                        },
+                        "license": {
+                            "type": "cc-by",
+                            "url": "https://textgrid.de/Digitale-Bibliothek"
+                        }
+                    },
+                    "source": "https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:\"Sophie von La Roche\"&limit=100",
+                    "timestamp": "2019-05-22T21:06:52Z"
                 }
             ]
         }
