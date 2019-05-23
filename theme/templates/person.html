@@ -40,6 +40,29 @@
       {% if page.works %}
         <section>
           <h2>{% trans %}Works{% endtrans %}</h2>
+          {% for grouper, items in page.works|groupby('value.provider.title') %}
+            <section>
+              <h3>{{ grouper }}</h3>
+              <ul class="no-bullet">
+                {% for work in items %}
+                  <li class="grid-x">
+                    <div class="cell auto"><a href="{{ work.value.url }}">{{ work.value.title }}</a></div>
+                    <div class="cell shrink license">
+                      {% if work.value.license.type == 'cc-by' %}
+                        {% if work.value.license.url %}
+                        <a href="{{ work.value.license.url }}" target="_blank" rel="noopener">
+                        {% else %}
+                          <a href="https://creativecommons.org/licenses/cc/by/legalcode" target="_blank" rel="noopener">
+                        {% endif %}
+                          <img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by.svg" alt="{{ work.value.license }}" style="opacity:0.6"/>
+                        </a>
+                      {% endif %}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endfor %}
         </section>
       {% endif %}
       {% if page.links %}
@@ -73,7 +96,7 @@
           <h2>{% trans %}Sources{% endtrans %}</h2>
           <ul class="no-bullet grid-x grid-padding-x">
             {% for source in page.sources %}
-              <li class="cell small-12">
+              <li class="cell small-12 margin-bottom">
                 <div class="label">{{ source.value }}</div>
                 <div class="source"><a href="{{ source.source }}">{{ source.source }}</a></div>
                 <div class="timestamp">{{ source.timestamp|format_timestamp }}</div>

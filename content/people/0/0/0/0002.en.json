@@ -14,8 +14,8 @@
                             "label": "Q68268",
                             "url": "https://www.wikidata.org/wiki/Q68268"
                         },
-                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=Margareta Ebner&format=json",
-                        "timestamp": "2019-05-16T17:13:49Z"
+                        "source": "https://www.wikidata.org/w/api.php?action=query&list=search&srsearch=\"Margareta Ebner\"&format=json",
+                        "timestamp": "2019-05-22T18:53:08Z"
                     }
                 },
                 "wikipedia": {
@@ -25,7 +25,7 @@
                             "url": "https://en.wikipedia.org/wiki/Margareta_Ebner"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                        "timestamp": "2019-05-16T17:49:09Z"
+                        "timestamp": "2019-05-22T18:54:28Z"
                     }
                 },
                 "viaf": {
@@ -34,7 +34,7 @@
                             "url": "https://viaf.org/viaf/64260075/"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                        "timestamp": "2019-05-16T17:49:09Z"
+                        "timestamp": "2019-05-22T18:54:28Z"
                     }
                 },
                 "gnd": {
@@ -43,7 +43,7 @@
                             "url": "https://viaf.org/viaf/11868759X/"
                         },
                         "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                        "timestamp": "2019-05-16T17:49:09Z"
+                        "timestamp": "2019-05-22T18:54:28Z"
                     }
                 }
             },
@@ -51,94 +51,94 @@
                 {
                     "value": "Margareta Ebner",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 },
                 {
                     "value": "Blessed Margareta Ebner",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "content": [
                 {
                     "value": "German nun",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "gender": [
                 {
                     "value": "female",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "country_of_citizenship": [
                 {
                     "value": "Germany",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "location_of_birth": [
                 {
                     "value": "Donauw\u00f6rth",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "location_of_death": [
                 {
                     "value": "M\u00f6dingen",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "occupation": [
                 {
                     "value": "diarist",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 },
                 {
                     "value": "nun",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "religion": [
                 {
                     "value": "Catholic Church",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "religious_order": [
                 {
                     "value": "Dominican Order",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "canonisation_status": [
                 {
                     "value": "blessed",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "date_of_birth": [
                 {
                     "value": "+1291-01-01T00:00:00Z",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "date_of_death": [
                 {
                     "value": "+1351-01-01T00:00:00Z",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ],
             "verification": "none",
@@ -146,7 +146,7 @@
                 {
                     "value": "Wikidata",
                     "source": "https://www.wikidata.org/wiki/Special:EntityData/Q68268.json",
-                    "timestamp": "2019-05-16T17:49:09Z"
+                    "timestamp": "2019-05-22T18:54:28Z"
                 }
             ]
         }

@@ -4,7 +4,7 @@ import os
 import re
 import requests
 
-from datetime import datetime
+from util import get_attribute, set_value, add_to_set, json_utcnow
 
 
 LINKED_ATTRIBUTES = (
@@ -43,12 +43,8 @@ def link_to_wikidata():
                     json.dump(obj, out_f, indent=4)
 
 
-QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch={0}&format=json'
+QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch="{0}"&format=json'
 DETAILS_URL = 'https://www.wikidata.org/wiki/Special:EntityData/{0}.json'
-
-
-def json_utcnow():
-    return datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
 def link_to_wikidata_person(obj):
@@ -107,63 +103,6 @@ def fetch_wikidata_page(title):
             PAGE_CACHE[title] = data['entities'][title]
             return PAGE_CACHE[title]
     return None
-
-
-def get_attribute(obj, path, default=None):
-    """Get the value in obj at path."""
-    if isinstance(path, str):
-        path = path.split('.')
-    if path:
-        if path[0] in obj:
-            if len(path) == 1:
-                return obj[path[0]]
-            else:
-                return get_attribute(obj[path[0]], path[1:])
-    return default
-
-
-def set_value(obj, path, value, source):
-    """Set the value at path in obj."""
-    if isinstance(path, str):
-        path = path.split('.')
-    tmp = obj
-    for component in path[:-1]:
-        if component not in tmp:
-            tmp[component] = {}
-        tmp = tmp[component]
-    if path[-1] not in tmp:
-        tmp[path[-1]] = {}
-    if source:
-        tmp[path[-1]] = {'value': value,
-                         'source': source['source'],
-                         'timestamp': source['timestamp']}
-    else:
-        tmp[path[-1]] = value
-
-
-def add_to_set(obj, path, value, source):
-    """Add a value to the set at location path in obj."""
-    if isinstance(path, str):
-        path = path.split('.')
-    tmp = obj
-    for component in path[:-1]:
-        if component not in tmp:
-            tmp[component] = {}
-        tmp = tmp[component]
-    if path[-1] not in tmp:
-        tmp[path[-1]] = []
-    elif not isinstance(tmp[path[-1]], list):
-        tmp[path[-1]] = [tmp[path[-1]]]
-    found = False
-    for exist in tmp[path[-1]]:
-        if exist['value'] == value:
-            exist['source'] = source['source']
-            exist['timestamp'] = source['timestamp']
-            found = True
-    if not found:
-        tmp[path[-1]].append({'value': value,
-                              'source': source['source'],
-                              'timestamp': source['timestamp']})
 
 
 @click.command()
