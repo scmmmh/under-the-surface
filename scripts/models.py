@@ -12,8 +12,10 @@ class Person(Base):
     id = Column(Integer(), primary_key=True)
     slug = Column(String(255), unique=True)
     title = Column(Text())
+    status = Column(String(255))
 
     properties = relationship('Property')
+    display_properties = relationship('Property', primaryjoin="and_(Person.id == Property.person_id, Property.status != 'incorrect')")
 
 
 class Property(Base):
@@ -24,6 +26,7 @@ class Property(Base):
     person_id = Column(Integer(), ForeignKey('people.id'))
     value_id = Column(Integer(), ForeignKey('values.id'))
     name = Column(String(255))
+    status = Column(String(255))
 
     person = relationship('Person')
     value = relationship('Value')

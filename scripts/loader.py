@@ -7,13 +7,10 @@ from util import merge_property
 
 
 @click.command()
-@click.option('--name', prompt='Your name')
-@click.option('--email', prompt='Your email')
 @click.argument('names', nargs=-1)
 @click.pass_context
-def add_people(ctx, name, email, names):
+def add_people(ctx, names):
     """Add new people into the archive"""
-    source = {'label': name, 'url': 'mailto:{0}'.format(email)}
     dbsession = ctx.obj['dbsession']
     for name in names:
         if '$' in name:
@@ -22,7 +19,6 @@ def add_people(ctx, name, email, names):
             slug = name.replace(' ', '-').lower()
         person = dbsession.query(Person).filter(Person.slug == slug).first()
         if not person:
-            person = Person(slug=slug, title=name)
+            person = Person(slug=slug, title=name, status='unconfirmed')
             dbsession.add(person)
             dbsession.commit()
-        merge_property(dbsession, person, 'name', name, source)

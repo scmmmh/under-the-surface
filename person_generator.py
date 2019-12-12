@@ -55,7 +55,7 @@ class PersonGenerator(Generator):
         """Load an individual person's data from the database."""
         metadata = {'slug': db_person.slug,
                     'title': db_person.title}
-        for db_property in db_person.properties:
+        for db_property in db_person.display_properties:
             if db_property.value.lang is None or db_property.value.lang == self.settings['DEFAULT_LANG']:
                 if db_property.name not in metadata:
                     metadata[db_property.name] = []
@@ -72,7 +72,7 @@ class PersonGenerator(Generator):
 
     def generate_context(self):
         """Generate the context, loading all people from the database."""
-        self.people = [self.load_person(db_person) for db_person in self._dbsession.query(DBPerson)]
+        self.people = [self.load_person(db_person) for db_person in self._dbsession.query(DBPerson).filter(DBPerson.status != 'incorrect')]
         self._update_context(('people', ))
 
     def generate_output(self, writer):

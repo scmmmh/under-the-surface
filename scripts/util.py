@@ -111,7 +111,7 @@ def merge_property(dbsession, person, property, value, source):
         if not db_value:
             db_value = Value(label=label, value=value, lang=lang)
             dbsession.add(db_value)
-        db_property = Property(person=person, name=property, value=db_value)
+        db_property = Property(person=person, name=property, value=db_value, status='unconfirmed')
         dbsession.add(db_property)
     source_timestamp = dbsession.query(SourceTimestamp).join(Source).filter(and_(SourceTimestamp.property == db_property,
                                                                                  Source.url == source['url'])).first()

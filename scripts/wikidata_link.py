@@ -46,31 +46,26 @@ DETAILS_URL = 'https://www.wikidata.org/wiki/Special:EntityData/{0}.json'
 
 def link_to_wikidata_person(dbsession, person):
     """Link a single person to a Wikidata entry."""
-    for property in person.properties:
-        if property.name == 'name':
-            for source_ts in property.sources:
-                if source_ts.source.url.startswith('mailto:'):
-                    for result in query_wikidata(property.value.value):
-                        data = load_wikidata_attribute(result['title'], 'claims.P31')
-                        if data:
-                            for attr in data:
-                                if get_attribute(attr, 'mainsnak.datavalue.value.id') == 'Q5':
-                                    data = fetch_wikidata_page(result['title'])
-                                    matches = False
-                                    if property.value.value in [l['value'] for l in data['labels'].values()]:
-                                        matches = True
-                                    elif property.value.value in [l['value'] for a in data['aliases'].values() for l in a]:
-                                        matches = True
-                                    if matches:
-                                        merge_property(dbsession,
-                                                       person,
-                                                       'link',
-                                                       {'value': 'https://www.wikidata.org/wiki/{0}'.format(result['title']),
-                                                        'label': result['title']},
-                                                       {'url': QUERY_URL.format(property.value.value),
-                                                        'label': 'Wikidata'})
-                                        load_wikidata_data(dbsession, person, result['title'])
-                                    break
+    for result in query_wikidata(person.title):
+        data = load_wikidata_attribute(result['title'], 'claims.P31')
+        if data:
+            for attr in data:
+                if get_attribute(attr, 'mainsnak.datavalue.value.id') == 'Q5':
+                    data = fetch_wikidata_page(result['title'])
+                    matches = False
+                    if person.title in [l['value'] for l in data['labels'].values()]:
+                        matches = True
+                    elif person.title in [l['value'] for a in data['aliases'].values() for l in a]:
+                        matches = True
+                    if matches:
+                        merge_property(dbsession,
+                                       person,
+                                       'link',
+                                       {'value': 'https://www.wikidata.org/wiki/{0}'.format(result['title']),
+                                        'label': result['title']},
+                                       {'url': QUERY_URL.format(person.title),
+                                        'label': 'Wikidata'})
+                        load_wikidata_data(dbsession, person, result['title'])
                     break
 
 
