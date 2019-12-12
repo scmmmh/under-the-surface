@@ -64,6 +64,20 @@ class PersonGenerator(Generator):
                             'sources': [{'label': st.source.label, 'url': st.source.url, 'timestamp': st.timestamp}
                                         for st in db_property.sources]}
                 metadata[db_property.name].append(property)
+        for db_work in db_person.display_works:
+            if 'work' not in metadata:
+                metadata['work'] = []
+            work = {'title': db_work.title,
+                    'copies': {}}
+            for db_property in db_work.display_properties:
+                copy_id, facet = db_property.name.split('§')
+                if copy_id not in work['copies']:
+                    work['copies'][copy_id] = {}
+                work['copies'][copy_id][facet] = {'value': db_property.value.value,
+                                                  'label': db_property.value.label,
+                                                  'sources': [{'label': st.source.label, 'url': st.source.url, 'timestamp': st.timestamp}
+                                                              for st in db_property.sources]}
+            metadata['work'].append(work)
         if 'summary' in metadata:
             content = ''.join(['<p>{0}</p>'.format(p['value']) for p in metadata['summary']])
         else:

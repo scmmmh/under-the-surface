@@ -14,13 +14,15 @@ class Person(Base):
     title = Column(Text())
     status = Column(String(255))
 
-    properties = relationship('Property')
-    display_properties = relationship('Property', primaryjoin="and_(Person.id == Property.person_id, Property.status != 'incorrect')")
+    properties = relationship('PersonProperty')
+    display_properties = relationship('PersonProperty', primaryjoin="and_(Person.id == PersonProperty.person_id, PersonProperty.status != 'incorrect')")
+    works = relationship('Work')
+    display_works = relationship('Work', primaryjoin="and_(Person.id == Work.person_id, Work.status != 'incorrect')")
 
 
-class Property(Base):
+class PersonProperty(Base):
 
-    __tablename__ = 'properties'
+    __tablename__ = 'person_properties'
 
     id = Column(Integer(), primary_key=True)
     person_id = Column(Integer(), ForeignKey('people.id'))
@@ -30,7 +32,36 @@ class Property(Base):
 
     person = relationship('Person')
     value = relationship('Value')
-    sources = relationship('SourceTimestamp')
+    sources = relationship('PersonPropertySource')
+
+
+class Work(Base):
+
+    __tablename__ = 'works'
+
+    id = Column(Integer(), primary_key=True)
+    person_id = Column(Integer(), ForeignKey('people.id'))
+    title = Column(String(255))
+    status = Column(String(255))
+
+    person = relationship('Person')
+    sources = relationship('WorkSource')
+    properties = relationship('WorkProperty')
+    display_properties = relationship('WorkProperty', primaryjoin="and_(Work.id == WorkProperty.work_id, WorkProperty.status != 'incorrect')")
+
+
+class WorkProperty(Base):
+
+    __tablename__ = 'work_properties'
+    id = Column(Integer(), primary_key=True)
+    work_id = Column(Integer(), ForeignKey('works.id'))
+    value_id = Column(Integer(), ForeignKey('values.id'))
+    name = Column(String(255))
+    status = Column(String(255))
+
+    work = relationship('Work')
+    value = relationship('Value')
+    sources = relationship('WorkPropertySource')
 
 
 class Value(Base):
@@ -43,15 +74,39 @@ class Value(Base):
     lang = Column(String(255))
 
 
-class SourceTimestamp(Base):
+class PersonPropertySource(Base):
 
-    __tablename__ = 'source_timestamps'
+    __tablename__ = 'person_property_sources'
 
-    property_id = Column(Integer(), ForeignKey('properties.id'), primary_key=True)
+    property_id = Column(Integer(), ForeignKey('person_properties.id'), primary_key=True)
     source_id = Column(Integer(), ForeignKey('sources.id'), primary_key=True)
     timestamp = Column(DateTime())
 
-    property = relationship('Property')
+    property = relationship('PersonProperty')
+    source = relationship('Source')
+
+
+class WorkSource(Base):
+
+    __tablename__ = 'work_sources'
+
+    work_id = Column(Integer(), ForeignKey('works.id'), primary_key=True)
+    source_id = Column(Integer(), ForeignKey('sources.id'), primary_key=True)
+    timestamp = Column(DateTime())
+
+    work = relationship('Work')
+    source = relationship('Source')
+
+
+class WorkPropertySource(Base):
+
+    __tablename__ = 'work_property_sources'
+
+    property_id = Column(Integer(), ForeignKey('work_properties.id'), primary_key=True)
+    source_id = Column(Integer(), ForeignKey('sources.id'), primary_key=True)
+    timestamp = Column(DateTime())
+
+    property = relationship('WorkProperty')
     source = relationship('Source')
 
 

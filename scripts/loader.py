@@ -3,7 +3,6 @@ import json
 import os
 
 from models import Person
-from util import merge_property
 
 
 @click.command()

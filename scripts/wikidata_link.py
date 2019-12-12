@@ -4,8 +4,10 @@ import os
 import re
 import requests
 
+from datetime import datetime
+
 from models import Person
-from util import merge_property, get_attribute
+from util import merge_person_property, get_attribute
 
 
 LINKED_ATTRIBUTES = (
@@ -49,6 +51,9 @@ def link_to_wikidata_person(dbsession, person):
     for result in query_wikidata(person.title):
         data = load_wikidata_attribute(result['title'], 'claims.P31')
         if data:
+            source = {'url': QUERY_URL.format(person.title),
+                      'label': 'Wikidata',
+                      'timestamp': datetime.now()}
             for attr in data:
                 if get_attribute(attr, 'mainsnak.datavalue.value.id') == 'Q5':
                     data = fetch_wikidata_page(result['title'])
@@ -58,13 +63,12 @@ def link_to_wikidata_person(dbsession, person):
                     elif person.title in [l['value'] for a in data['aliases'].values() for l in a]:
                         matches = True
                     if matches:
-                        merge_property(dbsession,
+                        merge_person_property(dbsession,
                                        person,
                                        'link',
                                        {'value': 'https://www.wikidata.org/wiki/{0}'.format(result['title']),
                                         'label': result['title']},
-                                       {'url': QUERY_URL.format(person.title),
-                                        'label': 'Wikidata'})
+                                       source)
                         load_wikidata_data(dbsession, person, result['title'])
                     break
 
@@ -112,43 +116,44 @@ def fetch_wikidata_page(title):
 def load_wikidata_data(dbsession, person, wikidata_id):
     """Load data from Wikidata."""
     source = {"url": DETAILS_URL.format(wikidata_id),
-              "label": wikidata_id}
+              "label": wikidata_id,
+              'timestamp': datetime.now()}
     data = fetch_wikidata_page(wikidata_id)
     if data:
         for lang in ['en', 'de']:
             # Load labels and aliases
             if lang in data['labels']:
-                merge_property(dbsession, person, 'name', {'value': data['labels'][lang]['value'], 'lang': lang}, source)
+                merge_person_property(dbsession, person, 'name', {'value': data['labels'][lang]['value'], 'lang': lang}, source)
             if lang in data['aliases']:
                 for label in data['aliases'][lang]:
-                    merge_property(dbsession, person, 'name', {'value': label['value'], 'lang': lang}, source)
+                    merge_person_property(dbsession, person, 'name', {'value': label['value'], 'lang': lang}, source)
             # Load descriptions
             if lang in data['descriptions']:
-                merge_property(dbsession, person, 'summary', {'value': data['descriptions'][lang]['value'], 'lang': lang}, source)
+                merge_person_property(dbsession, person, 'summary', {'value': data['descriptions'][lang]['value'], 'lang': lang}, source)
             # Load Wikipedia links
             if '{0}wiki'.format(lang) in data['sitelinks']:
                 sitelinks = data['sitelinks']['{0}wiki'.format(lang)]
-                merge_property(dbsession, person, 'link', {'value': sitelinks['url'], 'label': sitelinks['title'], 'lang':lang}, source)
+                merge_person_property(dbsession, person, 'link', {'value': sitelinks['url'], 'label': sitelinks['title'], 'lang':lang}, source)
             # Load other external links
             for label, key, path in EXTERNAL_LINKS:
                 value = get_structured_attribute(data, path, None)
                 if value:
                     for v in value:
-                        merge_property(dbsession, person, 'link', {'value': key.format(v), 'label': label}, source)
+                        merge_person_property(dbsession, person, 'link', {'value': key.format(v), 'label': label}, source)
             # Load linked attributes
             sub_path = 'labels.{0}.value'.format(lang)
             for key, path in LINKED_ATTRIBUTES:
                 value = get_structured_attribute(data, path, sub_path)
                 if value:
                     for v in value:
-                        merge_property(dbsession, person, key, {'value': v, 'lang': lang}, source)
+                        merge_person_property(dbsession, person, key, {'value': v, 'lang': lang}, source)
             # Load time attributes
             sub_path = 'time'
             for key, path in TIME_ATTRIBUTES:
                 value = get_structured_attribute(data, path, sub_path)
                 if value:
                     for v in value:
-                        merge_property(dbsession, person, key, v, source)
+                        merge_person_property(dbsession, person, key, v, source)
 
 
 def get_structured_attribute(data, path, sub_path):
