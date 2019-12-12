@@ -117,7 +117,7 @@
               <h3>{{ label }}</h3>
               <ul class="no-bullet">
                 {% for value in page[field] %}
-                  <li>{% if type == 'timestamp' %}{{ value.value|format_timestamp }}{% else %}{{ value.value }}{% endif %}</li>
+                  <li>{% if type == 'timestamp' %}{{ value.value|format_timestamp }}{% else %}{% if value.label %}{{ value.label }}{% else %}{{ value.value }}{% endif %}{% endif %}</li>
                 {% endfor %}
               </ul>
             </section>

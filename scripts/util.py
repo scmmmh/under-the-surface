@@ -1,4 +1,7 @@
 from datetime import datetime
+from sqlalchemy import and_
+
+from models import Person, Property, Value, Source, SourceTimestamp
 
 
 def get_attribute(obj, path, default=None):
@@ -84,3 +87,41 @@ def get_xml_attribute(obj, path, default=None, ns=None):
 
 def json_utcnow():
     return datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+
+
+def merge_property(dbsession, person, property, value, source):
+    """Merge the given ``property`` with ``value`` into the ``person``. Attribute the change to the ``source``.
+    ``value`` can be a string or a dictionary with keys "label", "lang", and "value". ``source`` is a dictionary
+    with keys "label" and "source".
+    """
+    if isinstance(value, dict):
+        label = value['label'] if 'label' in value else None
+        lang = value['lang'] if 'lang' in value else None
+        value = value['value']
+    else:
+        label = None
+        lang = None
+    db_property = dbsession.query(Property).join(Value).filter(and_(Property.person_id == person.id,
+                                                                 Property.name == property,
+                                                                 Value.value == value,
+                                                                 Value.lang == lang)).first()
+    if not db_property:
+        db_value = dbsession.query(Value).filter(and_(Value.value == value,
+                                                      Value.lang == lang)).first()
+        if not db_value:
+            db_value = Value(label=label, value=value, lang=lang)
+            dbsession.add(db_value)
+        db_property = Property(person=person, name=property, value=db_value)
+        dbsession.add(db_property)
+    source_timestamp = dbsession.query(SourceTimestamp).join(Source).filter(and_(SourceTimestamp.property == db_property,
+                                                                                 Source.url == source['url'])).first()
+    if not source_timestamp:
+        db_source = dbsession.query(Source).filter(Source.url == source['url']).first()
+        if not db_source:
+            db_source = Source(label=source['label'], url=source['url'])
+            dbsession.add(db_source)
+        source_timestamp = SourceTimestamp(property=db_property, source=db_source, timestamp=datetime.now())
+        dbsession.add(source_timestamp)
+    else:
+        source_timestamp.timestamp = datetime.now()
+    dbsession.commit()

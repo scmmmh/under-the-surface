@@ -20,7 +20,7 @@ SITEURL = ''
 # Path configuration
 PATH = 'content'
 
-PAGE_PATHS = ['people', 'pages']
+PAGE_PATHS = ['pages']
 
 ARTICLE_PATHS = ['articles']
 ARTICLE_URL = 'articles/{slug}.html'
@@ -37,7 +37,7 @@ LANGUAGES = (
 LANGUAGE_LABELS = dict(LANGUAGES)
 
 # Plugins
-PLUGINS = ('person_reader', 'i18n_install')
+PLUGINS = ('person_generator', 'i18n_install',)
 
 # Theme configuration
 THEME = './theme'
