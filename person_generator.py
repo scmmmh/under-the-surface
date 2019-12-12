@@ -25,6 +25,22 @@ class Person(Content):
         else:
             return ''
 
+    @property
+    def sources(self):
+        sources = {}
+        for property in self.metadata.values():
+            if isinstance(property, list):
+                for value in property:
+                    if 'sources' in value:
+                        for source in value['sources']:
+                            if source['url'] in sources:
+                                sources[source['url']]['timestamps'].add(source['timestamp'].strftime('%Y-%m-%dT00:00:00Z'))
+                            else:
+                                sources[source['url']] = {'label': source['label'],
+                                                          'url': source['url'],
+                                                          'timestamps': set([source['timestamp'].strftime('%Y-%m-%dT00:00:00Z')])}
+        return sources
+
 
 class PersonGenerator(Generator):
     """The PersonGenerator generates the person pages from the database, rather than from the filesystem."""

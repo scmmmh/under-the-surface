@@ -3083,6 +3083,16 @@ html {
 .sc {
   font-variant: small-caps; }
 
+ul.inline, ol.inline {
+  margin-left: 0; }
+  ul.inline li, ol.inline li {
+    list-style-type: none;
+    display: inline-block; }
+    ul.inline li::after, ol.inline li::after {
+      content: ', '; }
+    ul.inline li:last-child::after, ol.inline li:last-child::after {
+      content: ''; }
+
 svg.icon {
   width: 24px;
   height: 24px; }
