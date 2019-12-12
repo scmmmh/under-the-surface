@@ -54,7 +54,14 @@ class PersonGenerator(Generator):
     def load_person(self, db_person):
         """Load an individual person's data from the database."""
         metadata = {'slug': db_person.slug,
-                    'title': db_person.title}
+                    'title': db_person.title,
+                    'verification': 'none'}
+        if db_person.status == 'confirmed':
+            verification = 2
+        elif db_person.status == 'incorrect':
+            verification = -1
+        else:
+            verification = 0
         for db_property in db_person.display_properties:
             if db_property.value.lang is None or db_property.value.lang == self.settings['DEFAULT_LANG']:
                 if db_property.name not in metadata:
@@ -64,11 +71,19 @@ class PersonGenerator(Generator):
                             'sources': [{'label': st.source.label, 'url': st.source.url, 'timestamp': st.timestamp}
                                         for st in db_property.sources]}
                 metadata[db_property.name].append(property)
+                if db_property.status == 'confirmed' and verification >= 0:
+                    verification = 2 if verification == 2 else 1
+                elif verification == 2:
+                    verification = 1
         for db_work in db_person.display_works:
             if 'work' not in metadata:
                 metadata['work'] = []
             work = {'title': db_work.title,
                     'copies': {}}
+            if db_work.status == 'confirmed' and verification >= 0:
+                verification = 2 if verification == 2 else 1
+            elif verification == 2:
+                verification = 1
             for db_property in db_work.display_properties:
                 copy_id, facet = db_property.name.split('§')
                 if copy_id not in work['copies']:
@@ -77,11 +92,23 @@ class PersonGenerator(Generator):
                                                   'label': db_property.value.label,
                                                   'sources': [{'label': st.source.label, 'url': st.source.url, 'timestamp': st.timestamp}
                                                               for st in db_property.sources]}
+                if db_property.status == 'confirmed' and verification >= 0:
+                    verification = 2 if verification == 2 else 1
+                elif verification == 2:
+                    verification = 1
             metadata['work'].append(work)
         if 'summary' in metadata:
             content = ''.join(['<p>{0}</p>'.format(p['value']) for p in metadata['summary']])
         else:
             content = ''
+        if verification == 2:
+            metadata['verification'] = 'full'
+        elif verification == 1:
+            metadata['verification'] = 'partial'
+        elif verification == -1:
+            metadata['verification'] = 'failed'
+        else:
+            metadata['verification'] = 'none'
         return Person(content, metadata=metadata, settings=self.settings, context=self.context)
 
     def generate_context(self):
