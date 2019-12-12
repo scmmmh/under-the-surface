@@ -27,6 +27,7 @@ class Person(Content):
 
     @property
     def sources(self):
+        """Dynamically generate the list of sources used, based on sources defined on properties and works."""
         sources = {}
         for property in self.metadata.values():
             if isinstance(property, list):
@@ -39,6 +40,17 @@ class Person(Content):
                                 sources[source['url']] = {'label': source['label'],
                                                           'url': source['url'],
                                                           'timestamps': set([source['timestamp'].strftime('%Y-%m-%dT00:00:00Z')])}
+                    if 'copies' in value:
+                        for copy in value['copies'].values():
+                            for value in copy.values():
+                                if 'sources' in value:
+                                    for source in value['sources']:
+                                        if source['url'] in sources:
+                                            sources[source['url']]['timestamps'].add(source['timestamp'].strftime('%Y-%m-%dT00:00:00Z'))
+                                        else:
+                                            sources[source['url']] = {'label': source['label'],
+                                                                      'url': source['url'],
+                                                                      'timestamps': set([source['timestamp'].strftime('%Y-%m-%dT00:00:00Z')])}
         return sources
 
 
