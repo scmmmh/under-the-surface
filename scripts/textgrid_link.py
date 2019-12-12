@@ -7,7 +7,8 @@ import requests
 from datetime import datetime
 from lxml import etree
 
-from util import get_attribute, get_xml_attribute, add_to_set, json_utcnow
+from models import Person
+from util import merge_work, merge_work_property, get_attribute, get_xml_attribute
 
 
 QUERY_URL = 'https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:"{0}"&limit=100'
@@ -42,42 +43,28 @@ def fetch_textgrid_search(title):
 
 
 @click.command()
-def load_textgrid_data():
-    for basepath, _, files in os.walk(os.path.join('content', 'people')):
-        for filename in files:
-            if re.match('.+\.[a-z]{2}\.json', filename):
-                with open(os.path.join(basepath, filename)) as in_f:
-                    obj = json.load(in_f)
-                person_title = get_attribute(obj, 'data.attributes.title')
-                data = fetch_textgrid_search(person_title)
-                source = {'source': QUERY_URL.format(person_title),
-                          'timestamp': json_utcnow()}
-                if data:
-                    data = etree.fromstring(data)
-                    if int(data.attrib['hits']) > 0:
-                        found = False
-                        for result in data:
-                            agent = get_xml_attribute(result, 'tg:object.tg:edition.tg:agent', ns=NAMESPACES)
-                            if agent is not None and agent.text == format_query_author(person_title) and 'role' in agent.attrib and agent.attrib['role'] == 'author':
-                                found = True
-                                title = get_xml_attribute(result,
-                                                          'tg:object.tg:generic.tg:provided.tg:title.text()',
-                                                          ns=NAMESPACES)
-                                tgid = get_xml_attribute(result,
-                                                         'tg:object.tg:generic.tg:generated.tg:textgridUri.text()',
-                                                         ns=NAMESPACES)
-                                add_to_set(obj,
-                                           'data.attributes.works',
-                                           {'title': title,
-                                            'url': ITEM_URL.format(tgid),
-                                            'provider': {
-                                                'title': 'TextGrid Repository',
-                                                'url': 'https://textgridrep.org'
-                                           },
-                                           'license': {'type': 'cc-by',
-                                                       'url': 'https://textgrid.de/Digitale-Bibliothek'}},
-                                           source)
-                        if found:
-                            add_to_set(obj, 'data.attributes.sources', 'TextGrid Repository', source)
-                with open(os.path.join(basepath, filename), 'w') as out_f:
-                    json.dump(obj, out_f, indent=4)
+@click.pass_context
+def load_textgrid_data(ctx):
+    dbsession = ctx.obj['dbsession']
+    for person in dbsession.query(Person):
+        data = fetch_textgrid_search(person.title)
+        if data:
+            source = {'url': QUERY_URL.format(person.title),
+                      'label': 'TextGrid API',
+                      'timestamp': datetime.now()}
+            data = etree.fromstring(data)
+            if int(data.attrib['hits']) > 0:
+                for result in data:
+                    agent = get_xml_attribute(result, 'tg:object.tg:edition.tg:agent', ns=NAMESPACES)
+                    if agent is not None and agent.text == format_query_author(person.title) and 'role' in agent.attrib and agent.attrib['role'] == 'author':
+                        title = get_xml_attribute(result,
+                                                  'tg:object.tg:generic.tg:provided.tg:title.text()',
+                                                  ns=NAMESPACES)
+                        tgid = get_xml_attribute(result,
+                                                 'tg:object.tg:generic.tg:generated.tg:textgridUri.text()',
+                                                 ns=NAMESPACES)
+                        work = merge_work(dbsession, person, title, source)
+                        merge_work_property(dbsession, work, '{0}§provider'.format(tgid), {'label': 'TextGrid', 'value': 'https://textgridrep.org'}, source)
+                        merge_work_property(dbsession, work, '{0}§data'.format(tgid), {'value': ITEM_URL.format(tgid)}, source)
+                        merge_work_property(dbsession, work, '{0}§license'.format(tgid), {'label': 'CC-BY', 'value': 'cc-by'}, source)
+                        merge_work_property(dbsession, work, '{0}§license_url'.format(tgid), {'value': 'https://textgrid.de/Digitale-Bibliothek'}, source)

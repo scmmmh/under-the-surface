@@ -37,24 +37,25 @@
   <div class="grid-x grid-padding-x">
     <div class="cell small-12 medium-8 large-7">
       <section>{{ page.content }}</section>
-      {% if page.works %}
+      {% if page.work %}
         <section>
           <h2>{% trans %}Works{% endtrans %}</h2>
-          {% for grouper, items in page.works|groupby('value.provider.title') %}
+          {% for work in page.work %}
             <section>
-              <h3>{{ grouper }}</h3>
+              <h3>{{ work.title }}</h3>
               <ul class="no-bullet">
-                {% for work in items %}
-                  <li class="grid-x">
-                    <div class="cell auto"><a href="{{ work.value.url }}">{{ work.value.title }}</a></div>
+                {% for copy in work.copies.values() %}
+                  <li class="grid-x grid-padding-x">
+                    <div class="cell shrink"><a href="{{ copy.provider.value }}" target="_blank" rel="noopener">{{ copy.provider.label }}</a></div>
+                    <div class="cell auto"><a href="{{ copy.data.value }}" target="_blank" rel="noopener">{{ copy.data.value }}</a></div>
                     <div class="cell shrink license">
-                      {% if work.value.license.type == 'cc-by' %}
-                        {% if work.value.license.url %}
-                        <a href="{{ work.value.license.url }}" target="_blank" rel="noopener">
+                      {% if copy.license.value == 'cc-by' %}
+                        {% if copy.license_url %}
+                          <a href="{{ copy.license_url.value }}" target="_blank" rel="noopener">
                         {% else %}
                           <a href="https://creativecommons.org/licenses/cc/by/legalcode" target="_blank" rel="noopener">
                         {% endif %}
-                          <img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by.svg" alt="{{ work.value.license }}" style="opacity:0.6"/>
+                          <img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by.svg" alt="{{ copy.license.value }}" style="opacity:0.6"/>
                         </a>
                       {% endif %}
                     </div>
@@ -65,29 +66,13 @@
           {% endfor %}
         </section>
       {% endif %}
-      {% if page.links %}
+      {% if page.link %}
         <section>
           <h2>{% trans %}Links{% endtrans %}</h2>
           <ul class="no-bullet grid-x grid-padding-x">
-          {% for label, field in PERSON_LINK_CATEGORIES %}
-            {% if page.links[field] %}
-              <li class="cell small-6 medium-4 large-3">
-                <span class="sc">{{ label }}</span>
-                <ul class="no-bullet">
-                  {% for key, value in page.links[field].items() %}
-                    {% if value %}
-                      <li><a href="{{ value.value.url }}" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" class="icon small">
-                          <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                        </svg>
-                        {% if 'label' in value.value %}{{ value.value.label }}{% else %}{{ key }}{% endif %}</a>
-                      </li>
-                    {% endif %}
-                  {% endfor %}
-                </ul>
-              </li>
-            {% endif %}
-          {% endfor %}
+            {% for link in page.link %}
+              <li class="cell small-6 medium-4 large-3"><a href="{{ link.value }}">{{ link.label }}</a></li>
+            {% endfor %}
           </ul>
         </section>
       {% endif %}
@@ -95,11 +80,17 @@
         <section class="sources">
           <h2>{% trans %}Sources{% endtrans %}</h2>
           <ul class="no-bullet grid-x grid-padding-x">
-            {% for source in page.sources %}
+            {% for source in page.sources.values() %}
               <li class="cell small-12 margin-bottom">
-                <div class="label">{{ source.value }}</div>
-                <div class="source"><a href="{{ source.source }}">{{ source.source }}</a></div>
-                <div class="timestamp">{{ source.timestamp|format_timestamp }}</div>
+                <div class="label">{{ source.label }}</div>
+                <div class="source"><a href="{{ source.url }}">{{ source.url }}</a></div>
+                <div class="timestamp">
+                  <ul class="inline">
+                    {% for timestamp in source.timestamps %}
+                      <li>{{ timestamp|format_timestamp }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
               </li>
             {% endfor %}
           </ul>
@@ -117,7 +108,7 @@
               <h3>{{ label }}</h3>
               <ul class="no-bullet">
                 {% for value in page[field] %}
-                  <li>{% if type == 'timestamp' %}{{ value.value|format_timestamp }}{% else %}{{ value.value }}{% endif %}</li>
+                  <li>{% if type == 'timestamp' %}{{ value.value|format_timestamp }}{% else %}{% if value.label %}{{ value.label }}{% else %}{{ value.value }}{% endif %}{% endif %}</li>
                 {% endfor %}
               </ul>
             </section>

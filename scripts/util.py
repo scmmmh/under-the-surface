@@ -1,4 +1,7 @@
 from datetime import datetime
+from sqlalchemy import and_
+
+from models import Person, PersonProperty, Work, WorkProperty, Value, Source, PersonPropertySource, WorkSource, WorkPropertySource
 
 
 def get_attribute(obj, path, default=None):
@@ -12,50 +15,6 @@ def get_attribute(obj, path, default=None):
             else:
                 return get_attribute(obj[path[0]], path[1:], default=default)
     return default
-
-
-def set_value(obj, path, value, source):
-    """Set the value at path in obj."""
-    if isinstance(path, str):
-        path = path.split('.')
-    tmp = obj
-    for component in path[:-1]:
-        if component not in tmp:
-            tmp[component] = {}
-        tmp = tmp[component]
-    if path[-1] not in tmp:
-        tmp[path[-1]] = {}
-    if source:
-        tmp[path[-1]] = {'value': value,
-                         'source': source['source'],
-                         'timestamp': source['timestamp']}
-    else:
-        tmp[path[-1]] = value
-
-
-def add_to_set(obj, path, value, source):
-    """Add a value to the set at location path in obj."""
-    if isinstance(path, str):
-        path = path.split('.')
-    tmp = obj
-    for component in path[:-1]:
-        if component not in tmp:
-            tmp[component] = {}
-        tmp = tmp[component]
-    if path[-1] not in tmp:
-        tmp[path[-1]] = []
-    elif not isinstance(tmp[path[-1]], list):
-        tmp[path[-1]] = [tmp[path[-1]]]
-    found = False
-    for exist in tmp[path[-1]]:
-        if exist['value'] == value:
-            exist['source'] = source['source']
-            exist['timestamp'] = source['timestamp']
-            found = True
-    if not found:
-        tmp[path[-1]].append({'value': value,
-                              'source': source['source'],
-                              'timestamp': source['timestamp']})
 
 
 def get_xml_attribute(obj, path, default=None, ns=None):
@@ -84,3 +43,104 @@ def get_xml_attribute(obj, path, default=None, ns=None):
 
 def json_utcnow():
     return datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+
+
+def merge_person_property(dbsession, person, property, value, source):
+    """Merge the given ``property`` with ``value`` into the ``person``. Attribute the change to the ``source``.
+    ``value`` can be a string or a dictionary with keys "label", "lang", and "value". ``source`` is a dictionary
+    with keys "label", "source", and "timestamp".
+    """
+    if isinstance(value, dict):
+        label = value['label'] if 'label' in value else None
+        lang = value['lang'] if 'lang' in value else None
+        value = value['value']
+    else:
+        label = None
+        lang = None
+    db_property = dbsession.query(PersonProperty).join(Value).filter(and_(PersonProperty.person_id == person.id,
+                                                                          PersonProperty.name == property,
+                                                                          Value.value == value,
+                                                                          Value.lang == lang)).first()
+    if not db_property:
+        db_value = dbsession.query(Value).filter(and_(Value.value == value,
+                                                      Value.lang == lang)).first()
+        if not db_value:
+            db_value = Value(label=label, value=value, lang=lang)
+            dbsession.add(db_value)
+        db_property = PersonProperty(person=person, name=property, value=db_value, status='unconfirmed')
+        dbsession.add(db_property)
+    property_source = dbsession.query(PersonPropertySource).join(Source).filter(and_(PersonPropertySource.property == db_property,
+                                                                                     Source.url == source['url'])).first()
+    if not property_source:
+        db_source = dbsession.query(Source).filter(Source.url == source['url']).first()
+        if not db_source:
+            db_source = Source(label=source['label'], url=source['url'])
+            dbsession.add(db_source)
+        property_source = PersonPropertySource(property=db_property, source=db_source, timestamp=source['timestamp'])
+        dbsession.add(property_source)
+    else:
+        property_source.timestamp = source['timestamp']
+        dbsession.add(property_source)
+    dbsession.commit()
+
+
+def merge_work(dbsession, person, title, source):
+    work = dbsession.query(Work).filter(and_(Work.person_id == person.id, Work.title == title)).first()
+    if not work:
+        work = Work(person=person, title=title, status='unconfirmed')
+        dbsession.add(work)
+        dbsession.commit()
+    else:
+        work_source = dbsession.query(WorkSource).join(Source).filter(and_(WorkSource.work == work,
+                                                                           Source.url == source['url'])).first()
+        if not work_source:
+            db_source = dbsession.query(Source).filter(Source.url == source['url']).first()
+            if not db_source:
+                db_source = Source(label=source['label'], url=source['url'])
+                dbsession.add(db_source)
+            work_source = WorkSource(work=work, source=db_source, timestamp=source['timestamp'])
+            dbsession.add(work_source)
+        else:
+            work_source.timestamp = source['timestamp']
+            dbsession.add(work_source)
+        dbsession.commit()
+    return work
+
+
+def merge_work_property(dbsession, work, property, value, source):
+    """Merge the given ``property`` with ``value`` into the ``work``. Attribute the change to the ``source``.
+    ``value`` can be a string or a dictionary with keys "label", "lang", and "value". ``source`` is a dictionary
+    with keys "label", "source", and "timestamp".
+    """
+    if isinstance(value, dict):
+        label = value['label'] if 'label' in value else None
+        lang = value['lang'] if 'lang' in value else None
+        value = value['value']
+    else:
+        label = None
+        lang = None
+    db_property = dbsession.query(WorkProperty).join(Value).filter(and_(WorkProperty.work_id == work.id,
+                                                                        WorkProperty.name == property,
+                                                                        Value.value == value,
+                                                                        Value.lang == lang)).first()
+    if not db_property:
+        db_value = dbsession.query(Value).filter(and_(Value.value == value,
+                                                      Value.lang == lang)).first()
+        if not db_value:
+            db_value = Value(label=label, value=value, lang=lang)
+            dbsession.add(db_value)
+        db_property = WorkProperty(work=work, name=property, value=db_value, status='unconfirmed')
+        dbsession.add(db_property)
+    property_source = dbsession.query(WorkPropertySource).join(Source).filter(and_(WorkPropertySource.property == db_property,
+                                                                                   Source.url == source['url'])).first()
+    if not property_source:
+        db_source = dbsession.query(Source).filter(Source.url == source['url']).first()
+        if not db_source:
+            db_source = Source(label=source['label'], url=source['url'])
+            dbsession.add(db_source)
+        property_source = WorkPropertySource(property=db_property, source=db_source, timestamp=source['timestamp'])
+        dbsession.add(property_source)
+    else:
+        property_source.timestamp = source['timestamp']
+        dbsession.add(property_source)
+    dbsession.commit()

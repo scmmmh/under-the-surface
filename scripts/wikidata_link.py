@@ -4,65 +4,73 @@ import os
 import re
 import requests
 
-from util import get_attribute, set_value, add_to_set, json_utcnow
+from datetime import datetime
+
+from models import Person
+from util import merge_person_property, get_attribute
 
 
 LINKED_ATTRIBUTES = (
-    ('data.attributes.gender', 'claims.P21'),
-    ('data.attributes.country_of_citizenship', 'claims.P27'),
-    ('data.attributes.location_of_birth', 'claims.P19'),
-    ('data.attributes.location_of_death', 'claims.P20'),
-    ('data.attributes.languages_used', 'claims.P1412'),
-    ('data.attributes.occupation', 'claims.P106'),
-    ('data.attributes.residence', 'claims.P551'),
-    ('data.attributes.field_of_work', 'claims.P101'),
-    ('data.attributes.religion', 'claims.P140'),
-    ('data.attributes.religious_order', 'claims.P611'),
-    ('data.attributes.canonisation_status', 'claims.P411'),
+    ('gender', 'claims.P21'),
+    ('country_of_citizenship', 'claims.P27'),
+    ('location_of_birth', 'claims.P19'),
+    ('location_of_death', 'claims.P20'),
+    ('languages_used', 'claims.P1412'),
+    ('occupation', 'claims.P106'),
+    ('residence', 'claims.P551'),
+    ('field_of_work', 'claims.P101'),
+    ('religion', 'claims.P140'),
+    ('religious_order', 'claims.P611'),
+    ('canonisation_status', 'claims.P411'),
 )
 TIME_ATTRIBUTES = (
-    ('data.attributes.date_of_birth', 'claims.P569'),
-    ('data.attributes.date_of_death', 'claims.P570'),
+    ('date_of_birth', 'claims.P569'),
+    ('date_of_death', 'claims.P570'),
 )
 EXTERNAL_LINKS = (
-    ('data.attributes.links.viaf', 'claims.P214'),
-    ('data.attributes.links.gnd', 'claims.P227'),
+    ('VIAF', 'https://viaf.org/viaf/{0}/', 'claims.P214'),
+    ('GND', 'https://d-nb.info/gnd/{0}', 'claims.P227'),
 )
 
 
 @click.command()
-def link_to_wikidata():
+@click.pass_context
+def link_to_wikidata(ctx):
     """Link all people to Wikidata"""
-    for basepath, _, files in os.walk(os.path.join('content', 'people')):
-        for filename in files:
-            if re.match('.+\.[a-z]{2}\.json', filename):
-                with open(os.path.join(basepath, filename)) as in_f:
-                    obj = json.load(in_f)
-                obj = link_to_wikidata_person(obj)
-                with open(os.path.join(basepath, filename), 'w') as out_f:
-                    json.dump(obj, out_f, indent=4)
+    dbsession = ctx.obj['dbsession']
+    for person in dbsession.query(Person):
+        link_to_wikidata_person(dbsession, person)
 
 
-QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch="{0}"&format=json'
+QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch={0}&format=json'
 DETAILS_URL = 'https://www.wikidata.org/wiki/Special:EntityData/{0}.json'
 
 
-def link_to_wikidata_person(obj):
+def link_to_wikidata_person(dbsession, person):
     """Link a single person to a Wikidata entry."""
-    source = {'source': QUERY_URL.format(obj['data']['attributes']['title']),
-              'timestamp': json_utcnow()}
-    for result in query_wikidata(obj['data']['attributes']['title']):
+    for result in query_wikidata(person.title):
         data = load_wikidata_attribute(result['title'], 'claims.P31')
         if data:
+            source = {'url': QUERY_URL.format(person.title),
+                      'label': 'Wikidata',
+                      'timestamp': datetime.now()}
             for attr in data:
-                # Check that the Wikidata record is a person
                 if get_attribute(attr, 'mainsnak.datavalue.value.id') == 'Q5':
-                    set_value(obj,
-                              'data.attributes.links.wikidata.{0}'.format(result['title']),
-                              {'label': result['title'],
-                               'url': 'https://www.wikidata.org/wiki/{0}'.format(result['title'])},
-                              source)
-    return obj
+                    data = fetch_wikidata_page(result['title'])
+                    matches = False
+                    if person.title in [l['value'] for l in data['labels'].values()]:
+                        matches = True
+                    elif person.title in [l['value'] for a in data['aliases'].values() for l in a]:
+                        matches = True
+                    if matches:
+                        merge_person_property(dbsession,
+                                       person,
+                                       'link',
+                                       {'value': 'https://www.wikidata.org/wiki/{0}'.format(result['title']),
+                                        'label': result['title']},
+                                       source)
+                        load_wikidata_data(dbsession, person, result['title'])
+                    break
 
 
 QUERY_CACHE = {}
@@ -105,78 +113,47 @@ def fetch_wikidata_page(title):
     return None
 
 
-@click.command()
-def load_wikidata_data():
+def load_wikidata_data(dbsession, person, wikidata_id):
     """Load data from Wikidata."""
-    for basepath, _, files in os.walk(os.path.join('content', 'people')):
-        for filename in files:
-            if re.match('.+\.[a-z]{2}\.json', filename):
-                with open(os.path.join(basepath, filename)) as in_f:
-                    obj = json.load(in_f)
-                lang = get_attribute(obj, 'data.attributes.lang')
-                for source_key, value in list(get_attribute(obj, 'data.attributes.links.wikidata').items()):
-                    if value is None or True:
-                        data = fetch_wikidata_page(source_key)
-                        source = {'source': DETAILS_URL.format(source_key),
-                                  'timestamp': json_utcnow()}
-                        if data:
-                            # Load main label
-                            if lang in data['labels']:
-                                add_to_set(obj, 'data.attributes.names', data['labels'][lang]['value'], source)
-                            # Load alternative labels
-                            if lang in data['aliases']:
-                                for label in data['aliases'][lang]:
-                                    add_to_set(obj, 'data.attributes.names', label['value'], source)
-                            # Load content summary
-                            if lang in data['descriptions']:
-                                add_to_set(obj, 'data.attributes.content', data['descriptions'][lang]['value'], source)
-                            # Load links to Wikipedia
-                            if '{0}wiki'.format(lang) in data['sitelinks']:
-                                sitelinks = data['sitelinks']['{0}wiki'.format(lang)]
-                                set_value(obj,
-                                          'data.attributes.links.wikipedia.site',
-                                          {'label': sitelinks['title'], 'url': sitelinks['url']},
-                                          source)
-                            # Load other external links
-                            for key, path in EXTERNAL_LINKS:
-                                value = get_structured_attribute(data, path, None)
-                                if value:
-                                    for v in value:
-                                        set_value(obj,
-                                                  '{0}.{1}'.format(key, v),
-                                                  {'url': 'https://viaf.org/viaf/{0}/'.format(v)},
-                                                  source)
-                            # Load linked attributes
-                            sub_path = 'labels.{0}.value'.format(lang)
-                            for key, path in LINKED_ATTRIBUTES:
-                                value = get_structured_attribute(data, path, sub_path)
-                                if value:
-                                    for v in value:
-                                        add_to_set(obj, key, v, source)
-                            # Load time attributes
-                            sub_path = 'time'
-                            for key, path in TIME_ATTRIBUTES:
-                                value = get_structured_attribute(data, path, sub_path)
-                                if value:
-                                    for v in value:
-                                        add_to_set(obj, key, v, source)
-                            # Set the verification level
-                            if get_attribute(obj, 'data.attributes.verification') in ['partial', 'full']:
-                                set_value(obj,
-                                          'data.attributes.verification',
-                                          'partial',
-                                          None)
-                            else:
-                                set_value(obj,
-                                          'data.attributes.verification',
-                                          'none',
-                                          None)
-                            add_to_set(obj,
-                                       'data.attributes.sources',
-                                       'Wikidata',
-                                       source)
-                with open(os.path.join(basepath, filename), 'w') as out_f:
-                    json.dump(obj, out_f, indent=4)
+    source = {"url": DETAILS_URL.format(wikidata_id),
+              "label": wikidata_id,
+              'timestamp': datetime.now()}
+    data = fetch_wikidata_page(wikidata_id)
+    if data:
+        for lang in ['en', 'de']:
+            # Load labels and aliases
+            if lang in data['labels']:
+                merge_person_property(dbsession, person, 'name', {'value': data['labels'][lang]['value'], 'lang': lang}, source)
+            if lang in data['aliases']:
+                for label in data['aliases'][lang]:
+                    merge_person_property(dbsession, person, 'name', {'value': label['value'], 'lang': lang}, source)
+            # Load descriptions
+            if lang in data['descriptions']:
+                merge_person_property(dbsession, person, 'summary', {'value': data['descriptions'][lang]['value'], 'lang': lang}, source)
+            # Load Wikipedia links
+            if '{0}wiki'.format(lang) in data['sitelinks']:
+                sitelinks = data['sitelinks']['{0}wiki'.format(lang)]
+                merge_person_property(dbsession, person, 'link', {'value': sitelinks['url'], 'label': sitelinks['title'], 'lang':lang}, source)
+            # Load other external links
+            for label, key, path in EXTERNAL_LINKS:
+                value = get_structured_attribute(data, path, None)
+                if value:
+                    for v in value:
+                        merge_person_property(dbsession, person, 'link', {'value': key.format(v), 'label': label}, source)
+            # Load linked attributes
+            sub_path = 'labels.{0}.value'.format(lang)
+            for key, path in LINKED_ATTRIBUTES:
+                value = get_structured_attribute(data, path, sub_path)
+                if value:
+                    for v in value:
+                        merge_person_property(dbsession, person, key, {'value': v, 'lang': lang}, source)
+            # Load time attributes
+            sub_path = 'time'
+            for key, path in TIME_ATTRIBUTES:
+                value = get_structured_attribute(data, path, sub_path)
+                if value:
+                    for v in value:
+                        merge_person_property(dbsession, person, key, v, source)
 
 
 def get_structured_attribute(data, path, sub_path):

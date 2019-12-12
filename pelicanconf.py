@@ -20,7 +20,7 @@ SITEURL = ''
 # Path configuration
 PATH = 'content'
 
-PAGE_PATHS = ['people', 'pages']
+PAGE_PATHS = ['pages']
 
 ARTICLE_PATHS = ['articles']
 ARTICLE_URL = 'articles/{slug}.html'
@@ -37,12 +37,12 @@ LANGUAGES = (
 LANGUAGE_LABELS = dict(LANGUAGES)
 
 # Plugins
-PLUGINS = ('person_reader', 'i18n_install')
+PLUGINS = ('person_generator', 'i18n_install',)
 
 # Theme configuration
 THEME = './theme'
 PERSON_METADATA = (
-    (_('Names'), 'names', 'string'),
+    (_('Names'), 'name', 'string'),
     (_('Sex or Gender'), 'gender', 'string'),
     (_('Country of Citizenship'), 'country_of_citizenship', 'string'),
     (_('Date of Birth'), 'date_of_birth', 'timestamp'),

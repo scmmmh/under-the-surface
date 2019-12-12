@@ -10,3 +10,21 @@ html {
 .sc {
     font-variant: small-caps;
 }
+ul, ol {
+    &.inline {
+        margin-left: 0;
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+
+            &::after {
+                content: ', ';
+            }
+            
+            &:last-child::after {
+                content: '';
+            }
+        }
+    }
+}
