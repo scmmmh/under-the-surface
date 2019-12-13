@@ -23,6 +23,10 @@ LINKED_ATTRIBUTES = (
     ('religious_order', 'claims.P611'),
     ('canonisation_status', 'claims.P411'),
 )
+DIRECT_ATTRIBUTES = (
+    ('gnd', 'claims.P227'),
+    ('viaf', 'claims.P214'),
+)
 TIME_ATTRIBUTES = (
     ('date_of_birth', 'claims.P569'),
     ('date_of_death', 'claims.P570'),
@@ -38,8 +42,9 @@ EXTERNAL_LINKS = (
 def link_to_wikidata(ctx):
     """Link all people to Wikidata"""
     dbsession = ctx.obj['dbsession']
-    for person in dbsession.query(Person):
-        link_to_wikidata_person(dbsession, person)
+    with click.progressbar(dbsession.query(Person), length=dbsession.query(Person).count(), label='Linking People') as bar:
+        for person in bar:
+            link_to_wikidata_person(dbsession, person)
 
 
 QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch={0}&format=json'
@@ -140,6 +145,12 @@ def load_wikidata_data(dbsession, person, wikidata_id):
                 if value:
                     for v in value:
                         merge_person_property(dbsession, person, 'link', {'value': key.format(v), 'label': label}, source)
+            # Load direct attributes
+            for key, path in DIRECT_ATTRIBUTES:
+                value = get_structured_attribute(data, path, None)
+                if value:
+                    for v in value:
+                        merge_person_property(dbsession, person, key, v, source)
             # Load linked attributes
             sub_path = 'labels.{0}.value'.format(lang)
             for key, path in LINKED_ATTRIBUTES:
