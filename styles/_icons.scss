@@ -2,6 +2,15 @@ svg.icon {
     width: 24px;
     height: 24px;
 
+    circle {
+        fill: $white;
+        stroke: $black;
+
+        &.thick {
+            stroke-width: 2;
+        }
+    }
+
     &.small {
         width: 16px;
         height: 16px;
@@ -13,11 +22,13 @@ svg.icon {
             fill: $alert-color;
         }
     }
+
     &.warning {
         path {
             fill: $warning-color;
         }
     }
+
     &.success {
         path {
             fill: $success-color;

@@ -3,6 +3,16 @@ import re
 from datetime import datetime
 
 
+def startswith(string, prefix):
+    """Checks if the ``string`` starts with the ``prefix``."""
+    return string.startswith(prefix)
+
+
+def split(string, separator):
+    """Splits the ``string`` by the ``separator``."""
+    return string.split(separator)
+
+
 def json_strftime(timestamp):
     """Timestamp formatting that takes into account missing data."""
     match = re.match('([+-]?)([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z', timestamp)

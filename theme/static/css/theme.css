@@ -3096,6 +3096,11 @@ ul.inline, ol.inline {
 svg.icon {
   width: 24px;
   height: 24px; }
+  svg.icon circle {
+    fill: #fefefe;
+    stroke: #0a0a0a; }
+    svg.icon circle.thick {
+      stroke-width: 2; }
   svg.icon.small {
     width: 16px;
     height: 16px;

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 from gettext import NullTranslations
 
-from filters import json_strftime
+import filters
 
 
 # Dummy Translation to mark strings for translation
@@ -64,7 +64,9 @@ PERSON_LINK_CATEGORIES = (
     (_('GND'), 'gnd'),
 )
 JINJA_FILTERS = {
-    'format_timestamp': json_strftime
+    'format_timestamp': filters.json_strftime,
+    'startswith': filters.startswith,
+    'split': filters.split
 }
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n']
