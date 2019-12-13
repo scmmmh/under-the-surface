@@ -44,7 +44,8 @@ def fetch_textgrid_search(title):
 
 @click.command()
 @click.pass_context
-def load_textgrid_data(ctx):
+def link_to_textgrid(ctx):
+    """Link to works in TextGrid"""
     dbsession = ctx.obj['dbsession']
     with click.progressbar(dbsession.query(Person), length=dbsession.query(Person).count(), label='Linking People') as bar:
         for person in bar:

@@ -12,7 +12,7 @@ from util import merge_work, merge_work_property
 
 @click.command()
 @click.pass_context
-def link_dta_data(ctx):
+def link_to_dta(ctx):
     """Link to works in the DTA"""
     dbsession = ctx.obj['dbsession']
     with click.progressbar(dbsession.query(Person), length=dbsession.query(Person).count(), label='Linking People') as bar:
