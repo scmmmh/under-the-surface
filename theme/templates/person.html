@@ -40,7 +40,7 @@
       {% if page.work %}
         <section>
           <h2>{% trans %}Works{% endtrans %}</h2>
-          {% for work in page.work %}
+          {% for work in page.work|sort(attribute='title') %}
             <section>
               <h3>{{ work.title }}</h3>
               <ul class="no-bullet">
