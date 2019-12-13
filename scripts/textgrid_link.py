@@ -51,7 +51,7 @@ def link_to_textgrid(ctx):
         for person in bar:
             data = fetch_textgrid_search(person.title)
             if data:
-                source = {'url': QUERY_URL.format(person.title),
+                source = {'url': QUERY_URL.format(format_query_author(person.title)),
                           'label': 'TextGrid API',
                           'timestamp': datetime.now()}
                 data = etree.fromstring(data)
