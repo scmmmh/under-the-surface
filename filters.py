@@ -13,6 +13,11 @@ def split(string, separator):
     return string.split(separator)
 
 
+def format(string, *args, **kwargs):
+    """Format the ``string`` using new-style Python formatting."""
+    return string.format(*args, **kwargs)
+
+
 def json_strftime(timestamp):
     """Timestamp formatting that takes into account missing data."""
     match = re.match('([+-]?)([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z', timestamp)

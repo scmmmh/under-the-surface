@@ -18,7 +18,7 @@ def link_to_dta(ctx):
     with click.progressbar(dbsession.query(Person), length=dbsession.query(Person).count(), label='Linking People') as bar:
         for person in bar:
             for db_property in person.properties:
-                if db_property.name == 'gnd':
+                if db_property.name == 'gndid':
                     link_person(dbsession, person, db_property.value.value)
 
 

@@ -58,15 +58,16 @@ PERSON_METADATA = (
     (_('Canonisation Status'), 'canonisation_status', 'string'),
 )
 PERSON_LINK_CATEGORIES = (
-    (_('Wikidata'), 'wikidata'),
-    (_('Wikipedia'), 'wikipedia'),
-    (_('VIAF'), 'viaf'),
-    (_('GND'), 'gnd'),
+    (_('Wikidata'), 'wikidata', '{0}'),
+    (_('Wikipedia'), 'wikipedia', '{0}'),
+    (_('VIAF'), 'viafid', 'https://viaf.org/viaf/{0}'),
+    (_('GND'), 'gndid', 'https://d-nb.info/gnd/{0}'),
 )
 JINJA_FILTERS = {
     'format_timestamp': filters.json_strftime,
     'startswith': filters.startswith,
-    'split': filters.split
+    'split': filters.split,
+    'format': filters.format,
 }
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n']

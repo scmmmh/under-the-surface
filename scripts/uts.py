@@ -9,7 +9,7 @@ from editor import edit
 from wikidata_link import link_to_wikidata, load_wikidata_data
 from textgrid_link import link_to_textgrid
 from dta_link import link_to_dta
-from viaf_link import link_to_viaf
+from viaf_link import add_people_via_viaf, link_to_viaf
 from models import Base
 
 
@@ -28,6 +28,7 @@ main.add_command(edit)
 main.add_command(link_to_wikidata)
 main.add_command(link_to_dta)
 main.add_command(link_to_textgrid)
+main.add_command(add_people_via_viaf)
 main.add_command(link_to_viaf)
 
 if __name__ == '__main__':

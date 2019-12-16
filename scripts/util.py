@@ -4,6 +4,11 @@ from sqlalchemy import and_
 from models import Person, PersonProperty, Work, WorkProperty, Value, Source, PersonPropertySource, WorkSource, WorkPropertySource
 
 
+def slugify(text):
+    """Return a slugified version of the text."""
+    text.lower().replace(' ', '-').replace('.', '').replace(',', '').replace(':', '')
+
+
 def get_attribute(obj, path, default=None):
     """Get the value in obj at path."""
     if isinstance(path, str):
