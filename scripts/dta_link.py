@@ -30,7 +30,7 @@ def link_person(dbsession, person, gnd):
         if match:
             if int(match.group(1)) > 0:
                 source = {'url': 'http://www.deutschestextarchiv.de/search/metadata?select-1=pnd&search-1={0}&search=1'.format(gnd),
-                          'label': 'Deutsches Textarchiv',
+                          'label': 'Deutsches Textarchiv Query',
                           'timestamp': datetime.now()}
                 doc = etree.fromstring(response.text, etree.HTMLParser())
                 for link in doc.xpath("//div[@id='meta-results-short']//a"):
