@@ -25,11 +25,12 @@ def add_people_via_viaf(ctx, names):
 def link_to_viaf(ctx):
     """Link to people and works in the VIAF"""
     dbsession = ctx.obj['dbsession']
-    for person in dbsession.query(Person):
-        has_viaf = False
-        for property in person.display_properties:
-            if property.name == 'viafid':
-                link_data(dbsession, person, property.value.value)
+    with click.progressbar(dbsession.query(Person), length=dbsession.query(Person).count(), label='Linking People') as bar:
+        for person in bar:
+            has_viaf = False
+            for property in person.display_properties:
+                if property.name == 'viafid':
+                    link_data(dbsession, person, property.value.value)
 
 
 QUERY_URL = 'http://viaf.org/viaf/AutoSuggest?query={0}'
