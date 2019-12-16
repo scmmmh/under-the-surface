@@ -70,5 +70,5 @@ def link_to_textgrid(ctx):
                             work = merge_work(dbsession, person, title, source)
                             merge_work_property(dbsession, work, '{0}§provider'.format(tgid), {'label': 'TextGrid', 'value': 'https://textgridrep.org'}, source)
                             merge_work_property(dbsession, work, '{0}§data'.format(tgid), {'value': ITEM_URL.format(tgid)}, source)
-                            merge_work_property(dbsession, work, '{0}§license'.format(tgid), {'label': 'CC-BY', 'value': 'cc-by'}, source)
+                            merge_work_property(dbsession, work, '{0}§license'.format(tgid), {'label': 'CC-BY-3.0-DE', 'value': 'cc-by-3.0-de'}, source)
                             merge_work_property(dbsession, work, '{0}§license_url'.format(tgid), {'value': 'https://textgrid.de/Digitale-Bibliothek'}, source)
