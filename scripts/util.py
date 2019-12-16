@@ -82,6 +82,7 @@ def merge_person_property(dbsession, person, property, value, source):
         property_source.timestamp = source['timestamp']
         dbsession.add(property_source)
     dbsession.commit()
+    return db_property
 
 
 def merge_work(dbsession, person, title, source):
