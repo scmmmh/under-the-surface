@@ -24,17 +24,14 @@ LINKED_ATTRIBUTES = (
     ('canonisation_status', 'claims.P411'),
 )
 DIRECT_ATTRIBUTES = (
-    ('gnd', 'claims.P227'),
-    ('viaf', 'claims.P214'),
+    ('gndid', 'claims.P227'),
+    ('viafid', 'claims.P214'),
 )
 TIME_ATTRIBUTES = (
     ('date_of_birth', 'claims.P569'),
     ('date_of_death', 'claims.P570'),
 )
-EXTERNAL_LINKS = (
-    ('VIAF', 'https://viaf.org/viaf/{0}/', 'claims.P214'),
-    ('GND', 'https://d-nb.info/gnd/{0}', 'claims.P227'),
-)
+EXTERNAL_LINKS = []
 
 
 @click.command()
@@ -44,38 +41,13 @@ def link_to_wikidata(ctx):
     dbsession = ctx.obj['dbsession']
     with click.progressbar(dbsession.query(Person), length=dbsession.query(Person).count(), label='Linking People') as bar:
         for person in bar:
-            link_to_wikidata_person(dbsession, person)
+            for property in person.display_properties:
+                if property.name == 'wikidataid':
+                    load_wikidata_data(dbsession, person, property.value.value)
 
 
 QUERY_URL = 'https://www.wikidata.org/w/api.php?action=query&list=search&srsearch={0}&format=json'
 DETAILS_URL = 'https://www.wikidata.org/wiki/Special:EntityData/{0}.json'
-
-
-def link_to_wikidata_person(dbsession, person):
-    """Link a single person to a Wikidata entry."""
-    for result in query_wikidata(person.title):
-        data = load_wikidata_attribute(result['title'], 'claims.P31')
-        if data:
-            source = {'url': QUERY_URL.format(person.title),
-                      'label': 'Wikidata',
-                      'timestamp': datetime.now()}
-            for attr in data:
-                if get_attribute(attr, 'mainsnak.datavalue.value.id') == 'Q5':
-                    data = fetch_wikidata_page(result['title'])
-                    matches = False
-                    if person.title in [l['value'] for l in data['labels'].values()]:
-                        matches = True
-                    elif person.title in [l['value'] for a in data['aliases'].values() for l in a]:
-                        matches = True
-                    if matches:
-                        merge_person_property(dbsession,
-                                       person,
-                                       'link',
-                                       {'value': 'https://www.wikidata.org/wiki/{0}'.format(result['title']),
-                                        'label': result['title']},
-                                       source)
-                        load_wikidata_data(dbsession, person, result['title'])
-                    break
 
 
 QUERY_CACHE = {}
@@ -121,7 +93,7 @@ def fetch_wikidata_page(title):
 def load_wikidata_data(dbsession, person, wikidata_id):
     """Load data from Wikidata."""
     source = {"url": DETAILS_URL.format(wikidata_id),
-              "label": wikidata_id,
+              "label": 'Wikidata Record',
               'timestamp': datetime.now()}
     data = fetch_wikidata_page(wikidata_id)
     if data:
