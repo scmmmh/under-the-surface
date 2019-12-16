@@ -22,12 +22,14 @@ ITEM_URL = 'https://textgridlab.org/1.0/aggregator/teicorpus/{0}?flat=true'
 
 
 def format_query_author(title):
-    if ' von ' in title:
-        return NAME_STRUCTURE.format(givenName=title[title.find(' von ') + 5:].strip(),
-                                     firstName=title[:title.find(' von ') + 5].strip())
-    title = title.split()
-    return NAME_STRUCTURE.format(givenName=title[-1],
-                                 firstName=' '.join(title[:-1]))
+    if ',' not in title:
+        if ' von ' in title:
+            return NAME_STRUCTURE.format(givenName=title[title.find(' von ') + 5:].strip(),
+                                         firstName=title[:title.find(' von ') + 5].strip())
+        title = title.split()
+        return NAME_STRUCTURE.format(givenName=title[-1],
+                                     firstName=' '.join(title[:-1]))
+    return title
 
 
 def fetch_textgrid_search(title):
