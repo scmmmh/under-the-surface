@@ -71,7 +71,7 @@
       <section>
         <h2>{% trans %}Undigitised Works{% endtrans %}</h2>
         <ul class="no-bullet">
-          {% for category, works in page.work|selectattr('copies')|groupby(attribute='category') %}
+          {% for category, works in page.work|rejectattr('copies')|groupby(attribute='category') %}
             <li><h3>{{ category }}</h3>
               <ol class="no-bullet">
                 {% for work in page.work|rejectattr('copies')|sort(attribute='title') %}
