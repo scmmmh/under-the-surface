@@ -51,7 +51,7 @@
                       <div class="cell auto"><a href="{{ copy.data.value }}" target="_blank" rel="noopener">{{ copy.data.value }}</a></div>
                       <div class="cell shrink license">
                         {% if copy.license_url %}
-                          <a href="{{ copy.license_url.value }}" target="_blank" rel="noopener">
+                          <a href="{{ copy.license_url.value }}" target="_blank" rel="noopener" title="{{ copy.license.value }}">
                         {% endif %}
                         {% if copy.license.value|startswith('cc-') %}
                           {% for cc_part in copy.license.value|split('-') %}
@@ -129,12 +129,14 @@
                             			c-4.268,0-6.667,1.885-7.2,5.656h2.343l-6.342,6.343l-6.343-6.343L23.271,23.985L23.271,23.985z"/>
                                 </g>
                               </svg>
-                            {% elif cc_part in ['3.0', '4.0'] %}
+                            {% elif cc_part in ['2.0', '3.0', '4.0'] %}
                               <svg viewBox="0 0 24 24" class="icon">
                                 <g>
                                   <circle cx="12" cy="12" r="11" class="thick"/>
                                   <g transform="translate(-4 0)">
-                                    {% if cc_part == '3.0' %}
+                                    {% if cc_part == '2.0' %}
+                                      <path d="M9,7V9H13V11H11A2,2 0 0,0 9,13V17H11L15,17V15H11V13H13A2,2 0 0,0 15,11V9A2,2 0 0,0 13,7H9Z" />
+                                    {% elif cc_part == '3.0' %}
                                       <path d="M15,15V13.5A1.5,1.5 0 0,0 13.5,12A1.5,1.5 0 0,0 15,10.5V9C15,7.89 14.1,7 13,7H9V9H13V11H11V13H13V15H9V17H13A2,2 0 0,0 15,15" />
                                     {% elif cc_part == '4.0' %}
                                       <path d="M9,7V13H13V17H15V7H13V11H11V7H9Z" />
