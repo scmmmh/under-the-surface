@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-10 14:50+0000\n"
+"POT-Creation-Date: 2020-02-10 15:10+0000\n"
 "PO-Revision-Date: 2019-05-16 20:30+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -181,10 +181,18 @@ msgstr "Digitised Works"
 msgid "See more details on %(title)s"
 msgstr "See more details on %(title)s"
 
+#: theme/templates/person.html:49
+msgid "Download this work as TEI"
+msgstr "Download this work as TEI"
+
 #: theme/templates/person.html:50
 #, python-format
 msgid "Download %(title)s provided by  %(provider)s"
 msgstr "Download %(title)s provided by  %(provider)s"
+
+#: theme/templates/person.html:54
+msgid "Read this work online"
+msgstr "Read this work online"
 
 #: theme/templates/person.html:55
 #, python-format
@@ -261,4 +269,3 @@ msgstr "The information on this page has not been verified"
 #: theme/templates/person.html:227
 msgid "Works"
 msgstr "Works"
-

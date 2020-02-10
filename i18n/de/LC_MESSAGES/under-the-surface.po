@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-10 14:50+0000\n"
+"POT-Creation-Date: 2020-02-10 15:10+0000\n"
 "PO-Revision-Date: 2019-05-16 20:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -181,10 +181,18 @@ msgstr "Digitalisierte Werke"
 msgid "See more details on %(title)s"
 msgstr "Mehr Details zu %(title)s"
 
+#: theme/templates/person.html:49
+msgid "Download this work as TEI"
+msgstr "Dieses Werk als TEI herunterladen"
+
 #: theme/templates/person.html:50
 #, python-format
 msgid "Download %(title)s provided by  %(provider)s"
 msgstr "%(title)s bereitgestellt durch %(provider)s herunterladen"
+
+#: theme/templates/person.html:54
+msgid "Read this work online"
+msgstr "Dieses Werk online lesen"
 
 #: theme/templates/person.html:55
 #, python-format

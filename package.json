@@ -9,7 +9,8 @@
     "foundation-sites": "^6.5.3",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
-    "pump": "^3.0.0"
+    "pump": "^3.0.0",
+    "tippy.js": "^5.2.0"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.1",

@@ -1,4 +1,5 @@
 $(document).foundation();
+tippy('[data-tippy-content]');
 
 (function() {
     function setup_anchor(anchor) {

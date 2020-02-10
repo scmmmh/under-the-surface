@@ -11,6 +11,7 @@ gulp.task('styles', function(cb) {
         sass({
             includePaths: [
                 'node_modules/foundation-sites/scss',
+                'node_modules/tippy.js/dist',
                 'node_modules'
             ]
         }),
@@ -32,6 +33,8 @@ gulp.task('scripts', function(cb) {
             'node_modules/foundation-sites/dist/js/plugins/foundation.util.box.min.js',
             'node_modules/foundation-sites/dist/js/plugins/foundation.util.nest.min.js',
             'node_modules/foundation-sites/dist/js/plugins/foundation.dropdownMenu.min.js',
+            'node_modules/popper.js/dist/umd/popper.min.js',
+            'node_modules/tippy.js/dist/tippy.iife.min.js',
             'js/app.js'
         ]),
         concat('app.js'),
