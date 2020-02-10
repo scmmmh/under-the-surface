@@ -65,23 +65,29 @@
                 {% endfor %}
               </ol>
             </li>
+          {% else %}
+            {% if page.work|length > 0 %}
+              <li>{% trans count=page.work|length %}The author's work has not been digitised.{% pluralize %}None of the author's {{ count }} works have been digitised.{% endtrans %}</li>
+            {% endif %}
           {% endfor %}
         </ul>
       </section>
-      <section>
-        <h2>{% trans %}Undigitised Works{% endtrans %}</h2>
-        <ul class="no-bullet">
-          {% for category, works in page.work|rejectattr('copies')|groupby(attribute='category') %}
-            <li><h3>{{ category }}</h3>
-              <ol class="no-bullet">
-                {% for work in page.work|rejectattr('copies')|sort(attribute='title') %}
-                  <li>{{ work.title }}</li>
-                {% endfor %}
-              </ol>
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
+      {% if page.work|rejectattr('copies')|list|length > 0 %}
+        <section>
+          <h2>{% trans %}Undigitised Works{% endtrans %}</h2>
+          <ul class="no-bullet">
+            {% for category, works in page.work|rejectattr('copies')|groupby(attribute='category') %}
+              <li><h3>{{ category }}</h3>
+                <ol class="no-bullet">
+                  {% for work in page.work|rejectattr('copies')|sort(attribute='title') %}
+                    <li>{{ work.title }}</li>
+                  {% endfor %}
+                </ol>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
     </div>
     <div class="cell small-12 medium-4 medium-offset-1 large-5">
       <section class="grid-x grid-padding-x">

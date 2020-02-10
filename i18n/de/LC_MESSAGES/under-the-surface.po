@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-10 14:28+0000\n"
+"POT-Creation-Date: 2020-02-10 14:50+0000\n"
 "PO-Revision-Date: 2019-05-16 20:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -191,69 +191,76 @@ msgstr "%(title)s bereitgestellt durch %(provider)s herunterladen"
 msgid "Read %(title)s provided by  %(provider)s"
 msgstr "%(title)s bereitgestellt durch %(provider)s lesen"
 
-#: theme/templates/person.html:72
+#: theme/templates/person.html:70
+#, python-format
+msgid "The author's work has not been digitised."
+msgid_plural "None of the author's %(count)s works have been digitised."
+msgstr[0] "Das Werk der/des Autorin/Autors ist nicht digitalisiert."
+msgstr[1] "Keine der %(count)s Werke der/des Autorin/Autors sind digitalisiert."
+
+#: theme/templates/person.html:77
 msgid "Undigitised Works"
 msgstr "Nicht Digitalisierte Werke"
 
-#: theme/templates/person.html:89 theme/templates/person.html:395
+#: theme/templates/person.html:95 theme/templates/person.html:401
 msgid "Personal Information"
 msgstr "Persönliche Daten"
 
-#: theme/templates/person.html:107 theme/templates/person.html:363
+#: theme/templates/person.html:113 theme/templates/person.html:369
 msgid "Links"
 msgstr "Verlinkungen"
 
-#: theme/templates/person.html:118 theme/templates/person.html:412
+#: theme/templates/person.html:124 theme/templates/person.html:418
 msgid "Unique Identifiers"
 msgstr "Eindeutige Identifikatoren"
 
-#: theme/templates/person.html:131
+#: theme/templates/person.html:137
 msgid "Verification"
 msgstr "Verifizierung"
 
-#: theme/templates/person.html:151
+#: theme/templates/person.html:157
 msgid ""
 "All the information shown on this page have been manually verified. While"
 " this does not (and cannot) ensure that the information is always true, "
 "it is considered to be correct based on the currently available sources."
 msgstr ""
-"Alle auf dieser Seite angezeigten Informationen wurden manuell verifiziert."
-" Dies bedeutet nicht, dass die Informationen immer korrekt sind (dies ist"
-" auch nie möglich), aber sie sind basierenden auf den aktuell verfügbaren Quellen"
-" korrekt"
+"Alle auf dieser Seite angezeigten Informationen wurden manuell "
+"verifiziert. Dies bedeutet nicht, dass die Informationen immer korrekt "
+"sind (dies ist auch nie möglich), aber sie sind basierenden auf den "
+"aktuell verfügbaren Quellen korrekt"
 
-#: theme/templates/person.html:153
+#: theme/templates/person.html:159
 msgid "Some of the information shown on this page has been manually verified."
 msgstr ""
-"Ein Teil der auf dieser Seite angezeigten Informationen wurde manuell"
-" verifziert"
+"Ein Teil der auf dieser Seite angezeigten Informationen wurde manuell "
+"verifziert"
 
-#: theme/templates/person.html:155
+#: theme/templates/person.html:161
 msgid ""
 "None of the information on this page has been manually verified. This "
 "does not mean that it is not true, but its veracity is yet to be "
 "established."
 msgstr ""
 "Keine der Informationen auf dieser Seite wurden manuell verifiziert. Dies"
-" bedeutet nicht, dass sie nicht korrekt sind, aber sie wurden noch nicht"
-" manuell verifiziert."
+" bedeutet nicht, dass sie nicht korrekt sind, aber sie wurden noch nicht "
+"manuell verifiziert."
 
-#: theme/templates/person.html:163 theme/templates/person.html:373
+#: theme/templates/person.html:169 theme/templates/person.html:379
 msgid "Sources"
 msgstr "Quellen"
 
-#: theme/templates/person.html:194
+#: theme/templates/person.html:200
 msgid "The information on this page has been verified"
 msgstr "Die Informationen auf dieser Seite sind verfiziert worden"
 
-#: theme/templates/person.html:200
+#: theme/templates/person.html:206
 msgid "The information on this page has been verified partially"
 msgstr "Die Informationen auf dieser Seite sind teilweise verifiziert worden"
 
-#: theme/templates/person.html:206
+#: theme/templates/person.html:212
 msgid "The information on this page has not been verified"
 msgstr "Die Informationen auf dieser Seite sind nicht verifiziert worden"
 
-#: theme/templates/person.html:221
+#: theme/templates/person.html:227
 msgid "Works"
 msgstr "Werke"

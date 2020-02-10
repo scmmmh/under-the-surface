@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-10 14:28+0000\n"
+"POT-Creation-Date: 2020-02-10 14:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -183,61 +183,68 @@ msgstr ""
 msgid "Read %(title)s provided by  %(provider)s"
 msgstr ""
 
-#: theme/templates/person.html:72
+#: theme/templates/person.html:70
+#, python-format
+msgid "The author's work has not been digitised."
+msgid_plural "None of the author's %(count)s works have been digitised."
+msgstr[0] ""
+msgstr[1] ""
+
+#: theme/templates/person.html:77
 msgid "Undigitised Works"
 msgstr ""
 
-#: theme/templates/person.html:89 theme/templates/person.html:395
+#: theme/templates/person.html:95 theme/templates/person.html:401
 msgid "Personal Information"
 msgstr ""
 
-#: theme/templates/person.html:107 theme/templates/person.html:363
+#: theme/templates/person.html:113 theme/templates/person.html:369
 msgid "Links"
 msgstr ""
 
-#: theme/templates/person.html:118 theme/templates/person.html:412
+#: theme/templates/person.html:124 theme/templates/person.html:418
 msgid "Unique Identifiers"
 msgstr ""
 
-#: theme/templates/person.html:131
+#: theme/templates/person.html:137
 msgid "Verification"
 msgstr ""
 
-#: theme/templates/person.html:151
+#: theme/templates/person.html:157
 msgid ""
 "All the information shown on this page have been manually verified. While"
 " this does not (and cannot) ensure that the information is always true, "
 "it is considered to be correct based on the currently available sources."
 msgstr ""
 
-#: theme/templates/person.html:153
+#: theme/templates/person.html:159
 msgid "Some of the information shown on this page has been manually verified."
 msgstr ""
 
-#: theme/templates/person.html:155
+#: theme/templates/person.html:161
 msgid ""
 "None of the information on this page has been manually verified. This "
 "does not mean that it is not true, but its veracity is yet to be "
 "established."
 msgstr ""
 
-#: theme/templates/person.html:163 theme/templates/person.html:373
+#: theme/templates/person.html:169 theme/templates/person.html:379
 msgid "Sources"
 msgstr ""
 
-#: theme/templates/person.html:194
+#: theme/templates/person.html:200
 msgid "The information on this page has been verified"
 msgstr ""
 
-#: theme/templates/person.html:200
+#: theme/templates/person.html:206
 msgid "The information on this page has been verified partially"
 msgstr ""
 
-#: theme/templates/person.html:206
+#: theme/templates/person.html:212
 msgid "The information on this page has not been verified"
 msgstr ""
 
-#: theme/templates/person.html:221
+#: theme/templates/person.html:227
 msgid "Works"
 msgstr ""
 
