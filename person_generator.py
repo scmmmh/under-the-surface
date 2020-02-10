@@ -91,6 +91,8 @@ class PersonGenerator(Generator):
             if 'work' not in metadata:
                 metadata['work'] = []
             work = {'title': db_work.title,
+                    'category': 'Uncategorised',
+                    'year': 10000,
                     'copies': {}}
             if db_work.status == 'confirmed' and verification >= 0:
                 verification = 2 if verification == 2 else 1

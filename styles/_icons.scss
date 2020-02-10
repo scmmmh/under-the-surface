@@ -35,9 +35,26 @@ svg.icon {
         }
     }
 }
+
 [role="menu"] {
     svg.icon {
         width: 18px;
         height: 18px;
+    }
+}
+
+a {
+    svg.icon {
+        path {
+            fill: $anchor-color;
+        }
+    }
+
+    &:hover {
+        svg.icon {
+            path {
+                fill: $anchor-color-hover;
+            }
+        }
     }
 }

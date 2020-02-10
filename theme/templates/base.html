@@ -17,29 +17,33 @@
     {% endblock %}
   </head>
   <body>
+    <div class="top-bar-full-width">
+      <div class="grid-container">
+        <header class="top-bar">
+          <nav class="top-bar-left">
+            <ul class="menu">
+              <li><a href="{{ SITEURL }}">{{ SITENAME }}<small>{{ SITE_TAGLINE }}</small></a></li>
+            </ul>
+          </nav>
+          <nav class="top-bar-right">
+            <ul class="menu dropdown" data-dropdown-menu>
+              <li><a href="{{ SITEURL }}/pages/browse.html">{% trans %}People{% endtrans %}</a></li>
+              <!--<li role="presentation"><a href="" role="menuitem" tabindex="-1">Search</a></li>-->
+              <!--<li><a href="{{ SITEURL }}">{% trans %}Blog{% endtrans %}</a></li>-->
+              <!--<li role="presentation"><a href="" role="menuitem" tabindex="-1">About</a></li>-->
+              <li class="is-dropdown-submenu-parent"><a href="#">{% trans %}Language{% endtrans %}</a>
+                <ul class="menu">
+                  {% for code, label in LANGUAGES %}
+                    <li{% if code == DEFAULT_LANG %} class="current"{% endif %}><a href="{{ BASE_SITEURL }}/{{ code }}/{{output_file}}">{{ label }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </div>
     <div class="grid-container">
-      <header class="top-bar">
-        <nav class="top-bar-left">
-          <ul class="menu">
-            <li><a href="{{ SITEURL }}">{{ SITENAME }}<small>{{ SITE_TAGLINE }}</small></a></li>
-          </ul>
-        </nav>
-        <nav class="top-bar-right">
-          <ul class="menu dropdown" data-dropdown-menu>
-            <li><a href="{{ SITEURL }}/pages/browse.html">{% trans %}Browse{% endtrans %}</a></li>
-            <!--<li role="presentation"><a href="" role="menuitem" tabindex="-1">Search</a></li>-->
-            <li><a href="{{ SITEURL }}">{% trans %}Blog{% endtrans %}</a></li>
-            <!--<li role="presentation"><a href="" role="menuitem" tabindex="-1">About</a></li>-->
-            <li class="is-dropdown-submenu-parent"><a href="#">{% trans %}Language{% endtrans %}</a>
-              <ul class="menu">
-                {% for code, label in LANGUAGES %}
-                  <li{% if code == DEFAULT_LANG %} class="current"{% endif %}><a href="{{ BASE_SITEURL }}/{{ code }}/{{output_file}}">{{ label }}</a></li>
-                {% endfor %}
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </header>
       {% block content %}{% endblock content %}
     </div>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/app.js" async></script>

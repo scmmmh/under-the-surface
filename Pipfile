@@ -12,6 +12,7 @@ requests = "*"
 babel = "*"
 lxml = "*"
 sqlalchemy = "*"
+jinja2 = "*"
 
 [requires]
 python_version = "3.7"

@@ -44,6 +44,6 @@ gulp.task('default', gulp.parallel('styles', 'scripts'));
 
 gulp.task('watch', gulp.series('default', function(cb) {
     gulp.watch('styles/*.*', gulp.series('styles'));
-    //gulp.watch('scripts/**/*.*', gulp.series('scripts'))
+    gulp.watch('js/**/*.*', gulp.series('scripts'));
     cb();
 }));

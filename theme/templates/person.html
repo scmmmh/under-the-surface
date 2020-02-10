@@ -3,6 +3,185 @@
 {% block title %}{{ page.title }}{% endblock title %}
 
 {% block content %}
+{% import 'macros.html' as macros %}
+<main class="person">
+  <div class="grid-x grid-padding-x">
+    <div class="cell auto">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+  <div class="grid-x grid-padding-x">
+    <div class="cell small-12 medium-7 large-6">
+      <section>{{ page.content }}</section>
+      <section class="digitised-works">
+        <h2>{% trans %}Digitised Works{% endtrans %}</h2>
+        <ul class="no-bullet">
+          {% for category, works in page.work|selectattr('copies')|groupby(attribute='category') %}
+            <li><h3>{{ category }}</h3>
+              <ol class="no-bullet">
+                {% for work in works|sort(attribute='year,title') %}
+                  <li class="grid-x grid-padding-x">
+                    <span class="cell auto">{{ work.title }}</span>
+                    <span class="cell shrink">
+                      {% if work.year != 10000 %}
+                        <a data-action="toggle-display" data-toggle-display="#book-metadata-{{ loop.index0 }}">
+                          <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title %}See more details on {{ title }}{% endtrans %}">
+                            <path d="M13.5,4A1.5,1.5 0 0,0 12,5.5A1.5,1.5 0 0,0 13.5,7A1.5,1.5 0 0,0 15,5.5A1.5,1.5 0 0,0 13.5,4M13.14,8.77C11.95,8.87 8.7,11.46 8.7,11.46C8.5,11.61 8.56,11.6 8.72,11.88C8.88,12.15 8.86,12.17 9.05,12.04C9.25,11.91 9.58,11.7 10.13,11.36C12.25,10 10.47,13.14 9.56,18.43C9.2,21.05 11.56,19.7 12.17,19.3C12.77,18.91 14.38,17.8 14.54,17.69C14.76,17.54 14.6,17.42 14.43,17.17C14.31,17 14.19,17.12 14.19,17.12C13.54,17.55 12.35,18.45 12.19,17.88C12,17.31 13.22,13.4  13.89,10.71C14,10.07 14.3,8.67 13.14,8.77Z" />
+                          </svg>
+                        </a>
+                      {% endif %}
+                    </span>
+                    <div id="book-metadata-{{ loop.index0 }}" class="cell small-12 book-metadata hidden">
+                      <dl class="grid-x grid-padding-x">
+                        {% if work.year != 10000 %}
+                          <dt class="cell small-12 medium-4">Published</dt>
+                          <dd class="cell small-12 medium-8">{{ work.year }}</dd>
+                        {% endif %}
+                      </dl>
+                    </div>
+                    <div class="cell small-12 book-copies">
+                      <ul class="no-bullet">
+                        {% for copy in work.copies.values() %}
+                          <li class="grid-x grid-padding-x">
+                            <span class="cell auto">{{ copy.provider.label }}</span>
+                            <span class="cell shrink">{{ macros.license_block(copy.license) }}</span>
+                            <span class="cell shrink">
+                              <a href="{{ copy.data.value }}" rel="noopener">
+                                <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title, provider=copy.provider.label %}Download {{ title }} provided by  {{ provider }}{% endtrans %}">
+                                  <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                </svg>
+                              </a>
+                              <a>
+                                <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title, provider=copy.provider.label %}Read {{ title }} provided by  {{ provider }}{% endtrans %}">
+                                  <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z" />
+                                </svg>
+                              </a>
+                            </span>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ol>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section>
+        <h2>{% trans %}Undigitised Works{% endtrans %}</h2>
+        <ul class="no-bullet">
+          {% for category, works in page.work|selectattr('copies')|groupby(attribute='category') %}
+            <li><h3>{{ category }}</h3>
+              <ol class="no-bullet">
+                {% for work in page.work|rejectattr('copies')|sort(attribute='title') %}
+                  <li>{{ work.title }}</li>
+                {% endfor %}
+              </ol>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+    <div class="cell small-12 medium-4 medium-offset-1 large-5">
+      <section class="grid-x grid-padding-x">
+        <div class="cell small-12">
+          <h2>{% trans %}Personal Information{% endtrans %}</h2>
+        </div>
+        {% for label, field, type in PERSON_METADATA %}
+          {% if page[field] and page[field] %}
+            <section class="cell small-6">
+              <h3>{{ label }}</h3>
+              <ul class="no-bullet">
+                {% for value in page[field] %}
+                  <li>{% if type == 'timestamp' %}{{ value.value|format_timestamp }}{% else %}{% if value.label %}{{ value.label }}{% else %}{{ value.value }}{% endif %}{% endif %}</li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endif %}
+        {% endfor %}
+      </section>
+      {% if page.link %}
+        <section class="grid-x grid-padding-x">
+          <div class="cell small-12">
+            <h2>{% trans %}Links{% endtrans %}</h2>
+            <ul class="no-bullet">
+              {% for link in page.link %}
+                <li><a href="{{ link.value|escape }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </section>
+      {% endif %}
+      <section class="grid-x grid-padding-x">
+        <div class="cell small-12">
+          <h2>{% trans %}Unique Identifiers{% endtrans %}</h2>
+          <ul class="no-bullet">
+          {% for label, field, baseurl in PERSON_LINK_CATEGORIES %}
+            {% if page[field] %}
+              {% for value in page[field] %}
+                <li><a href="{{ baseurl|format(value['value']) }}" target="_blank" rel="noopener">{{ value['value'] }} ({{ label }})</a></li>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+      <section>
+        <h2 class="grid-x grid-padding-x">
+          <span class="cell auto">{% trans %}Verification{% endtrans %}</span>
+          <span class="cell shrink">
+          {% if page.verification == 'full' %}
+            <svg viewBox="0 0 24 24" class="icon success">
+              <path d="M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
+            </svg>
+          {% elif page.verification == 'partial' %}
+            <svg viewBox="0 0 24 24" class="icon warning">
+              <path d="M19.5,5.5V18.5H17.5V5.5H19.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
+            </svg>
+          {% else %}
+            <svg viewBox="0 0 24 24" class="icon alert">
+              <path d="M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z" />
+            </svg>
+          {% endif %}
+        </h2>
+        <div class="grid-x grid-padding-x">
+          <div class="cell small-12">
+            <p>
+              {% if page.verification == 'full' %}
+                {% trans %}All the information shown on this page have been manually verified. While this does not (and cannot) ensure that the information is always true, it is considered to be correct based on the currently available sources.{% endtrans %}
+              {% elif page.verification == 'partial' %}
+                {% trans %}Some of the information shown on this page has been manually verified.{% endtrans %}
+              {% else %}
+                {% trans %}None of the information on this page has been manually verified. This does not mean that it is not true, but its veracity is yet to be established.{% endtrans %}
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="cell small-12">
+      <h2>{% trans %}Sources{% endtrans %}</h2>
+      <ul class="no-bullet grid-x grid-padding-x">
+        {% for source in page.sources.values() %}
+          <li class="cell small-12 margin-bottom">
+            <div class="label">{{ source.label }}</div>
+            <div class="source"><a href="{{ source.url|escape }}" target="_blank" rel="noopener">{{ source.url }}</a></div>
+            <div class="timestamp">
+              <ul class="inline">
+                {% for timestamp in source.timestamps %}
+                  <li>{{ timestamp|format_timestamp }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</main>
+{% endblock content %}
+
+{% block content_old %}
 <main class="person">
   <div class="grid-x grid-padding-x">
     <div class="cell auto">
@@ -247,4 +426,4 @@
     </aside>
   </div>
 </main>
-{% endblock content %}
+{% endblock content_old %}

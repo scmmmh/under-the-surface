@@ -1,4 +1,9 @@
+.top-bar-full-width {
+    background: $purple;
+}
+
 .top-bar {
+    color: $white;
     margin-bottom: $global-margin * 2;
 }
 .top-bar-left li:first-child a {
@@ -8,9 +13,10 @@
     font-family: 'Playfair Display SC', Georgia, serif;
 
     &:link, &:visited, &:hover {
-        color: $black;
+        color: $white;
+
         &[aria-current="true"] {
-            color: $black;
+            color: $white;
         }
     }
 
@@ -22,5 +28,19 @@
     }
 }
 .top-bar-right {
-    border-bottom: 1px solid $primary-color;
+    border-bottom: 1px solid $white;
+
+    .menu {
+        &.dropdown, &.submenu {
+            > li {
+                > a {
+                    background: $purple;
+                    color: $white;
+
+                    &::after {
+                    }
+                }
+            }
+        }
+    }
 }
