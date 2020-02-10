@@ -6,7 +6,7 @@ from models import Person, PersonProperty, Work, WorkProperty, Value, Source, Pe
 
 def slugify(text):
     """Return a slugified version of the text."""
-    text.lower().replace(' ', '-').replace('.', '').replace(',', '').replace(':', '')
+    return text.lower().replace(' ', '-').replace('.', '').replace(',', '').replace(':', '')
 
 
 def get_attribute(obj, path, default=None):
