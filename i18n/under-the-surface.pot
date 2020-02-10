@@ -1,21 +1,21 @@
 # Translations template for PROJECT.
-# Copyright (C) 2019 ORGANIZATION
+# Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-17 08:57+0200\n"
+"POT-Creation-Date: 2020-02-10 14:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: pelicanconf.py:15
 msgid "Under the Surface"
@@ -123,8 +123,8 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: theme/templates/base.html:30 theme/templates/browse.html:3
-msgid "Browse"
+#: theme/templates/base.html:30
+msgid "People"
 msgstr ""
 
 #: theme/templates/base.html:32
@@ -133,6 +133,10 @@ msgstr ""
 
 #: theme/templates/base.html:34
 msgid "Language"
+msgstr ""
+
+#: theme/templates/browse.html:3
+msgid "Browse"
 msgstr ""
 
 #: theme/templates/browse.html:7
@@ -160,31 +164,80 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: theme/templates/person.html:15
-msgid "The information on this page has been verified"
+#: theme/templates/person.html:17
+msgid "Digitised Works"
 msgstr ""
 
-#: theme/templates/person.html:21
-msgid "The information on this page has been verified partially"
+#: theme/templates/person.html:28
+#, python-format
+msgid "See more details on %(title)s"
 msgstr ""
 
-#: theme/templates/person.html:27
-msgid "The information on this page has not been verified"
+#: theme/templates/person.html:50
+#, python-format
+msgid "Download %(title)s provided by  %(provider)s"
 msgstr ""
 
-#: theme/templates/person.html:42
-msgid "Works"
+#: theme/templates/person.html:55
+#, python-format
+msgid "Read %(title)s provided by  %(provider)s"
 msgstr ""
 
-#: theme/templates/person.html:47
+#: theme/templates/person.html:72
+msgid "Undigitised Works"
+msgstr ""
+
+#: theme/templates/person.html:89 theme/templates/person.html:395
+msgid "Personal Information"
+msgstr ""
+
+#: theme/templates/person.html:107 theme/templates/person.html:363
 msgid "Links"
 msgstr ""
 
-#: theme/templates/person.html:73
+#: theme/templates/person.html:118 theme/templates/person.html:412
+msgid "Unique Identifiers"
+msgstr ""
+
+#: theme/templates/person.html:131
+msgid "Verification"
+msgstr ""
+
+#: theme/templates/person.html:151
+msgid ""
+"All the information shown on this page have been manually verified. While"
+" this does not (and cannot) ensure that the information is always true, "
+"it is considered to be correct based on the currently available sources."
+msgstr ""
+
+#: theme/templates/person.html:153
+msgid "Some of the information shown on this page has been manually verified."
+msgstr ""
+
+#: theme/templates/person.html:155
+msgid ""
+"None of the information on this page has been manually verified. This "
+"does not mean that it is not true, but its veracity is yet to be "
+"established."
+msgstr ""
+
+#: theme/templates/person.html:163 theme/templates/person.html:373
 msgid "Sources"
 msgstr ""
 
-#: theme/templates/person.html:89
-msgid "Personal Information"
+#: theme/templates/person.html:194
+msgid "The information on this page has been verified"
+msgstr ""
+
+#: theme/templates/person.html:200
+msgid "The information on this page has been verified partially"
+msgstr ""
+
+#: theme/templates/person.html:206
+msgid "The information on this page has not been verified"
+msgstr ""
+
+#: theme/templates/person.html:221
+msgid "Works"
 msgstr ""
 
