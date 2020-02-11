@@ -3222,6 +3222,9 @@ aside {
 .person .digitised-works .dropdown-pane li {
   margin-bottom: 0; }
 
+.person .work {
+  font-style: italic; }
+
 .tippy-tooltip[data-animation=fade][data-state=hidden] {
   opacity: 0; }
 
