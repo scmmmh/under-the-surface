@@ -112,7 +112,7 @@ class PersonGenerator(Generator):
                     verification = 1
             metadata['work'].append(work)
         if 'summary' in metadata:
-            content = ''.join(['<p>{0}</p>'.format(p['value']) for p in metadata['summary']])
+            content = ''.join(['<p>{0}</p>'.format(p['value']) if not p['value'].startswith('<p>') else p['value'] for p in metadata['summary']])
         else:
             content = ''
         if verification == 2:

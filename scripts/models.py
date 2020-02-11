@@ -15,9 +15,9 @@ class Person(Base):
     status = Column(String(255))
 
     properties = relationship('PersonProperty')
-    display_properties = relationship('PersonProperty', primaryjoin="and_(Person.id == PersonProperty.person_id, PersonProperty.status != 'incorrect')")
+    display_properties = relationship('PersonProperty', primaryjoin="and_(Person.id == PersonProperty.person_id, PersonProperty.status.notin_(['incorrect', 'ignored']))")
     works = relationship('Work')
-    display_works = relationship('Work', primaryjoin="and_(Person.id == Work.person_id, Work.status != 'incorrect')")
+    display_works = relationship('Work', primaryjoin="and_(Person.id == Work.person_id, Work.status.notin_(['incorrect', 'ignored']))")
 
 
 class PersonProperty(Base):
@@ -47,7 +47,7 @@ class Work(Base):
     person = relationship('Person')
     sources = relationship('WorkSource')
     properties = relationship('WorkProperty')
-    display_properties = relationship('WorkProperty', primaryjoin="and_(Work.id == WorkProperty.work_id, WorkProperty.status != 'incorrect')")
+    display_properties = relationship('WorkProperty', primaryjoin="and_(Work.id == WorkProperty.work_id, WorkProperty.status.notin_(['incorrect', 'ignored']))")
 
 
 class WorkProperty(Base):
