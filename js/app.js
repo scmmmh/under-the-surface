@@ -35,6 +35,7 @@ tippy('[data-tippy-content]');
                     for(let idx = 1; idx < paragraphs.length; idx++) {
                         paragraphs[idx].classList.toggle('hidden');
                     }
+                    anchor.parentElement.classList.add('hidden');
                 });
             } else {
                 anchor.parentElement.classList.add('hidden');
