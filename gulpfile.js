@@ -32,6 +32,7 @@ gulp.task('scripts', function(cb) {
             'node_modules/foundation-sites/dist/js/plugins/foundation.util.keyboard.min.js',
             'node_modules/foundation-sites/dist/js/plugins/foundation.util.box.min.js',
             'node_modules/foundation-sites/dist/js/plugins/foundation.util.nest.min.js',
+            'node_modules/foundation-sites/dist/js/plugins/foundation.dropdown.min.js',
             'node_modules/foundation-sites/dist/js/plugins/foundation.dropdownMenu.min.js',
             'node_modules/popper.js/dist/umd/popper.min.js',
             'node_modules/tippy.js/dist/tippy.iife.min.js',

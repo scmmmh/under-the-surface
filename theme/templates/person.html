@@ -23,6 +23,60 @@
                   <li class="grid-x grid-padding-x">
                     <span class="cell auto">{{ work.title }}</span>
                     <span class="cell shrink">
+                      {% if work.copies.values()|length == 1 %}
+                        {% with %}
+                          {% set copy=work.copies.values()|first %}
+                          <a data-tippy-content="{% trans %}Read this work online{% endtrans %}" data-tippy-placement="bottom" data-tippy-delay="500">
+                            <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title, provider=copy.provider.label %}Read {{ title }} provided by  {{ provider }}{% endtrans %}">
+                              <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z" />
+                            </svg>
+                          </a>
+                        {% endwith %}
+                      {% else %}
+                        <a data-toggle="read-work-{{ loop.index0 }}">
+                          <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title %}Download {{ title }}{% endtrans %}">
+                            <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z" />
+                          </svg>
+                        </a>
+                        <div id="read-work-{{ loop.index0 }}" class="dropdown-pane" data-dropdown="" data-position="bottom" data-alignment="right" data-hover="true" data-hover-pane="true">
+                          <ul class="no-bullet">
+                            {% for copy in work.copies.values() %}
+                              <li class="grid-x grid-padding-x">
+                                <span class="cell auto">{{ copy.provider.label }}</span>
+                                <span class="cell shrink">
+                                  <a data-tippy-content="{% trans %}Read this work online{% endtrans %}" data-tippy-placement="bottom" data-tippy-delay="500">
+                                    <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title, provider=copy.provider.label %}Read {{ title }} provided by  {{ provider }}{% endtrans %}">
+                                      <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z" />
+                                    </svg>
+                                  </a>
+                                </span>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% endif %}
+                      <a data-toggle="download-work-{{ loop.index0 }}">
+                        <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title %}Download {{ title }}{% endtrans %}">
+                          <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                        </svg>
+                      </a>
+                      <div id="download-work-{{ loop.index0 }}" class="dropdown-pane" data-dropdown="" data-position="bottom" data-alignment="right" data-hover="true" data-hover-pane="true">
+                        <ul class="no-bullet">
+                          {% for copy in work.copies.values() %}
+                            <li class="grid-x grid-padding-x">
+                              <span class="cell auto">{{ copy.provider.label }}</span>
+                              <span class="cell shrink">{{ macros.license_block(copy.license) }}</span>
+                              <span class="cell shrink">
+                                <a href="{{ copy.data.value }}" rel="noopener" data-tippy-content="{% trans %}Download this work as TEI{% endtrans %}" data-tippy-placement="bottom" data-tippy-delay="500">
+                                  <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title, provider=copy.provider.label %}Download {{ title }} provided by  {{ provider }}{% endtrans %}">
+                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                  </svg>
+                                </a>
+                              </span>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
                       {% if work.year != 10000 %}
                         <a data-action="toggle-display" data-toggle-display="#book-metadata-{{ loop.index0 }}">
                           <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title %}See more details on {{ title }}{% endtrans %}">
@@ -38,28 +92,6 @@
                           <dd class="cell small-12 medium-8">{{ work.year }}</dd>
                         {% endif %}
                       </dl>
-                    </div>
-                    <div class="cell small-12 book-copies">
-                      <ul class="no-bullet">
-                        {% for copy in work.copies.values() %}
-                          <li class="grid-x grid-padding-x">
-                            <span class="cell auto">{{ copy.provider.label }}</span>
-                            <span class="cell shrink">{{ macros.license_block(copy.license) }}</span>
-                            <span class="cell shrink">
-                              <a href="{{ copy.data.value }}" rel="noopener" data-tippy-content="{% trans %}Download this work as TEI{% endtrans %}" data-tippy-placement="bottom" data-tippy-delay="500">
-                                <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title, provider=copy.provider.label %}Download {{ title }} provided by  {{ provider }}{% endtrans %}">
-                                  <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                </svg>
-                              </a>
-                              <a data-tippy-content="{% trans %}Read this work online{% endtrans %}" data-tippy-placement="bottom" data-tippy-delay="500">
-                                <svg viewBox="0 0 24 24" class="icon" aria-label="{% trans title=work.title, provider=copy.provider.label %}Read {{ title }} provided by  {{ provider }}{% endtrans %}">
-                                  <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z" />
-                                </svg>
-                              </a>
-                            </span>
-                          </li>
-                        {% endfor %}
-                      </ul>
                     </div>
                   </li>
                 {% endfor %}

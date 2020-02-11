@@ -3062,6 +3062,32 @@ a.button:hover, a.button:focus {
   .is-dropdown-submenu.js-dropdown-active {
     display: block; }
 
+.dropdown-pane {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  width: 300px;
+  padding: 1rem;
+  visibility: hidden;
+  border: 1px solid #cacaca;
+  border-radius: 0;
+  background-color: #fefefe;
+  font-size: 1rem; }
+  .dropdown-pane.is-opening {
+    display: block; }
+  .dropdown-pane.is-open {
+    display: block;
+    visibility: visible; }
+
+.dropdown-pane.tiny {
+  width: 100px; }
+
+.dropdown-pane.small {
+  width: 200px; }
+
+.dropdown-pane.large {
+  width: 400px; }
+
 h1 > a:link, h1 > a:visited, h2 > a:link, h2 > a:visited, h3 > a:link, h3 > a:visited, h4 > a:link, h4 > a:visited, h5 > a:link, h5 > a:visited, h6 > a:link, h6 > a:visited {
   color: #880990; }
 
@@ -3189,17 +3215,12 @@ aside {
   .person .digitised-works li .book-metadata {
     font-size: 10pt;
     padding-left: 2rem; }
-  .person .digitised-works li .book-copies {
-    font-size: 10pt;
-    padding-left: 2rem; }
-    .person .digitised-works li .book-copies li {
-      align-items: center; }
-    .person .digitised-works li .book-copies h4 {
-      font-size: 10pt;
-      font-weight: bold; }
-    .person .digitised-works li .book-copies .license svg {
-      width: 16px;
-      height: 16px; }
+  .person .digitised-works li .license svg {
+    width: 16px;
+    height: 16px; }
+
+.person .digitised-works .dropdown-pane li {
+  margin-bottom: 0; }
 
 .tippy-tooltip[data-animation=fade][data-state=hidden] {
   opacity: 0; }
