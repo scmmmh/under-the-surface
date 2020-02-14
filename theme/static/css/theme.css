@@ -2196,7 +2196,7 @@ ul.no-bullet, ol.no-bullet {
   flex-wrap: wrap; }
   .top-bar,
   .top-bar ul {
-    background-color: #880990; }
+    background-color: #480990; }
   .top-bar input {
     max-width: 200px;
     margin-right: 1rem; }
@@ -3089,7 +3089,7 @@ a.button:hover, a.button:focus {
   width: 400px; }
 
 h1 > a:link, h1 > a:visited, h2 > a:link, h2 > a:visited, h3 > a:link, h3 > a:visited, h4 > a:link, h4 > a:visited, h5 > a:link, h5 > a:visited, h6 > a:link, h6 > a:visited {
-  color: #880990; }
+  color: #480990; }
 
 h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {
   color: #158316; }
@@ -3123,7 +3123,7 @@ ul.inline, ol.inline {
       content: ''; }
 
 h1, h2, h3 {
-  color: #880990; }
+  color: #480990; }
 
 svg.icon {
   width: 24px;
@@ -3155,7 +3155,7 @@ a:hover svg.icon path {
   fill: #158316; }
 
 .top-bar-full-width {
-  background: #880990; }
+  background: #480990; }
 
 .top-bar {
   color: #fefefe;
@@ -3179,7 +3179,7 @@ a:hover svg.icon path {
 .top-bar-right {
   border-bottom: 1px solid #fefefe; }
   .top-bar-right .menu.dropdown > li > a, .top-bar-right .menu.submenu > li > a {
-    background: #880990;
+    background: #480990;
     color: #fefefe; }
 
 article .metadata {
