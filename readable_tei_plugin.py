@@ -71,6 +71,14 @@ DTA_STYLESHEET = etree.XSLT(etree.XML("""
 </xsl:stylesheet>
 """))
 
+TG_EXTRACT_TEXT_STYLESHEET = etree.XSLT(etree.XML("""
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:room3b="https://www.room3b.eu">
+    <xsl:template match="/tei:teiCorpus">
+        <xsl:copy-of select="tei:TEI"/>
+    </xsl:template>
+</xsl:stylesheet>
+"""))
+
 def transform_attrib(attrib):
     result = {}
     for key, value in attrib.items():
@@ -151,9 +159,10 @@ def transform(doc):
 
 
 TAGS = set()
-KNOWN_TAGS = set(('text', 'body', 'byline', 'cell', 'choice', 'cit', 'corr', 'div', 'docAuthor', 'docDate', 'docEdition',
-                  'docImprint', 'docTitle', 'head', 'hi', 'item', 'l', 'lb', 'lg', 'list', 'p', 'pubPlace', 'publisher',
-                  'quote', 'ref', 'row', 'seg', 'sic', 'table', 'titlePage', 'titlePart'))
+KNOWN_TAGS = set(('text', 'anchor', 'body', 'byline', 'cell', 'choice', 'cit', 'closer', 'corr', 'div', 'docAuthor',
+                  'docDate', 'docEdition', 'docImprint', 'docTitle', 'head', 'hi', 'item', 'l', 'lb', 'lg', 'list',
+                  'note', 'p', 'ptr', 'pubPlace', 'publisher', 'quote', 'ref', 'row', 'seg', 'sic', 'sp', 'speaker',
+                  'table', 'titlePage', 'titlePart'))
 IGNORED_TAGS = set(('fw', 'pb', 'gap', 'milestone'))
 
 
@@ -164,6 +173,23 @@ def determine_tags(node):
         determine_tags(child)
 
 
+def fetch_cached_work(url):
+    hash = sha256()
+    hash.update(url.encode('utf-8'))
+    os.makedirs('.cache', exist_ok=True)
+    filename = os.path.join('.cache', '{0}.tei'.format(hash.hexdigest()))
+    if os.path.exists(filename):
+        with open(filename, 'rb') as in_f:
+            return in_f.read()
+    else:
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(filename, 'wb') as out_f:
+                out_f.write(response.content)
+            return response.content
+        return None
+
+
 def add_readable_works(generator):
     if isinstance(generator, PersonGenerator):
         for person in generator.people:
@@ -172,11 +198,25 @@ def add_readable_works(generator):
                     for copy in work['copies'].values():
                         if 'provider' in copy and 'data' in copy:
                             if copy['provider']['value'] == 'https://textgridrep.org':
-                                pass
+                                content = fetch_cached_work(copy['data']['value'])
+                                if content:
+                                    doc = etree.XML(content)
+                                    doc = DTA_STYLESHEET(transform(TG_EXTRACT_TEXT_STYLESHEET(doc)))
+                                    determine_tags(doc.xpath('/tei:TEI/tei:text', namespaces=NS)[0])
+                                    hash = sha256()
+                                    hash.update(work['title'].encode('utf-8'))
+                                    hash.update(b'$$')
+                                    hash.update(copy['data']['value'].encode('utf-8'))
+                                    copy['read_url'] = {'value': '{0}/{1}.tei'.format(person.url[:-5], hash.hexdigest()), 'label': None}
+
+                                    target_dir = sanitised_join(generator.settings['OUTPUT_PATH'], person.url[:-5])
+                                    os.makedirs(target_dir, exist_ok=True)
+                                    with open(sanitised_join(target_dir, '{0}.tei'.format(hash.hexdigest())), 'wb') as out_f:
+                                        out_f.write(etree.tostring(doc, pretty_print=True))
                             elif copy['provider']['label'] == 'Deutsches Textarchiv':
-                                response = requests.get(copy['data']['value'])
-                                if response.status_code == 200:
-                                    doc = etree.XML(response.content)
+                                content = fetch_cached_work(copy['data']['value'])
+                                if content:
+                                    doc = etree.XML(content)
                                     doc = DTA_STYLESHEET(transform(doc))
                                     determine_tags(doc.xpath('/tei:TEI/tei:text', namespaces=NS)[0])
                                     hash = sha256()

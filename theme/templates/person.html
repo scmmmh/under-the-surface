@@ -252,6 +252,13 @@
                       }
                   },
                   {
+                      "name": "anchor",
+                      "type": "block",
+                      "parser": {
+                          "selector": "tei:anchor"
+                      }
+                  },
+                  {
                       "name": "byline",
                       "type": "inline",
                       "parser": {
@@ -304,6 +311,13 @@
                       "type": "inline",
                       "parser": {
                           "selector": "tei:cit"
+                      }
+                  },
+                  {
+                      "name": "closer",
+                      "type": "block",
+                      "parser": {
+                          "selector": "tei:closer"
                       }
                   },
                   {
@@ -415,6 +429,13 @@
                       }
                   },
                   {
+                      "name": "note",
+                      "type": "block",
+                      "parser": {
+                          "selector": "tei:note"
+                      }
+                  },
+                  {
                       "name": "p",
                       "type": "block",
                       "parser": {
@@ -433,6 +454,13 @@
                       "type": "inline",
                       "parser": {
                           "selector": "tei:publisher"
+                      }
+                  },
+                  {
+                      "name": "ptr",
+                      "type": "block",
+                      "parser": {
+                          "selector": "tei:ptr"
                       }
                   },
                   {
@@ -461,6 +489,20 @@
                       "type": "block",
                       "parser": {
                           "selector": "tei:sic"
+                      }
+                  },
+                  {
+                      "name": "sp",
+                      "type": "inline",
+                      "parser": {
+                          "selector": "tei:sp"
+                      }
+                  },
+                  {
+                      "name": "speaker",
+                      "type": "block",
+                      "parser": {
+                          "selector": "tei:speaker"
                       }
                   },
                   {
@@ -590,14 +632,6 @@
     window.TEIReader = {
         callbacks: {
             autoLoad: function(callback) {
-                let request = window.fetch('http://localhost:8080/de/people/de-la-motte-fouque-caroline/10da87bf7d10627f1cdcb25ddd43ee496ce39247ab769c4c8b4d129e521024aa.tei');
-                request.then((response) => {
-                    if (response.status === 200) {
-                        response.text().then((data) => {
-                            callback(data);
-                        });
-                    }
-                });
                 let links = document.querySelectorAll('[data-tei-reader-url]');
                 for (let idx = 0; idx < links.length; idx++) {
                     let link = links[idx];
