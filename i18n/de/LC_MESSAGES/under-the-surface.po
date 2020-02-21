@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-20 16:53+0000\n"
+"POT-Creation-Date: 2020-02-21 14:30+0000\n"
 "PO-Revision-Date: 2019-05-16 20:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -102,7 +102,7 @@ msgstr "GND"
 msgid "Written on"
 msgstr "Geschrieben am"
 
-#: theme/templates/article.html:18 theme/templates/person.html:550
+#: theme/templates/article.html:18 theme/templates/person.html:553
 msgid "Author"
 msgstr "Autor"
 
@@ -120,7 +120,7 @@ msgid "by"
 msgstr "von"
 
 #: theme/templates/author.html:18 theme/templates/category.html:18
-#: theme/templates/index.html:29 theme/templates/person.html:18
+#: theme/templates/index.html:29 theme/templates/person.html:21
 msgid "Read more"
 msgstr "Weiterlesen ..."
 
@@ -172,71 +172,75 @@ msgstr "Nach Personen suchen"
 msgid "Search"
 msgstr "Suchen"
 
-#: theme/templates/person.html:22
+#: theme/templates/person.html:13 theme/templates/person.html:137
+msgid "Personal Information"
+msgstr "Persönliche Daten"
+
+#: theme/templates/person.html:21
+msgid "Show less"
+msgstr "Weniger anzeigen"
+
+#: theme/templates/person.html:25
 msgid "Digitised Works"
 msgstr "Digitalisierte Werke"
 
-#: theme/templates/person.html:35 theme/templates/person.html:53
+#: theme/templates/person.html:38 theme/templates/person.html:56
 msgid "Read this work online"
 msgstr "Dieses Werk online lesen"
 
-#: theme/templates/person.html:36 theme/templates/person.html:54
+#: theme/templates/person.html:39 theme/templates/person.html:57
 #, python-format
 msgid "Read %(title)s provided by  %(provider)s"
 msgstr "%(title)s bereitgestellt durch %(provider)s lesen"
 
-#: theme/templates/person.html:43
+#: theme/templates/person.html:46
 #, python-format
 msgid "Read %(title)s"
 msgstr "%(title)s lesen"
 
-#: theme/templates/person.html:66
+#: theme/templates/person.html:69
 #, python-format
 msgid "Download %(title)s"
 msgstr "%(title)s herunterladen"
 
-#: theme/templates/person.html:77
+#: theme/templates/person.html:80
 msgid "Download this work as TEI"
 msgstr "Dieses Werk als TEI herunterladen"
 
-#: theme/templates/person.html:78
+#: theme/templates/person.html:81
 #, python-format
 msgid "Download %(title)s provided by  %(provider)s"
 msgstr "%(title)s bereitgestellt durch %(provider)s herunterladen"
 
-#: theme/templates/person.html:89
+#: theme/templates/person.html:92
 #, python-format
 msgid "See more details on %(title)s"
 msgstr "Mehr Details zu %(title)s"
 
-#: theme/templates/person.html:109
+#: theme/templates/person.html:112
 #, python-format
 msgid "The author's work has not been digitised."
 msgid_plural "None of the author's %(count)s works have been digitised."
 msgstr[0] "Das Werk der/des Autorin/Autors ist nicht digitalisiert."
 msgstr[1] "Keine der %(count)s Werke der/des Autorin/Autors sind digitalisiert."
 
-#: theme/templates/person.html:116
+#: theme/templates/person.html:119
 msgid "Undigitised Works"
 msgstr "Nicht Digitalisierte Werke"
 
-#: theme/templates/person.html:134
-msgid "Personal Information"
-msgstr "Persönliche Daten"
-
-#: theme/templates/person.html:152
+#: theme/templates/person.html:155
 msgid "Links"
 msgstr "Verlinkungen"
 
-#: theme/templates/person.html:163
+#: theme/templates/person.html:166
 msgid "Unique Identifiers"
 msgstr "Eindeutige Identifikatoren"
 
-#: theme/templates/person.html:176
+#: theme/templates/person.html:179
 msgid "Verification"
 msgstr "Verifizierung"
 
-#: theme/templates/person.html:196
+#: theme/templates/person.html:199
 msgid ""
 "All the information shown on this page have been manually verified. While"
 " this does not (and cannot) ensure that the information is always true, "
@@ -247,13 +251,13 @@ msgstr ""
 "sind (dies ist auch nie möglich), aber sie sind basierenden auf den "
 "aktuell verfügbaren Quellen korrekt"
 
-#: theme/templates/person.html:198
+#: theme/templates/person.html:201
 msgid "Some of the information shown on this page has been manually verified."
 msgstr ""
 "Ein Teil der auf dieser Seite angezeigten Informationen wurde manuell "
 "verifziert"
 
-#: theme/templates/person.html:200
+#: theme/templates/person.html:203
 msgid ""
 "None of the information on this page has been manually verified. This "
 "does not mean that it is not true, but its veracity is yet to be "
@@ -263,34 +267,34 @@ msgstr ""
 " bedeutet nicht, dass sie nicht korrekt sind, aber sie wurden noch nicht "
 "manuell verifiziert."
 
-#: theme/templates/person.html:208
+#: theme/templates/person.html:211
 msgid "Sources"
 msgstr "Quellen"
 
-#: theme/templates/person.html:237
+#: theme/templates/person.html:240
 msgid "Text"
 msgstr "Text"
 
-#: theme/templates/person.html:487
+#: theme/templates/person.html:490
 msgid "About"
 msgstr "Über das Werk"
 
-#: theme/templates/person.html:541
+#: theme/templates/person.html:544
 msgid "Bibliography"
 msgstr "Bibliographie"
 
-#: theme/templates/person.html:545
+#: theme/templates/person.html:548
 msgid "Title"
 msgstr "Titel"
 
-#: theme/templates/person.html:556
+#: theme/templates/person.html:559
 msgid "Digital Version"
 msgstr "Digitale Version"
 
-#: theme/templates/person.html:560
+#: theme/templates/person.html:563
 msgid "License"
 msgstr "Lizenz"
 
-#: theme/templates/person.html:569
+#: theme/templates/person.html:572
 msgid "Publisher"
 msgstr "Verlag"

@@ -3128,6 +3128,15 @@ ul.inline, ol.inline {
 h1, h2, h3 {
   color: #480990; }
 
+[data-action="read-more"] .less {
+  display: none; }
+
+[data-action="read-more"].is-expanded .more {
+  display: none; }
+
+[data-action="read-more"].is-expanded .less {
+  display: inline; }
+
 svg.icon {
   width: 24px;
   height: 24px; }

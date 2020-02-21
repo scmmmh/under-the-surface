@@ -44,3 +44,19 @@ ul, ol {
 h1, h2, h3 {
     color: $purple;
 }
+
+[data-action="read-more"] {
+    .less {
+        display: none;
+    }
+
+    &.is-expanded {
+        .more {
+            display: none;
+        }
+
+        .less {
+            display: inline;
+        }
+    }
+}
