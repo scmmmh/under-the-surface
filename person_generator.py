@@ -70,6 +70,7 @@ class PersonGenerator(Generator):
 
     def load_person(self, db_person):
         """Load an individual person's data from the database."""
+        _ = self.settings['translate']
         metadata = {'slug': db_person.slug,
                     'title': db_person.title,
                     'verification': 'none'}
@@ -96,7 +97,7 @@ class PersonGenerator(Generator):
             if 'work' not in metadata:
                 metadata['work'] = []
             work = {'title': db_work.title,
-                    'category': 'Uncategorised',
+                    'category': _('Uncategorised'),
                     'year': 10000,
                     'copies': {}}
             if db_work.status == 'confirmed' and verification >= 0:

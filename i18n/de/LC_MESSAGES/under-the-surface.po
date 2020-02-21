@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-21 14:30+0000\n"
+"POT-Creation-Date: 2020-02-21 14:54+0000\n"
 "PO-Revision-Date: 2019-05-16 20:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -97,6 +97,10 @@ msgstr "VIAF"
 #: pelicanconf.py:64
 msgid "GND"
 msgstr "GND"
+
+#: person_generator.py:99
+msgid "Uncategorised"
+msgstr "Unkategorisiert"
 
 #: theme/templates/article.html:16
 msgid "Written on"
