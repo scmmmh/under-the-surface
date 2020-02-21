@@ -1,4 +1,9 @@
 .person {
+    > div:first-child {
+        margin-bottom: $global-margin*2;
+        align-items: flex-end;
+    }
+
     section {
         padding-bottom: $global-padding;
 
@@ -42,5 +47,12 @@
 
     .work {
         font-style: italic;
+    }
+
+    aside {
+        li {
+            margin-left: $global-margin;
+            text-indent: -$global-margin;
+        }
     }
 }

@@ -3158,7 +3158,8 @@ a:hover svg.icon path {
   fill: #158316; }
 
 .top-bar-full-width {
-  background: #480990; }
+  background: #480990;
+  margin-bottom: 3rem; }
 
 .top-bar {
   color: #fefefe;
@@ -3203,6 +3204,10 @@ aside {
   aside dl dd {
     margin-bottom: 1rem; }
 
+.person > div:first-child {
+  margin-bottom: 2rem;
+  align-items: flex-end; }
+
 .person section {
   padding-bottom: 1rem; }
   .person section.sources div.label {
@@ -3227,6 +3232,10 @@ aside {
 
 .person .work {
   font-style: italic; }
+
+.person aside li {
+  margin-left: 1rem;
+  text-indent: -1rem; }
 
 #reader-app {
   position: fixed;
