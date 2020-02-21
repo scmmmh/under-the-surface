@@ -3137,7 +3137,7 @@ h1, h2, h3 {
 [data-action="read-more"].is-expanded .less {
   display: inline; }
 
-[data-tippy-content] {
+sup[data-tippy-content] {
   cursor: help; }
 
 svg.icon {
