@@ -226,7 +226,7 @@ msgstr "Mehr Details zu %(title)s"
 msgid "The author's work has not been digitised."
 msgid_plural "None of the author's %(count)s works have been digitised."
 msgstr[0] "Das Werk der/des Autorin/Autors ist nicht digitalisiert."
-msgstr[1] "Keine der %(count)s Werke der/des Autorin/Autors sind digitalisiert."
+msgstr[1] "Keines der %(count)s Werke der/des Autorin/Autors sind digitalisiert."
 
 #: theme/templates/person.html:119
 msgid "Undigitised Works"
