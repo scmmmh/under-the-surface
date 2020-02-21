@@ -1,3 +1,6 @@
+import requests
+
+from lxml import etree
 from pelican import signals
 from pelican.contents import Content
 from pelican.generators import Generator
@@ -63,6 +66,8 @@ class PersonGenerator(Generator):
         self._dbsession = sessionmaker(bind=engine)()
         self.people = []
 
+        signals.page_generator_init.send(self)
+
     def load_person(self, db_person):
         """Load an individual person's data from the database."""
         metadata = {'slug': db_person.slug,
@@ -125,10 +130,13 @@ class PersonGenerator(Generator):
             metadata['verification'] = 'none'
         return Person(content, metadata=metadata, settings=self.settings, context=self.context)
 
+
     def generate_context(self):
         """Generate the context, loading all people from the database."""
         self.people = [self.load_person(db_person) for db_person in self._dbsession.query(DBPerson).filter(DBPerson.status != 'incorrect')]
-        self._update_context(('people', ))
+        self._update_context(('people',))
+
+        signals.page_generator_finalized.send(self)
 
     def generate_output(self, writer):
         """Write the people to the filesystem."""
@@ -139,6 +147,8 @@ class PersonGenerator(Generator):
                 relative_urls=self.settings['RELATIVE_URLS'],
                 override_output=hasattr(person, 'override_save_as'),
                 url=person.url)
+
+        signals.page_writer_finalized.send(self, writer=writer)
 
 
 def get_generator(pelican_object):

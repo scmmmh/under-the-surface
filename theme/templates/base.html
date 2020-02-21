@@ -46,6 +46,7 @@
     <div class="grid-container">
       {% block content %}{% endblock content %}
     </div>
+    {% block body_scripts %}{% endblock body_scripts %}
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/app.js" async></script>
   </body>
 </html>

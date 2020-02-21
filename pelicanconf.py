@@ -37,7 +37,7 @@ LANGUAGES = (
 LANGUAGE_LABELS = dict(LANGUAGES)
 
 # Plugins
-PLUGINS = ('person_generator', 'i18n_install',)
+PLUGINS = ('person_generator', 'i18n_install', 'readable_tei_plugin')
 
 # Theme configuration
 THEME = './theme'

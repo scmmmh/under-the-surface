@@ -10,6 +10,7 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "pump": "^3.0.0",
+    "tei-reader": "^0.4.0",
     "tippy.js": "^5.2.0"
   },
   "devDependencies": {

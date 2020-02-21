@@ -36,6 +36,8 @@ gulp.task('scripts', function(cb) {
             'node_modules/foundation-sites/dist/js/plugins/foundation.dropdownMenu.min.js',
             'node_modules/popper.js/dist/umd/popper.min.js',
             'node_modules/tippy.js/dist/tippy.iife.min.js',
+            'node_modules/tei-reader/dist/js/chunk-vendors.js',
+            'node_modules/tei-reader/dist/js/app.js',
             'js/app.js'
         ]),
         concat('app.js'),
