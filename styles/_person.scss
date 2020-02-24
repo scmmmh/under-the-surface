@@ -1,3 +1,17 @@
+.person-list {
+    li {
+        a {
+            display: block;
+        }
+
+        span {
+            display: block;
+            margin-left: $global-margin;
+            font-size: 80%;
+        }
+    }
+}
+
 .person {
     > div:first-child {
         margin-bottom: $global-margin*2;

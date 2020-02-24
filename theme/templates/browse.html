@@ -10,10 +10,13 @@
       <h2>{% trans %}Alphabetic{% endtrans %}</h2>
       <ul class="no-bullet">
         {% for grouper, group in people|groupby(attribute='first_title_letter') %}
-          <li><span class="sc">{{ grouper }}</span>
-            <ul class="no-bullet">
-              {% for child in group %}
-                <li><a href="{{ SITEURL }}/{{ child.url }}">{{ child.title }}</a></li>
+          <li class="margin-bottom"><span class="sc">{{ grouper }}</span>
+            <ul class="no-bullet person-list">
+              {% for person in group %}
+                <li>
+                  <a href="{{ SITEURL }}/{{ person.url }}">{{ person.title }}</a>
+                  <span>{% trans count=person.work|length %}{{ count }} work{% pluralize %}{{ count }} works{% endtrans %}, {% trans count=person.work|selectattr('copies')|list|length %}{{ count }} digitised{% pluralize %}{{ count }} digitised{% endtrans %}</span>
+                </li>
               {% endfor %}
             </ul>
           </li>

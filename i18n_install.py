@@ -7,7 +7,8 @@ def install_gettext_jinja2(generator):
     generator.env.install_gettext_translations(translation('under-the-surface',
                                                            localedir='i18n',
                                                            languages=[generator.settings['DEFAULT_LANG']],
-                                                           fallback=True))
+                                                           fallback=True),
+                                               newstyle=True)
 
 
 def install_gettext(pelican_object):

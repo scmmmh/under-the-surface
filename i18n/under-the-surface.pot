@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-21 14:54+0000\n"
+"POT-Creation-Date: 2020-02-24 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,14 +61,6 @@ msgstr ""
 msgid "Languages used"
 msgstr ""
 
-#: pelicanconf.py:54
-msgid "Occupation"
-msgstr ""
-
-#: pelicanconf.py:55
-msgid "Field of Work"
-msgstr ""
-
 #: pelicanconf.py:56
 msgid "Religion"
 msgstr ""
@@ -97,7 +89,7 @@ msgstr ""
 msgid "GND"
 msgstr ""
 
-#: person_generator.py:99
+#: person_generator.py:100
 msgid "Uncategorised"
 msgstr ""
 
@@ -105,7 +97,7 @@ msgstr ""
 msgid "Written on"
 msgstr ""
 
-#: theme/templates/article.html:18 theme/templates/person.html:553
+#: theme/templates/article.html:18 theme/templates/person.html:595
 msgid "Author"
 msgstr ""
 
@@ -150,6 +142,20 @@ msgstr ""
 #: theme/templates/browse.html:10
 msgid "Alphabetic"
 msgstr ""
+
+#: theme/templates/browse.html:18
+#, python-format
+msgid "%(count)s work"
+msgid_plural "%(count)s works"
+msgstr[0] ""
+msgstr[1] ""
+
+#: theme/templates/browse.html:18
+#, python-format
+msgid "%(count)s digitised"
+msgid_plural "%(count)s digitised"
+msgstr[0] ""
+msgstr[1] ""
 
 #: theme/templates/category.html:3 theme/templates/category.html:9
 #, python-format
@@ -262,27 +268,27 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: theme/templates/person.html:490
+#: theme/templates/person.html:532
 msgid "About"
 msgstr ""
 
-#: theme/templates/person.html:544
+#: theme/templates/person.html:586
 msgid "Bibliography"
 msgstr ""
 
-#: theme/templates/person.html:548
+#: theme/templates/person.html:590
 msgid "Title"
 msgstr ""
 
-#: theme/templates/person.html:559
+#: theme/templates/person.html:601
 msgid "Digital Version"
 msgstr ""
 
-#: theme/templates/person.html:563
+#: theme/templates/person.html:605
 msgid "License"
 msgstr ""
 
-#: theme/templates/person.html:572
+#: theme/templates/person.html:614
 msgid "Publisher"
 msgstr ""
 

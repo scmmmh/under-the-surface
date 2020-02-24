@@ -3216,6 +3216,14 @@ aside {
   aside dl dd {
     margin-bottom: 1rem; }
 
+.person-list li a {
+  display: block; }
+
+.person-list li span {
+  display: block;
+  margin-left: 1rem;
+  font-size: 80%; }
+
 .person > div:first-child {
   margin-bottom: 2rem;
   align-items: flex-end; }
