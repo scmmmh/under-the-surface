@@ -53,18 +53,6 @@
               {% endblock scrolling_menu_items %}
             </ul>
           </nav>
-          <nav class="top-bar-right">
-            <ul class="menu dropdown hide-for-small-only" data-dropdown-menu>
-              <li><a href="{{ SITEURL }}/pages/browse.html">{% trans %}People{% endtrans %}</a></li>
-              <li class="is-dropdown-submenu-parent"><a href="#">{% trans %}Language{% endtrans %}</a>
-                <ul class="menu">
-                  {% for code, label in LANGUAGES %}
-                    <li{% if code == DEFAULT_LANG %} class="current"{% endif %}><a href="{{ BASE_SITEURL }}/{{ code }}/{{output_file}}">{{ label }}</a></li>
-                  {% endfor %}
-                </ul>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
     </div>
