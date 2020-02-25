@@ -2913,10 +2913,10 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
 
-tei-reader@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/tei-reader/-/tei-reader-0.4.1.tgz#610b177bde5b78984acb4ba196ea85d5263f400a"
-  integrity sha512-dRPl6W2UcMAhmDYVu59+s2kMdSq603oI4WgZq9Fq88Mb5S6MYdZJMcwFGCEC9Y9QokX1q1lthYAB5nRS3/LxIg==
+tei-reader@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/tei-reader/-/tei-reader-0.5.1.tgz#1fe4b418913fcd9bc5c359b1fa6c693b0d48a6bc"
+  integrity sha512-IeQNECNA9ksM59ZFgeuV3DGnzFaqg7PYcf+WXQdKxCDjjxllxyfj3nYzzEi2Kp4bKZOMpqqi2uFg1+BpV+c96Q==
   dependencies:
     core-js "^3.6.4"
     femtotween "^1.0.2"

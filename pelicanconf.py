@@ -68,6 +68,7 @@ JINJA_FILTERS = {
     'startswith': filters.startswith,
     'split': filters.split,
     'format': filters.format,
+    'sha256': filters.sha256_hash,
 }
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n']

@@ -1,6 +1,7 @@
 import re
 
 from datetime import datetime
+from hashlib import sha256
 
 
 def startswith(string, prefix):
@@ -57,3 +58,9 @@ def json_strftime(timestamp):
                     else:
                         parts[idx] = 1
     return ''
+
+
+def sha256_hash(text):
+    hash = sha256()
+    hash.update(text.encode('utf-8'))
+    return hash.hexdigest()
