@@ -3198,6 +3198,29 @@ a:hover svg.icon path {
     background: #480990;
     color: #fefefe; }
 
+.top-bar-scrolling {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #480990;
+  z-index: 1;
+  font-size: 0.875rem;
+  max-height: 0;
+  transition: max-height 0.5s;
+  overflow: hidden; }
+  .top-bar-scrolling .top-bar {
+    margin-bottom: 0;
+    padding: 0; }
+    .top-bar-scrolling .top-bar .top-bar-left li:first-child a {
+      font-size: 1rem; }
+      .top-bar-scrolling .top-bar .top-bar-left li:first-child a small {
+        font-size: 0.875rem; }
+
+.scrolling .top-bar-scrolling {
+  max-height: 200px;
+  box-shadow: 0 0 10px #8a8a8a; }
+
 article .metadata {
   font-size: 0.8125rem;
   position: relative;

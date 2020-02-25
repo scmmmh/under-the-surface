@@ -45,3 +45,39 @@
         }
     }
 }
+
+.top-bar-scrolling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $purple;
+    z-index: 1;
+    font-size: rem-calc(14);
+    max-height: 0;
+    transition: max-height 0.5s;
+    overflow: hidden;
+
+    .top-bar {
+        margin-bottom: 0;
+        padding: 0;
+
+        .top-bar-left {
+            li:first-child {
+                a {
+                    font-size: rem-calc(16);
+
+                    small {
+                        font-size: rem-calc(14);
+                    }
+                }
+            }
+        }
+    }
+}
+.scrolling {
+    .top-bar-scrolling {
+        max-height: 200px;
+        box-shadow: 0 0 10px $dark-gray;
+    }
+}

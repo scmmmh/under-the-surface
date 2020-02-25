@@ -2,6 +2,10 @@
 
 {% block title %}{{ page.title }}{% endblock title %}
 
+{% block scrolling_menu_items %}
+<li><a href="{{ SITEURL }}/{{ page.url }}">{{ SITENAME }}<small>{{ page.title }}</small></a></li>
+{% endblock scrolling_menu_items %}
+
 {% block content %}
 {% import 'macros.html' as macros %}
 <main class="person">

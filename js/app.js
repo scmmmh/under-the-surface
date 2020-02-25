@@ -49,3 +49,21 @@ tippy('[data-tippy-content]');
         setup_anchor(anchors[idx]);
     }
 })();
+
+(function() {
+    const html = document.querySelector('html');
+    const body = document.querySelector('body');
+    const baseHeader = document.querySelector('#main-nav');
+    if (html.scrollTop <= baseHeader.clientHeight) {
+        body.classList.remove('scrolling');
+    } else {
+        body.classList.add('scrolling');
+    }
+    window.addEventListener('scroll', function(ev) {
+        if (html.scrollTop <= baseHeader.clientHeight) {
+            body.classList.remove('scrolling');
+        } else {
+            body.classList.add('scrolling');
+        }
+    });
+})();
