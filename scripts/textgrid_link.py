@@ -11,7 +11,7 @@ from models import Person
 from util import merge_work, merge_work_property, get_attribute, get_xml_attribute
 
 
-QUERY_URL = 'https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:"{0}"&limit=100'
+QUERY_URL = 'https://textgridlab.org/1.0/tgsearch-public/search?q=edition.agent.value:"{0}"&limit=1000'
 NAMESPACES = {
     '{http://textgrid.info/namespaces/metadata/core/2010}': 'tg',
     '{http://www.textgrid.info/namespaces/middleware/tgsearch}': 'tgs'
