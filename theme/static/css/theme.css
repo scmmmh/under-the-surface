@@ -3396,6 +3396,14 @@ aside {
     #reader-app #app .node-sic {
       display: block;
       padding-left: 2rem; }
+    #reader-app #app [data-style="font-size-very-large"] {
+      font-size: 150%; }
+    #reader-app #app [data-style="letter-spacing-wide"] {
+      letter-spacing: 2.5pt; }
+    #reader-app #app [data-style="font-style-italic"] {
+      font-style: italic; }
+    #reader-app #app [data-style="font-style-bold"] {
+      font-weight: bold; }
     #reader-app #app .metadata-reader {
       font-size: 11pt; }
       #reader-app #app .metadata-reader section {
