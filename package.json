@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "gulp-concat": "^2.6.1",
-    "http-server": "^0.11.1",
+    "http-server": "^0.12.1",
     "jquery": "^3.4.1",
     "what-input": "^5.2.1"
   }
