@@ -8,15 +8,15 @@
   "dependencies": {
     "foundation-sites": "^6.5.3",
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "pump": "^3.0.0",
-    "tei-reader": "^0.5.1",
-    "tippy.js": "^5.2.0"
+    "tei-reader": "^0.6.1",
+    "tippy.js": "^6.2.7"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.1",
-    "http-server": "^0.12.1",
-    "jquery": "^3.4.1",
-    "what-input": "^5.2.1"
+    "http-server": "^0.12.3",
+    "jquery": "^3.5.1",
+    "what-input": "^5.2.10"
   }
 }
