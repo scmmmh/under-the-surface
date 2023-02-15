@@ -31,20 +31,19 @@ html:
   use_issues_button: false
   use_repository_button: true
   extra_navbar: |
-    <nav id="language-switcher" style="text-align:left;" aria-labelledby="language-switcher-title">
+    <nav id="language-switcher" style="text-align:left;" data-current-lang="de" aria-labelledby="language-switcher-title">
       <span id="language-switcher-title" class="caption-text">In anderen Sprachen</span>
       <ul style="padding-left: 0;">
         <li style="list-style: none;"><a href="" data-lang="en">English</a></li>
       </ul>
     </nav>
     <script>
-      const languageLinks = document.querySelectorAll('#language-switcher a');
+      const languageSwitcher = document.querySelector('#language-switcher');
+      const currentLanguage = languageSwitcher.getAttribute('data-current-lang');
+      const languageLinks = languageSwitcher.querySelectorAll('a');
       let path = document.location.pathname.substring(1);
-      if (path.indexOf('/') >= 0) {
-        path = path.substring(path.indexOf('/'));
-      }
       for (const languageLink of languageLinks) {
-        languageLink.setAttribute('href', '/' + languageLink.getAttribute('data-lang') + path);
+        languageLink.setAttribute('href', '/' + path.replace(currentLanguage + '/', languageLink.getAttribute('data-lang') + '/'));
       }
     </script>
   extra_footer: |
