@@ -1,0 +1,56 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Unter der Oberfläche
+author: Under the Surface Project
+logo: logo.jpg
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - ../references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/scmmmh/under-the-surface  # Online location of your book
+  path_to_book: de  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: false
+  use_repository_button: true
+  extra_navbar: |
+    <nav id="language-switcher" style="text-align:left;" aria-labelledby="language-switcher-title">
+      <span id="language-switcher-title" class="caption-text">In anderen Sprachen</span>
+      <ul style="padding-left: 0;">
+        <li style="list-style: none;"><a href="" data-lang="en">English</a></li>
+      </ul>
+    </nav>
+    <script>
+      const languageLinks = document.querySelectorAll('#language-switcher a');
+      let path = document.location.pathname.substring(1);
+      if (path.indexOf('/') >= 0) {
+        path = path.substring(path.indexOf('/'));
+      }
+      for (const languageLink of languageLinks) {
+        languageLink.setAttribute('href', '/' + languageLink.getAttribute('data-lang') + path);
+      }
+    </script>
+  extra_footer: |
+    <p>Logo based on: <a href="https://unsplash.com/photos/At_r0TuqL8o">https://unsplash.com/photos/At_r0TuqL8o</a></p>
+
+sphinx:
+  config:
+    html_show_copyright: false
+    language: de
