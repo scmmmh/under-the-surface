@@ -3,3 +3,10 @@
 
 format: jb-book
 root: index
+parts:
+  - caption: Authors
+    chapters:
+      - file: authors/zäunemann-sidonia-hedwig
+  - caption: Appendices
+    chapters:
+      - file: bibliography
