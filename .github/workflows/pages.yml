@@ -40,15 +40,14 @@ jobs:
         run: |
           jupyter-book build en
           jupyter-book build de
-          mkdir published
-          cp -r en/_build/html published/en
-          cp -r de/_build/html published/de
+          cp -r en/_build/html site/en
+          cp -r de/_build/html site/de
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'published'
+          path: 'site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
