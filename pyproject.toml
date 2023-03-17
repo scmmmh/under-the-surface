@@ -20,7 +20,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "uedition>=0.0.2",
+  "uedition>=0.0.3",
 ]
 version = "1.0.0"
 
