@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "Under-the-Surface"
 description = ''
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 keywords = []
 authors = [
   { name = "Mark Hall", email = "mark.hall@work.room3b.eu" },
@@ -14,16 +14,13 @@ authors = [
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "jupyter-book<1.0.0"
+  "uedition",
 ]
 version = "1.0.0"
 
@@ -31,3 +28,6 @@ version = "1.0.0"
 Documentation = "https://github.com/unknown/-#readme"
 Issues = "https://github.com/unknown/-/issues"
 Source = "https://github.com/unknown/-"
+
+[tool.hatch.envs.default.scripts]
+build = "uEdition build"

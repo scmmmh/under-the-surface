@@ -30,7 +30,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Setup python
+        uses: actions/setup-python@v4
         with:
           python-version: "3.11"
 
@@ -43,11 +44,11 @@ jobs:
       - name: Install Base Dependencies
         run: |
           sudo apt-get install python3-venv pipx
-          pipx install uedition
+          pipx install hatch
 
       - name: Build the pages
         run: |
-          uEdition build
+          hatch run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
