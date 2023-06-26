@@ -25,9 +25,9 @@ dependencies = [
 version = "1.0.0"
 
 [project.urls]
-Documentation = "https://github.com/unknown/-#readme"
-Issues = "https://github.com/unknown/-/issues"
-Source = "https://github.com/unknown/-"
+Documentation = "https://github.com/scmmmh/under-the-surface/-#readme"
+Issues = "https://github.com/scmmmh/under-the-surface/-/issues"
+Source = "https://github.com/scmmmh/under-the-surface/-"
 
 [tool.hatch.envs.default.scripts]
 build = "uEdition build"
