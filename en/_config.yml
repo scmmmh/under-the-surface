@@ -30,26 +30,12 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: true
-  extra_navbar: |
-    <nav id="language-switcher" style="text-align:left;" data-current-lang="en" aria-labelledby="language-switcher-title">
-      <span id="language-switcher-title" class="caption-text">In other languages</span>
-      <ul style="padding-left: 0;">
-        <li style="list-style: none;"><a href="" data-lang="de">Deutsch</a></li>
-      </ul>
-    </nav>
-    <script>
-      const languageSwitcher = document.querySelector('#language-switcher');
-      const currentLanguage = languageSwitcher.getAttribute('data-current-lang');
-      const languageLinks = languageSwitcher.querySelectorAll('a');
-      let path = document.location.pathname.substring(1);
-      for (const languageLink of languageLinks) {
-        languageLink.setAttribute('href', '/' + path.replace(currentLanguage + '/', languageLink.getAttribute('data-lang') + '/'));
-      }
-    </script>
   extra_footer: |
     <p>Logo based on: <a href="https://unsplash.com/photos/At_r0TuqL8o">https://unsplash.com/photos/At_r0TuqL8o</a></p>
 
 sphinx:
+  extra_extensions:
+    - uedition
   config:
     html_show_copyright: false
     language: en
