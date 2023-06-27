@@ -1,7 +1,0 @@
-version: 2
-updates:
-  # Check for updates of all GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"

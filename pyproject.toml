@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "Under-the-Surface"
-description = ''
+name = "under-the-surface"
+description = 'The Under the Surface μEdition'
 readme = "README.md"
 requires-python = ">=3.10"
 keywords = []
