@@ -1,4 +1,3 @@
-version: "1"
 languages:
   - code: en
     label: English
@@ -7,3 +6,4 @@ languages:
     label: Deutsch
     path: de
 output: site
+version: '1'
