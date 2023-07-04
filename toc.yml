@@ -1,12 +1,13 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: index
 parts:
-  - caption: Authors
+  - caption:
+      de: Autoren und Autorinnnen
+      en: Authors
     chapters:
       - file: authors/zäunemann-sidonia-hedwig
-  - caption: Appendices
+  - caption:
+      de: Anhänge
+      en: Appendices
     chapters:
       - file: bibliography
