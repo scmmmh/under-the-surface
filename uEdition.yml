@@ -1,3 +1,14 @@
+author:
+  name: The Under the Surface Project
+  email: mark.hall@work.room3b.eu
+jb_config:
+  logo: logo.jpg
+  bibtex_bibfiles:
+    - ../references.bib
+  html:
+    use_issues_button: False
+    extra_footer: |
+      <p>Logo based on: <a href="https://unsplash.com/photos/At_r0TuqL8o">https://unsplash.com/photos/At_r0TuqL8o</a></p>
 languages:
 - code: en
   label: English
@@ -6,4 +17,10 @@ languages:
   label: Deutsch
   path: de
 output: site
+repository:
+  url: https://github.com/scmmmh/under-the-surface
+  branch: main
+title:
+  en: Under the Surface
+  de: Unter der Oberfläche
 version: '1'

@@ -1,41 +1,20 @@
-# Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
-
-title: Under the Surface
-author: Under the Surface Project
-logo: logo.jpg
-
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
-execute:
-  execute_notebooks: force
-
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
-
-# Add a bibtex file so that we can create citations
+author: The Under the Surface Project
 bibtex_bibfiles:
-  - ../references.bib
-
-# Information about where the book exists on the web
-repository:
-  url: https://github.com/scmmmh/under-the-surface  # Online location of your book
-  path_to_book: en  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
-
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+- ../references.bib
 html:
+  extra_footer: '<p>Logo based on: <a href="https://unsplash.com/photos/At_r0TuqL8o">https://unsplash.com/photos/At_r0TuqL8o</a></p>
+
+    '
   use_issues_button: false
   use_repository_button: true
-  extra_footer: |
-    <p>Logo based on: <a href="https://unsplash.com/photos/At_r0TuqL8o">https://unsplash.com/photos/At_r0TuqL8o</a></p>
-
+logo: logo.jpg
+repository:
+  branch: main
+  path: en
+  url: https://github.com/scmmmh/under-the-surface
 sphinx:
-  extra_extensions:
-    - uedition
   config:
-    html_show_copyright: false
     language: en
+  extra_extensions:
+  - uedition
+title: Under the Surface
