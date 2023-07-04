@@ -1,0 +1,17 @@
+html[data-theme="light"] {
+  --pst-color-primary: #6f00b5;
+  --pst-color-secondary: #325340;
+}
+
+html[data-theme="dark"] {
+  --pst-color-primary: #bd54ff;
+  --pst-color-secondary: #2cae75;
+}
+
+html[data-theme="dark"] article a.reference {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--pst-color-secondary);
+}
