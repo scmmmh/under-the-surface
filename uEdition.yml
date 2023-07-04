@@ -9,6 +9,12 @@ jb_config:
     use_issues_button: False
     extra_footer: |
       <p>Logo based on: <a href="https://unsplash.com/photos/At_r0TuqL8o">https://unsplash.com/photos/At_r0TuqL8o</a></p>
+  sphinx:
+    config:
+      html_theme: pydata_sphinx_theme
+      html_theme_options:
+        secondary_sidebar_items:
+          - page-toc.html
 languages:
 - code: en
   label: English

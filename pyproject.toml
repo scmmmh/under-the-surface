@@ -21,6 +21,7 @@ classifiers = [
 ]
 dependencies = [
   "uedition>=0.6.0",
+  "pydata-sphinx-theme>=0.13.3,<1.0.0",
 ]
 version = "1.0.0"
 

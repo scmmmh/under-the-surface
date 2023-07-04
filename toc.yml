@@ -1,13 +1,9 @@
 format: jb-book
 root: index
-parts:
-  - caption:
-      de: Autoren und Autorinnnen
-      en: Authors
-    chapters:
+chapters:
+  - file: authors/index
+    sections:
       - file: authors/zäunemann-sidonia-hedwig
-  - caption:
-      de: Anhänge
-      en: Appendices
-    chapters:
-      - file: bibliography
+  - file: appendices/index
+    sections:
+      - file: appendices/bibliography
