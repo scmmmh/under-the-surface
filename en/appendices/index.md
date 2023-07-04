@@ -1,1 +1,4 @@
 # Appendices
+
+:::{tableofcontents}
+:::
