@@ -8,7 +8,7 @@ To try out the Under the Surface locally, you need to install [Python 3.10 or ne
 [Hatch](https://hatch.pypa.io). Then run the following command to start a local development server:
 
 ```
-$ hatch run dev:server
+$ hatch run serve
 ```
 
-The development server will then serve your μEdition at http://localhost:88888.
+The development server will then serve your μEdition at http://localhost:8000.
