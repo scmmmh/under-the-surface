@@ -12,7 +12,7 @@ Im Anschluss daran erscheint ihr umfangreicher Gedichtband Poetische Rosen in Kn
 
 Verschiedene Motive und Themen durchziehen Zäunemanns Texte und werden immer wieder aufgegriffen und weiterentwickelt, eins davon ist die Frage der Frauengelehrsamkeit, was die Frau leisten kann und darf, wenn sie es will. Zäunemann träumt nicht nur literarisch davon, in vermeintlich männliche Domänen einzubrechen, wie etwa in ihren Soldatenliedern, sondern setzt dies auch in die Tat um, wenn sie in ein Ilmenauer Bergwerk einfährt und darüber ein Lehrgedicht verfasst, das noch in Goethes Weimarer Bibliothek stehen wird.[^quelle-motive-themen]
 
-<p>Ausarbeitung Corinna Dziudzia</p>
+Ausarbeitung Corinna Dziudzia
 
 [^geburtsdatum]: Das fehlerhafte Datum 1714 als Sidonia Hedwig Zäunemanns angeblichem Geburtsjahr, von dem in der Sekundärliteratur vielfach fälschlicherweise die Rede ist, ist tatsächlich das Jahr der Geburt ihrer Schwester, Martha Paulina. Mutmaßlich geht das falsche Datum auf einen Nachruf zurück, der 1741 erschienen ist und der das falsche Jahr nennt. {cite}`riemann2011register` S. 206.
 
