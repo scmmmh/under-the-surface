@@ -4,6 +4,5 @@ _src_path: gh:uEdition/uEdition-project-template
 author_email: mark.hall@work.room3b.eu
 author_name: Mark Hall
 edition_name: Under the Surface
-publishing: true
 repository_branch: main
 repository_url: https://github.com/scmmmh/under-the-surface
