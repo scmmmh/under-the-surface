@@ -2,6 +2,11 @@ author:
   name: The Under the Surface Project
   email: mark.hall@work.room3b.eu
 sphinx_config:
+  extensions:
+    - myst_parser
+    - sphinx_external_toc
+    - uedition
+    - sphinxcontrib.bibtex
   html_logo: logo.jpg
   bibtex_bibfiles:
     - ../references.bib
