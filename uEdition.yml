@@ -1,27 +1,21 @@
 author:
   name: The Under the Surface Project
   email: mark.hall@work.room3b.eu
-jb_config:
-  logo: logo.jpg
+sphinx_config:
+  html_logo: logo.jpg
   bibtex_bibfiles:
     - ../references.bib
-  html:
-    use_issues_button: False
-    extra_footer: |
-      <p>Logo based on: <a href="https://unsplash.com/photos/At_r0TuqL8o">https://unsplash.com/photos/At_r0TuqL8o</a></p>
-  sphinx:
-    config:
-      html_theme: pydata_sphinx_theme
-      html_theme_options:
-        secondary_sidebar_items:
-          - page-toc.html
+  html_theme: pydata_sphinx_theme
+  html_theme_options:
+    secondary_sidebar_items:
+      - page-toc.html
 languages:
-- code: en
-  label: English
-  path: en
-- code: de
-  label: Deutsch
-  path: de
+  - code: en
+    label: English
+    path: en
+  - code: de
+    label: Deutsch
+    path: de
 output: site
 repository:
   url: https://github.com/scmmmh/under-the-surface
@@ -29,4 +23,4 @@ repository:
 title:
   en: Under the Surface
   de: Unter der Oberfläche
-version: '1'
+version: "2"
