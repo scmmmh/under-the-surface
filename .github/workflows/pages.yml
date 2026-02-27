@@ -32,7 +32,7 @@ jobs:
 
       - name: Install Base Dependencies
         run: |
-          sudo pip install python-venv pipx
+          sudo pip install python3-venv pipx
           pipx install hatch
 
       - name: Build the pages
