@@ -24,9 +24,16 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Add .local path
+        run: |
+          echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+          echo "PIPX_HOME=$HOME/.local/pipx" >> $GITHUB_ENV
+          echo "PIPX_BIN_DIR=$HOME/.local/bin" >> $GITHUB_ENV
+
       - name: Install Base Dependencies
         run: |
-          sudo pip install hatch
+          sudo pip install python-venv pipx
+          pipx install hatch
 
       - name: Build the pages
         run: |
