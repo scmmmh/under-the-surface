@@ -14,6 +14,10 @@ sphinx_config:
   html_theme_options:
     secondary_sidebar_items:
       - page-toc.html
+  html_static_path:
+    - _static
+  html_css_files:
+    - style.css
 languages:
   - code: en
     label: English

@@ -15,3 +15,12 @@ html[data-theme="dark"] article a.reference {
 a:hover {
   color: var(--pst-color-secondary);
 }
+
+p.bd-links__title {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
