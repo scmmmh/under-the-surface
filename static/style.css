@@ -24,3 +24,45 @@ p.bd-links__title {
   height:1px;
   overflow:hidden;
 }
+
+#metadata h2 {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+#metadata dl {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+}
+
+#body h2 {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+[data-tei-mark-page-begin] {
+  font-size: 0.8rem;
+}
+
+[data-tei-mark-page-begin]::before {
+  content: '[';
+}
+
+[data-tei-mark-page-begin]::after {
+  content: ']';
+}
+
+a[target="_blank"]::after {
+  font: var(--fa-font-solid);
+  font-size: 0.8rem;
+  content: '\f08e';
+  padding-left: 0.2rem;
+}

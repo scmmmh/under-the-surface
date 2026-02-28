@@ -3,7 +3,9 @@ root: index
 chapters:
   - file: authors/index
     sections:
-      - file: authors/zäunemann-sidonia-hedwig
+      - file: authors/zäunemann-sidonia-hedwig/about
+        sections:
+          - file: authors/zäunemann-sidonia-hedwig/ein-sendschreiben
   - file: appendices/index
     sections:
       - file: appendices/bibliography

@@ -1,0 +1,341 @@
+<TEI xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://textgrid.info/namespaces/metadata/core/2010" xmlns:tgl="http://textgrid.info/namespaces/metadata/language/2010" xmlns:tgs="http://textgrid.info/namespaces/metadata/script/2010" xmlns:tgr="http://textgrid.info/namespaces/metadata/agent/2010" xml:id="tg135" n="/Literatur/M/Zäunemann, Sidonia Hedwig/Gedichte/Poetische Rosen in Knospen/Vermischte Gedichte/Ein Sendschreiben">
+  <teiHeader xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:a="http://www.textgrid.info/namespace/digibib/authors">
+    <fileDesc>
+      <titleStmt>
+        <title>Ein Sendschreiben</title>
+      </titleStmt>
+      <publicationStmt>
+        <idno type="handle">hdl:11858/00-1734-0000-0005-AC16-2</idno>
+        <idno type="TextGridUri">textgrid:xb5r.0</idno>
+        <availability>
+          <p> Der annotierte Datenbestand der Digitalen Bibliothek inklusive Metadaten sowie
+                                   davon einzeln zugängliche Teile sind eine Abwandlung des Datenbestandes von
+                                   www.editura.de durch TextGrid und werden unter der Lizenz Creative Commons
+                                   Namensnennung 3.0 Deutschland Lizenz (by-Nennung TextGrid) veröffentlicht. Die
+                                   Lizenz bezieht sich nicht auf die der Annotation zu Grunde liegenden
+                                   allgemeinfreien Texte (Siehe auch Punkt 2 der Lizenzbestimmungen). </p>
+          <p>
+            <ref target="http://creativecommons.org/licenses/by/3.0/de/legalcode">Lizenzvertrag</ref>
+          </p>
+          <p>
+            <ref target="http://creativecommons.org/licenses/by/3.0/de/"> Eine vereinfachte
+                                   Zusammenfassung des rechtsverbindlichen Lizenzvertrages in
+                                   allgemeinverständlicher Sprache </ref>
+          </p>
+          <p>
+            <ref target="http://www.textgrid.de/Digitale-Bibliothek">Hinweise zur Lizenz und zur Digitalen Bibliothek</ref>
+          </p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblFull>
+          <titleStmt>
+            <title>Sidonia Hedwig Zäunemann: Poetische Rosen in Knospen, Erfurt: Johann Heinrich Nonne, 1738.</title>
+            <author key="pnd:122537122">Zäunemann, Sidonia Hedwig</author>
+          </titleStmt>
+          <extent>473-</extent>
+          <publicationStmt>
+            <date when="1738"/>
+            <pubPlace>Erfurt</pubPlace>
+          </publicationStmt>
+        </biblFull>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <creation>
+        <date notBefore="1714" notAfter="1738"/>
+      </creation>
+      <textClass>
+        <keywords scheme="http://textgrid.info/namespaces/metadata/core/2010#genre">
+          <term>verse</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <tei:front>
+      <tei:div type="front">
+        <tei:head type="h3" xml:id="tg134.2.1">Vermischte Gedichte</tei:head>
+        <tei:pb n="471" xml:id="tg134.2.2"/>
+        <tei:pb type="start" n="473" xml:id="tg134.2.3"/>
+      </tei:div>
+    </tei:front>
+    <tei:body>
+      <tei:div type="text" xml:id="tg135.3">
+        <tei:div type="h4">
+          <tei:head type="h4" xml:id="tg135.3.1">
+            <tei:seg>Ein Sendschreiben</tei:seg>
+          </tei:head>
+          <tei:lg>
+            <tei:l xml:id="tg135.3.2">
+              <tei:hi rend="italic" xml:id="tg135.3.2.1">Geehrtester!</tei:hi>
+            </tei:l>
+            <tei:l xml:id="tg135.3.3">
+              <tei:seg>Du hast mir kund gemacht,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.4">
+              <tei:seg>Daß deiner Liebsten jetzt ein Kind im Schooße lacht:</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.5">
+              <tei:seg>Worüber ich mich herzlich freue,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.6">
+              <tei:seg>Und wünsche, daß der Herr dem Kinde Gnad verleyhe.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.7">
+              <tei:seg>Ich will mich auch bemühen,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.8">
+              <tei:seg>Die Bücher, so du mir geliehen,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.9">
+              <tei:seg>Mit ersterer Gelegenheit,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.10">
+              <tei:seg>Nach deinen gütgen Händen</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.11">
+              <tei:seg>Mit Danck zu übersenden.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.12">
+              <tei:seg>Das Eine, so du mir zum Eigenthum geweyht,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.13">
+              <tei:seg>Soll dir zu Ehren bey mir leben.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.14">
+              <tei:seg>Den Danck davor will ich auf diesem Blatte geben.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.15">
+              <tei:seg>So muß ich Dir auch etwas neues melden:</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.16">
+              <tei:seg>Marinus, einer von den größten Helden,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.17">
+              <tei:seg>Und Ritterschafft der Sparsamkeit,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.18">
+              <tei:seg>Und Ehstands-Canditate,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.19">
+              <tei:seg>Der gieng, noch neulich spate,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.20">
+              <tei:seg>Und zwar ganz in dem stillen,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.21">
+              <tei:seg>Und überhäufte sich mit Grillen.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.22">
+              <tei:seg>Dieweilen ihm die Zeit</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.23">
+              <tei:seg>Des Abends und des Nachts zu lange,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.24">
+              <tei:seg>Die Liebe machte ihm auch ziehmlich bange.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.25">
+              <tei:seg>Drum schmückte er sich aus,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.26">
+              <tei:seg>Und gienge recht in Schrancken,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.27">
+              <tei:seg>Mit Freyerey Gedancken</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.28">
+              <tei:seg>In Liselantens Haus.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.29">
+              <tei:seg>Es musten Mienen und Geberden,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.30">
+              <tei:seg>Wie gleichsam angenagelt werden.</tei:seg>
+            </tei:l>
+            <tei:lb type="dummy">
+              <tei:pb n="473" xml:id="tg135.3.31"/>
+            </tei:lb>
+            <tei:l xml:id="tg135.3.32">
+              <tei:seg>Doch Liselante,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.33">
+              <tei:seg>Die seine Eigenschafften kannte:</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.34">
+              <tei:seg>Indem er stets die Erbsen zehlt,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.35">
+              <tei:seg>Und nie aus Sparsamkeit die Rüben scheelt;</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.36">
+              <tei:seg>Das Brod auf einer goldnen Wage wieget;</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.37">
+              <tei:seg>Und sich mit Hallschen Schmalz begnüget:</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.38">
+              <tei:seg>Um dessen Trank sich sieben Bauren raufen,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.39">
+              <tei:seg>Ob er dem Geren-Strom entlaufen.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.40">
+              <tei:seg>Sie sprach, mit angenehmen Mienen:</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.41">
+              <tei:seg>Mich wundert sehr, daß ihr bey mir erschienen,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.42">
+              <tei:seg>Und gar um meine Liebe werbet;</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.43">
+              <tei:seg>Da ich doch nicht wie ihr die Tugenden ererbet.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.44">
+              <tei:seg>Denn ihr casteyet euch mit Macht;</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.45">
+              <tei:seg>Ich aber bin auf Gasterey bedacht;</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.46">
+              <tei:seg>So speise ich auch gerne Fleisch,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.47">
+              <tei:seg>Denn Saltz und Brod macht mich nur heisch.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.48">
+              <tei:seg>So ist mir auch das Wasser viel zu stark,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.49">
+              <tei:seg>Indem es grosse Räder treibet.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.50">
+              <tei:seg>Ich speise mich nicht karg,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.51">
+              <tei:seg>Und trinke daß nichts übrig bleibet;</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.52">
+              <tei:seg>So möchtet ihr durch mich und mein Erbarmen,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.53">
+              <tei:seg>In kurzer Zeit verarmen.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.54">
+              <tei:seg>Solt ich wohl solche Sünde auf mich laden?</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.55">
+              <tei:seg>Davor bewahr mich Gott in Gnaden.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.56">
+              <tei:seg>Und so ist er vom Jungfer-Orden,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.57">
+              <tei:seg>Mit Körben reich beschencket worden;</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.58">
+              <tei:seg>So, daß er wohl in manchen Jahren,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.59">
+              <tei:seg>Das Geld zum Holze kan erspahren.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.60">
+              <tei:seg>Doch liese ihm die Liebe keine Ruh,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.61">
+              <tei:seg>Drum sagte er zu sich</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.62">
+              <tei:seg>Großmüthiglich:</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.63">
+              <tei:seg>Ich weis wohl was ich thu.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.64">
+              <tei:seg>Ich will mich an Rosetgen machen,</tei:seg>
+            </tei:l>
+            <tei:lb type="dummy">
+              <tei:pb n="474" xml:id="tg135.3.65"/>
+            </tei:lb>
+            <tei:l xml:id="tg135.3.66">
+              <tei:seg>Vieleicht gerathen meine Sachen.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.67">
+              <tei:seg>Ich will sie mit der Venus-Kette,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.68">
+              <tei:seg>Ins Hochzeit und ins Wochen-Bette,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.69">
+              <tei:seg>Auf einen Tag einführen.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.70">
+              <tei:seg>Rosetgen brannte wie ein Feuer,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.71">
+              <tei:seg>Drum tanzte sie nach seiner Leyer,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.72">
+              <tei:seg>Gieng seinen Willen leichtlich ein,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.73">
+              <tei:seg>Und sang am Hochzeit-Tage</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.74">
+              <tei:seg>Zu ihrer Eltern Schmerz und Plage:</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.75">
+              <tei:seg>Schlaf ein, schlaf ein mein Kindelein!</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.76">
+              <tei:seg>Auf solche Art</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.77">
+              <tei:seg>Hat er den Mahlschatz und das Kleid erspahrt:</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.78">
+              <tei:seg>Er brauchte bey dergleichen Sachen,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.79">
+              <tei:seg>Sich keine grosse Müh zu machen.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.80">
+              <tei:seg>Es wurde kein Geschenke ausgetheilt,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.81">
+              <tei:seg>Es unterblieb der Schmaus,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.82">
+              <tei:seg>Der Priester gieng mit trocknem Munde raus.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.83">
+              <tei:seg>Auf diese Weise war sein Schmerz geheilt,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.84">
+              <tei:seg>Und kunte darbey viel erspahren.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.85">
+              <tei:seg>Wohlan! ich muß nun schliessen,</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.86">
+              <tei:seg>Laß dir mein Schreiben nicht verdrüssen.</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.87">
+              <tei:seg>Ich wünsche; lebe wohl!</tei:seg>
+            </tei:l>
+            <tei:l xml:id="tg135.3.88">
+              <tei:seg>Es kröne dich das Glück vom Sternen-Pol!</tei:seg>
+            </tei:l>
+          </tei:lg>
+          <tei:lb xml:id="tg135.3.89"/>
+          <tei:closer>
+            <tei:seg type="closer" rend="zenoPC" xml:id="tg135.3.90">Den 19ten des Wintermonats 1734.</tei:seg>
+          </tei:closer>
+          <tei:lb xml:id="tg135.3.91"/>
+        </tei:div>
+      </tei:div>
+    </tei:body>
+  </text>
+</TEI>

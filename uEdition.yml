@@ -18,6 +18,60 @@ sphinx_config:
     - _static
   html_css_files:
     - style.css
+  html_js_files:
+    - script.js
+  tei:
+    blocks:
+      - name: div
+        selector: tei:div
+        tag: div
+      - name: heading-2
+        selector: tei:head[@type="h2"]
+        tag: h3
+      - name: heading-4
+        selector: tei:head[@type="h4"]
+        tag: h4
+      - name: line-group
+        selector: tei:lg
+        tag: div
+      - name: line
+        selector: tei:l
+        tag: div
+      - name: closer
+        selector: tei:closer
+        tag: div
+      - name: dummy-linebreak
+        selector: tei:lb[@type="dummy"]
+        tag: div
+      - name: line-break
+        selector: tei:lb
+        tag: br
+    marks:
+      - name: page-begin
+        selector: tei:pb
+        text: "@n"
+      - name: italic
+        selector: tei:hi[@rend="italic"]
+        tag: em
+    sections:
+      - title: About
+        name: metadata
+        type: metadata
+        selector: /tei:TEI/tei:teiHeader
+        fields:
+          - title: Author
+            type: single
+            selector: tei:fileDesc/tei:sourceDesc/tei:biblFull/tei:titleStmt/tei:author/text()
+          - title: Bibliographic entry
+            type: single
+            selector: tei:fileDesc/tei:sourceDesc/tei:biblFull/tei:titleStmt/tei:title/text()
+          - title: Source
+            type: single
+            selector: tei:fileDesc/tei:publicationStmt/tei:idno[@type="TextGridUri"]/text()
+      - name: body
+        type: text
+        title: Text
+        selector: tei:text/tei:body
 languages:
   - code: en
     label: English
