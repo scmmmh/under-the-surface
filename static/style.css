@@ -66,3 +66,7 @@ a[target="_blank"]::after {
   content: '\f08e';
   padding-left: 0.2rem;
 }
+
+.admonition.text-sample > .admonition-title::after, div.admonition > .admonition-title::after {
+  content: '\f15c';
+}

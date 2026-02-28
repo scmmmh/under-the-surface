@@ -14,6 +14,12 @@ Zäunemann develops a number of motives and themes that are repeatedly picked up
 
 Prepared by Corinna Dziudzia
 
+:::{admonition} Extract
+:class: text-sample
+
+On the next page you can read the poem "Ein Sendschreiben" taken from Sidonia Hedwig Zäunemann's "Poetische Rosen in Knospen".
+:::
+
 [^dateofbirth]: Secondary literatur often lists 1714 as the incorrect year of birth of Sidonia Zäunemann. This is actually the year her sister Martha Paulina was born. The incorrect date most likely comes from an obituary published in 1741, which lists the incorrect year. {cite}`riemann2011register` S. 206.
 
 [^source-parents]: {cite}`eigler1997feminist` S. 581.

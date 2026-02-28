@@ -14,6 +14,12 @@ Verschiedene Motive und Themen durchziehen Zäunemanns Texte und werden immer wi
 
 Ausarbeitung Corinna Dziudzia
 
+:::{admonition} Werkauszug
+:class: text-sample
+
+Auf der nächsten Seite finden sie das Gedicht "Ein Sendschreiben" aus Sidonia Hedwig Zäunemann's "Poetische Rosen in Knospen".
+:::
+
 [^geburtsdatum]: Das fehlerhafte Datum 1714 als Sidonia Hedwig Zäunemanns angeblichem Geburtsjahr, von dem in der Sekundärliteratur vielfach fälschlicherweise die Rede ist, ist tatsächlich das Jahr der Geburt ihrer Schwester, Martha Paulina. Mutmaßlich geht das falsche Datum auf einen Nachruf zurück, der 1741 erschienen ist und der das falsche Jahr nennt. {cite}`riemann2011register` S. 206.
 
 [^quelle-eltern]: {cite}`eigler1997feminist` S. 581.
