@@ -20,9 +20,10 @@ Source = "https://github.com/scmmmh/under-the-surface/-"
 
 [tool.hatch.envs.default]
 dependencies = [
-    "uedition<3,>=2.0.3",
+    "uedition<3,>=2.1.0",
     "uedition_editor<3,>=2.0.0b14",
     "sphinxcontrib-bibtex",
+    "pydata-sphinx-theme>=0.16.1"
 ]
 skip-install = true
 
